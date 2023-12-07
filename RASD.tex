@@ -1,0 +1,164 @@
+\documentclass{article}
+\usepackage{anyfontsize}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\fontsize{10pt}{12pt}\selectfont % Set the font size
+\begin{document}
+
+% FRONT PAGE
+\begin{titlepage}
+    \begin{center}
+        
+        Politecnico di Milano\\
+      
+        Computer Science and Engineering\\
+        
+        Software Engineering II\\
+
+        \vfill
+        
+        {\Large \textbf{RASD - CodeKataBlade}}\\
+        
+        \vfill
+
+        José Alejandro Sarmiento
+
+        \today
+
+        v1.0
+        
+    \end{center}
+\end{titlepage}
+\newpage
+
+
+% TABLE OF CONTENTS
+\tableofcontents
+
+
+\section{INTRODUCTION}
+\subsection{Purpose}
+
+The primary purpose of the CodeKataBattle (CKB) platform is to provide an environment 
+for students to enhance their software development skills through collaborative 
+learning and friendly competition and for educators to set up these scenarios. The platform facilitates 
+this by allowing educators to setup tournaments where code kata battles are organized. Here students 
+form teams and showcase their coding abilities in a test-driven development (TDD) framework.
+\\ \\
+\textbf{A) Skill Enhancement through Practice:}
+\\ \\
+\indent CKB serves as a virtual arena where students can test and improve their programming abilities by actively 
+participating in code kata battles.
+\\ \\
+\textbf{B) Educator-Guided Learning:}
+\\ \\
+\indent The platform must allow for educators to create tournaments, compose battles and perform manual evaluations
+on top of automated ones. This ensures that the learning experience aligns with the curriculum and instructional goals.
+\\ \\
+\textbf{C) Automated Evaluation:}
+\\ \\
+\indent CKB should have an automated evaluation system that provides feedback to students based on
+ objective criteria. Specifically, the criteria the evaluation is based upon is the number of passed test cases 
+ set up by the battle organizer and the timeliness. 
+\\ \\
+\textbf{D) Competition and Recognition:}
+\\ \\
+\indent The platform should possess a leaderboard functionality that allows participants to 
+gauge their performance and see how their skills compare to other participants.
+\\ \\
+\indent In summary, CodeKataBattle aims to create a learning platform, combining 
+hands-on coding practice, collaborative teamwork and automated feedback, all under the 
+guidance of educators. 
+\\ \\
+\indent Knowing this, the S2B will have a certain set of goals to achieve:
+\begin{itemize}
+    \item \textbf{G1:} Every educator should be able to create a tournament.
+    \item \textbf{G2:} When crearing a tournament, the educator doing so should be able to set a registration deadline.
+    \item \textbf{G3:} Every educator that owns a tournament should be able to invite other educators to it.
+    \item \textbf{G4:} Every educator that belongs to a tournament should be able to create battles.
+    \item \textbf{G5:} When creating a battle, the educator doing so should be able to set the programming language, a decription of the problem, the test cases which will evaluate the students code, the registration deadline, the final submission deadline, the minimum and maximum number of participants per group.
+    \item \textbf{G6:} Every student should be able to see the list of tournaments and register to them before the registration deadline.
+    \item \textbf{G7:} Every student should be able to see the description of the battles of a tournament they belong to and register to them before the registration deadline by themselves or with other students.
+    \item \textbf{G8:} Every time a student makes a submission to a battle, the platform should evaluate it and update the leaderboard of the battle accordingly.
+    \item \textbf{G9:} The evaluation carried on by the platform should be based on the test cases set by the educator and the timeliness of the submission.
+    \item \textbf{G10:} Every student and educator should be able to see the leaderboard of a battle they belong to.
+    \item \textbf{G11:} Once the battle ends, the educator that created it should be able to manually evaluate the code of the students if they so desire to and set a grade for each student.
+    \item \textbf{G12:} Once the educator consolides the results of a battle, the students that participated in it should be notified, the final results of the battle should be displayed to everyone and the leaderboard of the tournament the battle belongs to should be updated by adding for each student the battle score to the sum of all the other battles they have participated on.
+    \item \textbf{G13:} Every student and educator should be able to see the leaderboard of every tournament.
+    \item \textbf{G14:} An instructor that owns a tournament should be able to close it.
+    \item \textbf{G15:} Once the owner of a tournament closes it, the platform should notify all the students once the leaderboard of the tournament is available.
+    \item \textbf{G16:} When a tournament is created, all students should be notified. 
+    \item \textbf{G17:} When a battle is created, all students participating in the tournament the battle belongs to should be notified.
+\end{itemize}
+
+\subsection{Scope}  
+
+
+\subsection{Definitions, Acronyms, Abbreviations}
+\subsection{Revision history}
+\subsection{Reference Documents}
+\subsection{Document Structure}
+
+\section{OVERALL DESCRIPTION}
+\subsection{Product perspective}
+\subsection{Product functions}
+\subsection{User characteristics}
+\subsection{Assumptions, dependencies and constraints}
+
+\section{SPECIFIC REQUIREMENTS}
+\iffalse
+    \item \textbf{G1:} Every educator should be able to create a tournament.
+    \item \textbf{G2:} When crearing a tournament, the educator doing so should be able to set a registration deadline.
+    \item \textbf{G3:} Every educator that owns a tournament should be able to invite other educators to it.
+    \item \textbf{G4:} Every educator that belongs to a tournament should be able to create battles.
+    \item \textbf{G5:} When creating a battle, the educator doing so should be able to choose the programming language.
+    \item \textbf{G6:} When creating a battle, the educator doing so should be able to set a decription of the problem.
+    \item \textbf{G7:} When creating a battle, the educator doing so should be able to set the test cases which will evaluate the students code.
+    \item \textbf{G8:} When creating a battle, the educator doing so should be able to set the registration deadline.
+    \item \textbf{G9:} When creating a battle, the educator doing so should be able to set the final submission deadline.
+    \item \textbf{G10:} When creating a battle, the educator doing so should be able to set the minimum and maximum number of participants per group.
+    \item \textbf{G11:} The platform should be able to create a GitHub repository for each battle after the registration deadline.
+    \item \textbf{G12:} The platform should send invitations to the GitHub repository of a battle to the students that registered to it.
+    \item \textbf{G13:} Every student should be able to see the list of tournaments.
+    \item \textbf{G14:} Every student should be able to register to a tournament before the registration deadline.
+    \item \textbf{G15:} Every student and educator should be able to see the description of the battles of a tournament they belong to.
+    \item \textbf{G16:} Every student should be able to register to a battle of a tournament they are a part of by themselves or with other students before the battle's registration deadline.
+    \item \textbf{G17:} The platform should be able to automatically evaluate the code of a student every time a commit is pushed to the main branch of the forked repository of a battle.
+    \item \textbf{G18:} The evaluation carried on by the platform should be based on the test cases set by the educator and the timeliness of the submission.
+    \item \textbf{G19:} The platform should be able to update the leaderboard of a battle every time an evaluation is performed. 
+    \item \textbf{G20:} Every student and educator should be able to see the leaderboard of a battle they belong to.
+    \item \textbf{G21:} Once the battle ends, the educator that created it should be able to manually evaluate the code of the students if they so desire to.
+    \item \textbf{G22:} Once the educator consolides the results of a battle, the students that participated in it should be notified.
+    \item \textbf{G23:} Once the educator consolides the results of a battle, the final results of the battle shoud be displayed to everyone.
+    \item \textbf{G24:} Once the educator consolides the results of a battle, the tournament leaderboard should be updated by adding the score that each student got on the battle to their score on the rest of the battles of the tournament that they have participated on.
+    \item \textbf{G25:} Every student and educator should be able to see the leaderboard of every tournament.
+    \item \textbf{G26:} An instructor that owns a tournament should be able to close it.
+    \item \textbf{G26:} Once the owner of a tournament closes it, the platform should notify all the students once the leaderboard of the tournament is available.
+\fi
+\subsection{External Interface Requirements}
+\subsubsection{User Interfaces}
+\subsubsection{Hardware Interfaces}
+\subsubsection{Software Interfaces}
+\subsubsection{Communication Interfaces}
+\subsection{Functional Requirements}
+\subsection{Performance Requirements}
+\subsection{Design Constraints}
+\subsubsection{Standards compliance}
+\subsubsection{Hardware limitations}
+\subsubsection{Any other constraint}
+\subsection{Software System Attributes}
+\subsubsection{Reliability}
+\subsubsection{Availability}
+\subsubsection{Security}
+\subsubsection{Maintainability}
+\subsubsection{Portability}
+
+\section{FORMAL ANALYSIS USING ALLOY}
+
+\section{EFFORT SPENT}
+
+\section{REFERENCES}
+
+\end{document}
+
