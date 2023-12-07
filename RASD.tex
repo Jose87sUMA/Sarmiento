@@ -2,6 +2,7 @@
 \usepackage{anyfontsize}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{parskip}
 
 \fontsize{10pt}{12pt}\selectfont % Set the font size
 \begin{document}
@@ -45,33 +46,33 @@ for students to enhance their software development skills through collaborative
 learning and friendly competition and for educators to set up these scenarios. The platform facilitates 
 this by allowing educators to setup tournaments where code kata battles are organized. Here students 
 form teams and showcase their coding abilities in a test-driven development (TDD) framework.
-\\ \\
+
 \textbf{A) Skill Enhancement through Practice:}
-\\ \\
-\indent CKB serves as a virtual arena where students can test and improve their programming abilities by actively 
+
+CKB serves as a virtual arena where students can test and improve their programming abilities by actively 
 participating in code kata battles.
-\\ \\
+
 \textbf{B) Educator-Guided Learning:}
-\\ \\
-\indent The platform must allow for educators to create tournaments, compose battles and perform manual evaluations
+
+The platform must allow for educators to create tournaments, compose battles and perform manual evaluations
 on top of automated ones. This ensures that the learning experience aligns with the curriculum and instructional goals.
-\\ \\
+
 \textbf{C) Automated Evaluation:}
-\\ \\
-\indent CKB should have an automated evaluation system that provides feedback to students based on
+
+CKB should have an automated evaluation system that provides feedback to students based on
  objective criteria. Specifically, the criteria the evaluation is based upon is the number of passed test cases 
  set up by the battle organizer and the timeliness. 
-\\ \\
-\textbf{D) Competition and Recognition:}
-\\ \\
-\indent The platform should possess a leaderboard functionality that allows participants to 
+
+ \textbf{D) Competition and Recognition:}
+
+The platform should possess a leaderboard functionality that allows participants to 
 gauge their performance and see how their skills compare to other participants.
-\\ \\
-\indent In summary, CodeKataBattle aims to create a learning platform, combining 
+
+In summary, CodeKataBattle aims to create a learning platform, combining 
 hands-on coding practice, collaborative teamwork and automated feedback, all under the 
 guidance of educators. 
-\\ \\
-\indent Knowing this, the S2B will have a certain set of goals to achieve:
+
+Knowing this, the S2B will have a certain set of goals to achieve:
 \begin{itemize}
     \item \textbf{G1:} Every educator should be able to create a tournament.
     \item \textbf{G2:} When crearing a tournament, the educator doing so should be able to set a registration deadline.
@@ -92,10 +93,107 @@ guidance of educators.
     \item \textbf{G17:} When a battle is created, all students participating in the tournament the battle belongs to should be notified.
 \end{itemize}
 
+\newpage
+
 \subsection{Scope}  
 
+The education sector in software development is an ever-growing field given the nature of the topic 
+being teached. The CodeKataBattle (CKB) platform aims to provide a competitive twist to the learning
+by facilitating the creation of competitions in the form of tournaments where students can showcase their abilities.
+
+These are managed by educators who can create the aforementioned tournaments and compose battles where they can decide 
+the programming language, the description of the problem and the test cases which will evaluate the students code among other things.
+
+This way, through the use of GitHub, the platform can automatically evaluate the code of a team.
+
+In the environment of the CodeKataBattle system the following actors are identified:
+
+\textbf{Students:} These are the primary users of the CKB system. They participate in battles and tournaments to improve their software development skills. They can form teams, work on code katas, and submit their solutions.
+
+\textbf{Educators:}: They are responsible for creating and managing battles and tournaments. They set various parameters for battles, evaluate the solutions submitted by students, and provide feedback.
+
+\textbf{GitHub:} The CKB system integrates with GitHub for managing code kata projects and tracking students' commits. GitHub is a widely used platform for version control and collaboration in software development.
+
+Having all of this in mind, the following are the World and Shared phenomena that the system will have to deal with:
+
+\textbf{World Phenomena:}
+\begin{itemize}
+    \item \textbf{W1:} A group of students organizes themselves to participate in a battle together.
+    \item \textbf{W2:} A group of students registered to a battle fork the repository of the battle.
+    \item \textbf{W3:} Students set up an automated workflow through GitHub Actions that will notify the system every time a commit is pushed to the main branch of the forked repository of a battle.
+    \item \textbf{W4:} A student pushes a commit to the main branche of a forked repository of a battle.
+    \item \textbf{W5:} An educator possesses a specific evaluation criteria through which they perform their manual evaluations.
+\end{itemize}
+\textbf{Shared Phenomena:}
+
+Controlled by the world and observed by the system.
+
+\begin{itemize}
+    \item \textbf{SP1:} An educator creates a tournament with a set of attributes.
+    \item \textbf{SP2:} An educator creates a battle with a set of attributes inside a tournament.
+    \item \textbf{SP3:} An educator invites other educators to a tournament.
+    \item \textbf{SP4:} A student registers to a tournament.
+    \item \textbf{SP5:} A student or a team of students registers to a battle.
+    \item \textbf{SP6:} GitHub notfies the system that a student has pushed a commit to the main branch of a forked repository of a battle. 
+    \item \textbf{SP7:} An educator performs manual evaluations on the submissions of a battle they own.
+    \item \textbf{SP8:} An educator consolides the results of a battle.
+    \item \textbf{SP9:} An educator closes a tournament.
+\end{itemize}
+
+Controlled by the system and observed by the world.
+
+\begin{itemize}
+    \item \textbf{SP10:} The system notifies all the students that a tournament has been created.
+    \item \textbf{SP11:} The system notifies all the students participating in a tournament that a battle has been created.
+    \item \textbf{SP12:} The system displays the leaderboard of tournament while it is active and after it has ended.
+    \item \textbf{SP13:} The system displays the leaderboard of a battle while it is active and after it has ended.
+    \item \textbf{SP14:} The system updates a battle's leaderboard every time a new evaluation is performed.
+    \item \textbf{SP15:} The system notifies all the students participating in a battle that the final results have been consolided.
+    \item \textbf{SP16:} The system updates the leaderboard of a tournament every time a battle ends.
+    \item \textbf{SP17:} The system notifies all the students participating in a tournament that it has ended.
+\end{itemize}
+
+\newpage
 
 \subsection{Definitions, Acronyms, Abbreviations}
+
+\subsubsection{Definitions}
+ 
+\begin{itemize}
+    \item \textbf{Tournament:} A tournament is a space where educators can create battles and students can register to them. It has a registration deadline and a leaderboard that is updated every time a battle ends.
+    \item \textbf{Battle:} A battle is a space where students can register to and submit their solutions to a problem. It has a registration deadline, a final submission deadline, a leaderboard that is updated every time a new evaluation is performed and a set of test cases that will be used to evaluate the submissions.
+    \item \textbf{GitHub:} GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
+    \item \textbf{GitHub Actions:} GitHub Actions is a CI/CD tool that allows you to automate your software development workflows in the same place you store code and collaborate on pull requests and issues.
+    \item \textbf{Educator:} An educator is a user of the platform that can create tournaments and battles, invite other educators to tournaments, perform manual evaluations on the submissions of a battle they own and consolidate the results of a battle.
+    \item \textbf{Student:} A student is a user of the platform that can register to tournaments and battles, create teams and submit their solutions to a battle.
+    \item \textbf{Test Case:} A test case is a set of conditions under which a tester will determine whether an application, software system or one of its features is working as it was originally established for it to do.
+    \item \textbf{Timeliness:} Timeliness is the quality of doing something or producing something at the right time. In the context of the system, it refers to the time in which a student submits their solution to a battle with respect to the start of the battle and the final submission deadline.
+\end{itemize}
+
+\subsubsection{Acronyms}
+
+\begin{itemize}
+    \item \textbf{CKB:} CodeKataBattle
+    \item \textbf{S2B:} System to Be
+    \item \textbf{TDD:} Test-Driven Development
+    \item \textbf{CI/CD:} Continuous Integration/Continuous Delivery
+    \item \textbf{UI:} User Interface
+    \item \textbf{API:} Application Programming Interface
+    \item \textbf{UML:} Unified Modeling Language
+\end{itemize}
+
+\subsubsection{Abbreviations}
+
+\begin{itemize}
+    \item \textbf{Gn:} Goal number n
+    \item \textbf{Wn:} World Phenomena number n
+    \item \textbf{SPn:} Shared Phenomena number n
+    \item \textbf{Dn:} Domain Assumption number n
+    \item \textbf{Rn:} Requirement number 
+    \item \textbf{UCn:} Use Case number n
+\end{itemize}
+
+
 \subsection{Revision history}
 \subsection{Reference Documents}
 \subsection{Document Structure}

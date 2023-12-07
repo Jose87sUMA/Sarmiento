@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1701972584 "c:/Users/jasm2/Documents/3er anno/Polimi/Software/RASD & DD/Sarmiento/RASD.tex" "RASD.pdf" "RASD" 1701972585 0
-  "C:/Users/jasm2/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1701870126 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
+["pdflatex"] 1701992353 "c:/Users/jasm2/Documents/3er anno/Polimi/Software/RASD & DD/Sarmiento/RASD.tex" "RASD.pdf" "RASD" 1701992354 0
+  "C:/Users/jasm2/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1701986453 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/jasm2/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1701953873 11548 1db3ae61c46fc30034f50769b9c6a1fc ""
   "C:/Users/jasm2/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1701868854 24213272 693d9d5013bcc37dd655a1a9aecfeba2 ""
   "C:/Users/jasm2/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm1000.tfm" 993062508 1436 c7f957a372ef2fbe93c0982f96625e12 ""
@@ -49,14 +49,15 @@
   "C:/Users/jasm2/AppData/Local/Programs/MiKTeX/tex/latex/kvsetkeys/kvsetkeys.sty" 1665066333 13815 760b0c02f691ea230f5359c4e1de23a7 ""
   "C:/Users/jasm2/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-pdftex.def" 1699552361 29988 6d57d2b884f7464419678df319af86d2 ""
   "C:/Users/jasm2/AppData/Local/Programs/MiKTeX/tex/latex/letltxmacro/letltxmacro.sty" 1575399536 5766 13a9e8766c47f30327caf893ece86ac8 ""
+  "C:/Users/jasm2/AppData/Local/Programs/MiKTeX/tex/latex/parskip/parskip.sty" 1615976160 4288 94714aa7f535440f33181fec52a31963 ""
   "C:/Users/jasm2/AppData/Local/Programs/MiKTeX/tex/latex/refcount/refcount.sty" 1576433952 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "C:/Users/jasm2/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1657800696 9714 ba3194bd52c8499b3f1e3eb91d409670 ""
   "C:/Users/jasm2/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "RASD.aux" 1701972585 4368 cfcbefb2203edd2c280b52133b7237c3 "pdflatex"
-  "RASD.out" 1701972585 5112 a41691f4a31920aa2054c8002b5a7898 "pdflatex"
-  "RASD.tex" 1701972583 10027 262c37af2fbdb23db69efba1026cda39 ""
-  "RASD.toc" 1701972585 2853 abc39c97dbf2d71290ed7bf71a1726a0 "pdflatex"
-  "c:/Users/jasm2/Documents/3er anno/Polimi/Software/RASD & DD/Sarmiento/RASD.tex" 1701972583 10027 262c37af2fbdb23db69efba1026cda39 ""
+  "RASD.aux" 1701992354 4752 9f393caea7a7b2b3c73b56be0328ec1f "pdflatex"
+  "RASD.out" 1701992354 5476 b46d4b18c941d1b2f78b0f23961b0eb9 "pdflatex"
+  "RASD.tex" 1701992352 16802 64ee98e9f347cb2e78e7e34722378351 ""
+  "RASD.toc" 1701992354 3113 fccabfcb7fa21a937f653f539fc3d0a8 "pdflatex"
+  "c:/Users/jasm2/Documents/3er anno/Polimi/Software/RASD & DD/Sarmiento/RASD.tex" 1701992352 16802 64ee98e9f347cb2e78e7e34722378351 ""
   (generated)
   "RASD.aux"
   "RASD.log"

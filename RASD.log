@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.6)  7 DEC 2023 19:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.6)  8 DEC 2023 00:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -152,6 +152,8 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
 \Hy@SectionHShift=\skip50
+) (C:\Users\jasm2\AppData\Local\Programs\MiKTeX\tex/latex/parskip\parskip.sty
+Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
 ) (C:\Users\jasm2\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-11-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count272
@@ -159,24 +161,24 @@ File: l3backend-pdftex.def 2023-11-09 L3 backend support: PDF output (pdfTeX)
 ) (RASD.aux)
 \openout1 = `RASD.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
  (C:\Users\jasm2\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count273
@@ -196,7 +198,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (C:\Users\jasm2\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 7.
+Package hyperref Info: Link coloring OFF on input line 8.
  (RASD.out) (RASD.out)
 \@outlinefile=\write3
 \openout3 = `RASD.out'.
@@ -213,83 +215,33 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \openout4 = `RASD.toc'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--75
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 43--75
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 43--75
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 43--75
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 43--75
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 43--75
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 43--75
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 43--75
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 43--75
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 43--75
-
- []
-
-
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.75 \begin{itemize}
-                     [1] [2] [3] [4]
-Overfull \vbox (93.42992pt too high) has occurred while \output is active []
+l.49 
+      [1] [2] [3] [4] [5] [6] [7] [8]
+Overfull \vbox (46.51329pt too high) has occurred while \output is active []
 
- [5] (RASD.aux)
+ [9] (RASD.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
  ***********
 Package rerunfilecheck Info: File `RASD.out' has not changed.
-(rerunfilecheck)             Checksum: A41691F4A31920AA2054C8002B5A7898;5112.
+(rerunfilecheck)             Checksum: B46D4B18C941D1B2F78B0F23961B0EB9;5476.
  ) 
 Here is how much of TeX's memory you used:
- 8436 strings out of 474586
- 133601 string characters out of 5745681
- 1939558 words of memory out of 5000000
- 30510 multiletter control sequences out of 15000+600000
+ 8484 strings out of 474586
+ 134702 string characters out of 5745681
+ 1938558 words of memory out of 5000000
+ 30548 multiletter control sequences out of 15000+600000
  559922 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,5n,79p,494b,504s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,5n,79p,569b,490s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\jasm2\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/jasm2/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/jasm2/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/jasm2/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on RASD.pdf (6 pages, 94818 bytes).
+Output written on RASD.pdf (10 pages, 106663 bytes).
 PDF statistics:
- 226 PDF objects out of 1000 (max. 8388607)
- 40 named destinations out of 1000 (max. 500000)
- 265 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 260 PDF objects out of 1000 (max. 8388607)
+ 47 named destinations out of 1000 (max. 500000)
+ 289 words of extra memory for PDF output out of 10000 (max. 10000000)
 
