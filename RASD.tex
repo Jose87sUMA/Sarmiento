@@ -80,12 +80,12 @@ Knowing this, the S2B will have a certain set of goals to achieve:
     \item \textbf{G4:} Every educator that belongs to a tournament should be able to create battles.
     \item \textbf{G5:} When creating a battle, the educator doing so should be able to set the programming language, a decription of the problem, the test cases which will evaluate the students code, the registration deadline, the final submission deadline, the minimum and maximum number of participants per group.
     \item \textbf{G6:} Every student should be able to see the list of tournaments and register to them before the registration deadline.
-    \item \textbf{G7:} Every student should be able to see the description of the battles of a tournament they belong to and register to them before the registration deadline by themselves or with other students.
+    \item \textbf{G7:} Every student should be able to see the description of the battles of a tournament they belong to and register to them before the registration deadline by themselves or with other students by inviting them to join or by accepting another student's invitation.
     \item \textbf{G8:} Every time a student makes a submission to a battle, the platform should evaluate it and update the leaderboard of the battle accordingly.
     \item \textbf{G9:} The evaluation carried on by the platform should be based on the test cases set by the educator and the timeliness of the submission.
     \item \textbf{G10:} Every student and educator should be able to see the leaderboard of a battle they belong to.
     \item \textbf{G11:} Once the battle ends, the educator that created it should be able to manually evaluate the code of the students if they so desire to and set a grade for each student.
-    \item \textbf{G12:} Once the educator consolides the results of a battle, the students that participated in it should be notified, the final results of the battle should be displayed to everyone and the leaderboard of the tournament the battle belongs to should be updated by adding for each student the battle score to the sum of all the other battles they have participated on.
+    \item \textbf{G12:} Once the educator consolides the results of a battle, the students that participated in it should be notified, the final results of the battle should be displayed to everyone. The leaderboard of the tournament the battle belongs to should be updated by adding for each student the battle score to the sum of all the other battles they have participated on.
     \item \textbf{G13:} Every student and educator should be able to see the leaderboard of every tournament.
     \item \textbf{G14:} An instructor that owns a tournament should be able to close it.
     \item \textbf{G15:} Once the owner of a tournament closes it, the platform should notify all the students once the leaderboard of the tournament is available.
@@ -164,8 +164,8 @@ Controlled by the system and observed by the world.
     \item \textbf{Battle:} A battle is a space where students can register to and submit their solutions to a problem. It has a registration deadline, a final submission deadline, a leaderboard that is updated every time a new evaluation is performed and a set of test cases that will be used to evaluate the submissions.
     \item \textbf{GitHub:} GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
     \item \textbf{GitHub Actions:} GitHub Actions is a CI/CD tool that allows you to automate your software development workflows in the same place you store code and collaborate on pull requests and issues.
-    \item \textbf{Educator:} An educator is a user of the platform that can create tournaments and battles, invite other educators to tournaments, perform manual evaluations on the submissions of a battle they own and consolidate the results of a battle.
-    \item \textbf{Student:} A student is a user of the platform that can register to tournaments and battles, create teams and submit their solutions to a battle.
+    \item \textbf{Educator:} An educator, in the context of the system, is a user of the platform that can create tournaments and battles, invite other educators to tournaments, perform manual evaluations on the submissions of a battle they own and consolidate the results of a battle.
+    \item \textbf{Student:} A student, in the context of the system, is a user of the platform that can register to tournaments and battles, create teams and submit their solutions to a battle.
     \item \textbf{Test Case:} A test case is a set of conditions under which a tester will determine whether an application, software system or one of its features is working as it was originally established for it to do.
     \item \textbf{Timeliness:} Timeliness is the quality of doing something or producing something at the right time. In the context of the system, it refers to the time in which a student submits their solution to a battle with respect to the start of the battle and the final submission deadline.
 \end{itemize}
@@ -196,10 +196,79 @@ Controlled by the system and observed by the world.
 
 \subsection{Revision history}
 \subsection{Reference Documents}
+
+The specification of the RASD and DD assignment of the Software
+Engineering II course, held by professor Matteo Rossi, Elisabetta Di Nitto and
+Matteo Camilli at the Politecnico di Milano, A.Y 2023/2024;
+
 \subsection{Document Structure}
+
+\begin{itemize}
+    \item \textbf{1. Introduction:} This section provides an overview of the entire document. It identifies the product’s goals and the scope of the system along with the definitions, acronyms, abbreviations and the revision history.
+    \item \textbf{2. Overall Description:} This section provides a general description of the product and its functionality. It also describes the user characteristics, assumptions, dependencies and constraints.
+    \item \textbf{3. Specific Requirements:} This section contains all the software requirements to a level of detail sufficient to enable designers to design a system to satisfy those requirements, and testers to test that the system satisfies those requirements.
+    \item \textbf{4. Formal Analysis Using Alloy:} This section contains a formal analysis of the system using the Alloy language.
+    \item \textbf{5. Effort Spent:} This section contains the number of hours each group member has worked on the document.
+    \item \textbf{6. References:} This section contains all the reference documents used to create this document.
+\end{itemize}
 
 \section{OVERALL DESCRIPTION}
 \subsection{Product perspective}
+\subsubsection{Scenarios}
+
+\begin{itemize}
+    \item \textbf{1. Educator creates a tournament:} 
+    
+    An educator called Adam wants to create a tournament for his students. He goes to the CKB platform and creates a tournament with a registration deadline of 2 weeks from now. The platform notifies all the students that a tournament has been created. He then invites his colleagues to the tournament so when the tournament starts they can create battles.
+
+    \textbf{Goals:} G1, G2, G3, G16.
+    \textbf{Phenomena:} SP1, SP3, SP10.
+
+    \item \textbf{2. Student registers to a tournament:}
+    
+    A student called Bob receives a notification that a tournament has been created by educator Adam. He goes to the CKB platform and registers to the tournament before the registration deadline.
+
+    \textbf{Goals:} G6, G16.
+    \textbf{Phenomena:} SP4, SP10.
+
+    \item \textbf{3. Educator creates a battle:}
+    
+    Educator Charlie wants to create a battle for the tournament he was invited to by educator Adam. He goes to the CKB platform and creates a battle with a registration deadline of 1 week from now, a final submission deadline of 2 weeks from now, a minimum of 1 participant per group and a maximum of 3 participants per group. He also sets the programming language to Java, the description of the problem and uploads the test cases which will evaluate the students code. The platform notifies all the students participating in the tournament that a battle has been created.
+
+    \textbf{Goals:} G4, G5, G17.
+    \textbf{Phenomena:} SP2, SP11.
+
+    \item \textbf{4. Students registers to a battle:}
+    
+    Bob receives a notification that a battle has been created by educator Charlie. He goes to the CKB platform and reads the description of the battle. He then contacts his friends Danielle and Eve, who are also inside educator Adam's tournament, and they decide to form a team and register to the battle together. Charlie invites Danielle and Eve to the battle and they accept. 
+
+    \textbf{Goals:} G7, G17.
+    \textbf{Phenomena:} W1, SP5, SP11.
+
+    \item \textbf{5. Student submits a solution to a battle:}
+    
+    After the registrarion deadline ends, the system sends the link to the newly created GitHub repository to the students that registered to the battle. Bob, Danielle and Eve fork the repository and set up an automated workflow through GitHub Actions that will notify the system every time a commit is pushed to the main branch of the forked repository of the battle. After that, they start working on the problem and push a commit to the main branch of the forked repository of the battle. The system receives the notification thanks to the automated workflow and evaluates the submission taking into account the test cases educator Charlie submitted and the timeliness of the submission. The system then updates the leaderboard of the battle accordingly. The team notices that they have not passed all the test cases and decide to keep working on the problem. After a few days of several teams submitting their solutions, educator Charlie checks the leaderboard to see how the students are doing.
+
+    \textbf{Goals:} G8, G9, G10.
+    \textbf{Phenomena:} W2, W3, W4, SP6, SP13, SP14.
+
+    \item \textbf{6. Educator performs manual evaluations on the submissions of a battle after it has ended:}
+    
+    After the final submission deadline of educator Charlie's battle ends, he decides to manually evaluate the submissions of the students. He sets a grade for each team based on his own evaluation criteria. After that, he consolides the results of the battle. The system updates the leaderboards taking into account the evaluation it performed and the evaluations from educator Charlie. It then also updates the tournament leadeaboard accordingly. The system then notifies all the students participating in the battle that the final results have been consolided. Bob, Danielle and Eve check the leaderboard and see their score. They then check the leaderboard of the tournament and see that their score has been added to the sum of all the other battles they have participated on.
+
+    \textbf{Goals:} G11, G12, G13.
+    \textbf{Phenomena:} W5, SP7, SP8, SP12, SP13, SP15, SP16.
+
+    \item \textbf{7. Educator closes a tournament:}
+    
+    After all the battles of the tournament have ended, educator Adam decides to close the tournament. The system notifies all the students participating in the tournament that it has ended. Bob, Danielle and Eve check the leaderboard of the tournament and see their final score.
+
+    \textbf{Goals:} G14, G15.
+    \textbf{Phenomena:} SP9, SP17.
+
+
+\end{itemize}
+
 \subsection{Product functions}
 \subsection{User characteristics}
 \subsection{Assumptions, dependencies and constraints}
