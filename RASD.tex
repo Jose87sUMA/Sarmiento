@@ -3,6 +3,7 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{parskip}
+\usepackage[section]{placeins}
 
 \fontsize{10pt}{12pt}\selectfont % Set the font size
 \begin{document}
@@ -78,11 +79,11 @@ Knowing this, the S2B will have a certain set of goals to achieve:
     \item \textbf{G2:} When crearing a tournament, the educator doing so should be able to set a registration deadline.
     \item \textbf{G3:} Every educator that owns a tournament should be able to invite other educators to it.
     \item \textbf{G4:} Every educator that belongs to a tournament should be able to create battles.
-    \item \textbf{G5:} When creating a battle, the educator doing so should be able to set the programming language, a decription of the problem, the test cases which will evaluate the students code, the registration deadline, the final submission deadline, the minimum and maximum number of participants per group.
+    \item \textbf{G5:} When creating a battle, the educator doing so should be able to set the programming language, a decription of the problem, the test cases which will evaluate the students code, the build automation scripts, the registration deadline, the final submission deadline, the minimum and maximum number of participants per group.
     \item \textbf{G6:} Every student should be able to see the list of tournaments and register to them before the registration deadline.
     \item \textbf{G7:} Every student should be able to see the description of the battles of a tournament they belong to and register to them before the registration deadline by themselves or with other students by inviting them to join or by accepting another student's invitation.
     \item \textbf{G8:} Every time a student makes a submission to a battle, the platform should evaluate it and update the leaderboard of the battle accordingly.
-    \item \textbf{G9:} The evaluation carried on by the platform should be based on the test cases set by the educator and the timeliness of the submission.
+    \item \textbf{G9:} The evaluation carried on by the platform should be performed with the build automation scripts set by the educator and should be based on the test cases set by the educator and the timeliness of the submission.
     \item \textbf{G10:} Every student and educator should be able to see the leaderboard of a battle they belong to.
     \item \textbf{G11:} Once the battle ends, the educator that created it should be able to manually evaluate the code of the students if they so desire to and set a grade for each student.
     \item \textbf{G12:} Once the educator consolides the results of a battle, the students that participated in it should be notified, the final results of the battle should be displayed to everyone. The leaderboard of the tournament the battle belongs to should be updated by adding for each student the battle score to the sum of all the other battles they have participated on.
@@ -98,7 +99,9 @@ Knowing this, the S2B will have a certain set of goals to achieve:
 \subsection{Scope}  
 
 The education sector in software development is an ever-growing field given the nature of the topic 
-being teached. The CodeKataBattle (CKB) platform aims to provide a competitive twist to the learning
+being teached. 
+
+The CodeKataBattle (CKB) platform aims to provide a competitive twist to the learning
 by facilitating the creation of competitions in the form of tournaments where students can showcase their abilities.
 
 These are managed by educators who can create the aforementioned tournaments and compose battles where they can decide 
@@ -117,6 +120,7 @@ In the environment of the CodeKataBattle system the following actors are identif
 Having all of this in mind, the following are the World and Shared phenomena that the system will have to deal with:
 
 \textbf{World Phenomena:}
+
 \begin{itemize}
     \item \textbf{W1:} A group of students organizes themselves to participate in a battle together.
     \item \textbf{W2:} A group of students registered to a battle fork the repository of the battle.
@@ -124,6 +128,7 @@ Having all of this in mind, the following are the World and Shared phenomena tha
     \item \textbf{W4:} A student pushes a commit to the main branche of a forked repository of a battle.
     \item \textbf{W5:} An educator possesses a specific evaluation criteria through which they perform their manual evaluations.
 \end{itemize}
+
 \textbf{Shared Phenomena:}
 
 Controlled by the world and observed by the system.
@@ -166,6 +171,7 @@ Controlled by the system and observed by the world.
     \item \textbf{GitHub Actions:} GitHub Actions is a CI/CD tool that allows you to automate your software development workflows in the same place you store code and collaborate on pull requests and issues.
     \item \textbf{Educator:} An educator, in the context of the system, is a user of the platform that can create tournaments and battles, invite other educators to tournaments, perform manual evaluations on the submissions of a battle they own and consolidate the results of a battle.
     \item \textbf{Student:} A student, in the context of the system, is a user of the platform that can register to tournaments and battles, create teams and submit their solutions to a battle.
+    \item \textbf{Build Automation Scripts:} Build automation scripts are scripts that are run automatically by the system every time a commit is pushed to the main branch of the forked repository of a battle. They are used to evaluate the submissions of the students.
     \item \textbf{Test Case:} A test case is a set of conditions under which a tester will determine whether an application, software system or one of its features is working as it was originally established for it to do.
     \item \textbf{Timeliness:} Timeliness is the quality of doing something or producing something at the right time. In the context of the system, it refers to the time in which a student submits their solution to a battle with respect to the start of the battle and the final submission deadline.
 \end{itemize}
@@ -233,7 +239,7 @@ Matteo Camilli at the Politecnico di Milano, A.Y 2023/2024;
 
     \item \textbf{3. Educator creates a battle:}
     
-    Educator Charlie wants to create a battle for the tournament he was invited to by educator Adam. He goes to the CKB platform and creates a battle with a registration deadline of 1 week from now, a final submission deadline of 2 weeks from now, a minimum of 1 participant per group and a maximum of 3 participants per group. He also sets the programming language to Java, the description of the problem and uploads the test cases which will evaluate the students code. The platform notifies all the students participating in the tournament that a battle has been created.
+    Educator Charlie wants to create a battle for the tournament he was invited to by educator Adam. He goes to the CKB platform and creates a battle with a registration deadline of 1 week from now, a final submission deadline of 2 weeks from now, a minimum of 1 participant per group and a maximum of 3 participants per group. He also sets the programming language to Java, the description of the problem and uploads the build automation scripts and test cases which will evaluate the students code. The platform notifies all the students participating in the tournament that a battle has been created.
 
     \textbf{Goals:} G4, G5, G17.
     \textbf{Phenomena:} SP2, SP11.
@@ -247,7 +253,7 @@ Matteo Camilli at the Politecnico di Milano, A.Y 2023/2024;
 
     \item \textbf{5. Student submits a solution to a battle:}
     
-    After the registrarion deadline ends, the system sends the link to the newly created GitHub repository to the students that registered to the battle. Bob, Danielle and Eve fork the repository and set up an automated workflow through GitHub Actions that will notify the system every time a commit is pushed to the main branch of the forked repository of the battle. After that, they start working on the problem and push a commit to the main branch of the forked repository of the battle. The system receives the notification thanks to the automated workflow and evaluates the submission taking into account the test cases educator Charlie submitted and the timeliness of the submission. The system then updates the leaderboard of the battle accordingly. The team notices that they have not passed all the test cases and decide to keep working on the problem. After a few days of several teams submitting their solutions, educator Charlie checks the leaderboard to see how the students are doing.
+    After the registrarion deadline ends, the system sends the link to the newly created GitHub repository to the students that registered to the battle. Bob, Danielle and Eve fork the repository and set up an automated workflow through GitHub Actions that will notify the system every time a commit is pushed to the main branch of the forked repository of the battle. After that, they start working on the problem and push a commit to the main branch of the forked repository of the battle. The system receives the notification thanks to the automated workflow and runs the build automation script to evaluate the submission taking into account the test cases educator Charlie submitted and the timeliness of the submission. The system then updates the leaderboard of the battle accordingly. The team notices that they have not passed all the test cases and decide to keep working on the problem. After a few days of several teams submitting their solutions, educator Charlie checks the leaderboard to see how the students are doing.
 
     \textbf{Goals:} G8, G9, G10.
     \textbf{Phenomena:} W2, W3, W4, SP6, SP13, SP14.
@@ -268,6 +274,34 @@ Matteo Camilli at the Politecnico di Milano, A.Y 2023/2024;
 
 
 \end{itemize}
+
+\subsubsection{Domain Class Diagram}
+
+In Figure 1 we can see the Domain Class Diagram of the system.
+
+In it we can see the following classes:
+
+\begin{itemize}
+    \item \textbf{Student:} This class represents a student of the platform. It has an id, a name, a github account and it associates to a set of TournamentRegistrations and StudentTeams.
+    \item \textbf{TournamentRegistration:} This class represents a registration of a student to a tournament. It saves the score the associated student has on the associated tournament. Serves as a Many to Many relationship between Student and Tournament.
+    \item \textbf{StudentTeam:} This class represents a team of students. There can be 1 or more students in one StudentTeam. It has an id and saves the score of the team on the battle the team belongs to.
+    \item \textbf{Tournament:} This class represents a tournament. It has an id and a registration deadline. It is associated to a set of Battles and TournamentRegistrations. It also has an owner which is an Educator and a set of invited educators.
+    \item \textbf{Battle:} This class represents a battle. It has an id, a registration deadline, a final submission deadline, and a minimum and maximum number of participants per group. It belongs to a tournament and it contains a set of StudentTeams, a CodeKata and a GitHubRepo.
+    \item \textbf{CodeKata:} This class represents a code kata. It has a programming language, a description, a set of test cases and a set of build automation scripts. These will be uploaded to the GitHubRepo of the battle. 
+    \item \textbf{GitHubRepo:} This class represents a GitHub repository. It has an id and it belongs to a battle. 
+    \item \textbf{GitHubIntegration:} This class represents the integration of the system with GitHub. It could act as a facade for the GitHub API.
+    \item \textbf{Educator:} This class represents an educator of the platform. It has an id, a name, and it associates to a set of Tournaments and Battles. It can associato to tournaments as an owner or as an invited educator. 
+\end{itemize}
+\newpage
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{images/DomainClassDiagram.png}
+    \caption{Domain Class Diagram}
+    \label{fig:DomainClassDiagram}
+\end{figure}
+\newpage
+
+
 
 \subsection{Product functions}
 \subsection{User characteristics}
