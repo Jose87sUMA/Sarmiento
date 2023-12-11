@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1702093573 "c:/Users/jasm2/Documents/3er anno/Polimi/Software/RASD & DD/Sarmiento/RASD.tex" "RASD.pdf" "RASD" 1702093575 0
+["pdflatex"] 1702326430 "c:/Users/jasm2/Documents/3er anno/Polimi/Software/RASD & DD/Sarmiento/RASD.tex" "RASD.pdf" "RASD" 1702326433 0
   "C:/Users/jasm2/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1702079588 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/jasm2/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1701953873 11548 1db3ae61c46fc30034f50769b9c6a1fc ""
   "C:/Users/jasm2/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1701868854 24213272 693d9d5013bcc37dd655a1a9aecfeba2 ""
@@ -55,12 +55,14 @@
   "C:/Users/jasm2/AppData/Local/Programs/MiKTeX/tex/latex/refcount/refcount.sty" 1576433952 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "C:/Users/jasm2/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1657800696 9714 ba3194bd52c8499b3f1e3eb91d409670 ""
   "C:/Users/jasm2/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "RASD.aux" 1702093575 5248 cd9f1043916f193c968859f5f77a9a53 "pdflatex"
-  "RASD.out" 1702093575 5763 9218a6f4bc45941125c365f4a5461d7f "pdflatex"
-  "RASD.tex" 1702093572 25751 09d46687f92a42bca334697373bafe65 ""
-  "RASD.toc" 1702093575 3318 ed3afd63906f4ff613b7af109b9b3733 "pdflatex"
-  "c:/Users/jasm2/Documents/3er anno/Polimi/Software/RASD & DD/Sarmiento/RASD.tex" 1702093572 25751 09d46687f92a42bca334697373bafe65 ""
+  "RASD.aux" 1702326433 6206 ec697f97c1fba024ac27dbf9a9b48f6a "pdflatex"
+  "RASD.out" 1702326433 6316 0c24b556bd5643b4de279d1cb4381b03 "pdflatex"
+  "RASD.tex" 1702326427 34756 4673940f6596604875688ea94476816c ""
+  "RASD.toc" 1702326433 3682 cd99cb84236ba5a33cb2bbf81910a22a "pdflatex"
+  "c:/Users/jasm2/Documents/3er anno/Polimi/Software/RASD & DD/Sarmiento/RASD.tex" 1702326427 34756 4673940f6596604875688ea94476816c ""
+  "images/BattleStateDiagram.png" 1702322088 146136 2d32367a6a43964cd154f14691d48b39 ""
   "images/DomainClassDiagram.png" 1702093259 171978 759f8b05ac8b983366722b10b380ce8d ""
+  "images/TournamentStateDiagram.png" 1702323838 146136 f7110dce7227f80ea375baa5fbdbcdc5 ""
   (generated)
   "RASD.aux"
   "RASD.log"
