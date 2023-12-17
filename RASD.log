@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.6)  11 DEC 2023 21:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.6)  17 DEC 2023 21:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -222,48 +222,75 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.42 ...{\numberline {6}REFERENCES}{16}{section.6}
+l.44 ... {3.5.3}Security}{25}{subsubsection.3.5.3}
                                                   % [1])
 \tf@toc=\write4
 \openout4 = `RASD.toc'.
 
- [2] [3] [4] [5] [6] [7] [8] [9] [10]
-<images/DomainClassDiagram.png, id=263, 750.8853pt x 397.485pt>
+ [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12]
+<images/DomainClassDiagram.png, id=307, 777.6252pt x 398.2077pt>
 File: images/DomainClassDiagram.png Graphic file (type png)
 <use images/DomainClassDiagram.png>
-Package pdftex.def Info: images/DomainClassDiagram.png  used on input line 298.
-(pdftex.def)             Requested size: 345.0pt x 182.62697pt.
-<images/BattleStateDiagram.png, id=265, 513.117pt x 289.8027pt>
+Package pdftex.def Info: images/DomainClassDiagram.png  used on input line 320.
+(pdftex.def)             Requested size: 345.0pt x 176.6702pt.
+<images/BattleStateDiagram.png, id=309, 513.117pt x 289.8027pt>
 File: images/BattleStateDiagram.png Graphic file (type png)
 <use images/BattleStateDiagram.png>
-Package pdftex.def Info: images/BattleStateDiagram.png  used on input line 312.
+Package pdftex.def Info: images/BattleStateDiagram.png  used on input line 334.
 (pdftex.def)             Requested size: 345.0pt x 194.85663pt.
- [11 <./images/DomainClassDiagram.png> <./images/BattleStateDiagram.png>]
-<images/TournamentStateDiagram.png, id=274, 534.0753pt x 255.8358pt>
+ [13 <./images/DomainClassDiagram.png> <./images/BattleStateDiagram.png>]
+<images/TournamentStateDiagram.png, id=318, 534.0753pt x 255.8358pt>
 File: images/TournamentStateDiagram.png Graphic file (type png)
 <use images/TournamentStateDiagram.png>
-Package pdftex.def Info: images/TournamentStateDiagram.png  used on input line 339.
+Package pdftex.def Info: images/TournamentStateDiagram.png  used on input line 361.
 (pdftex.def)             Requested size: 345.0pt x 165.26462pt.
- [12 <./images/TournamentStateDiagram.png>] [13] [14] [15] [16] (RASD.aux)
+ [14 <./images/TournamentStateDiagram.png>] [15] [16]
+<images/UI/Homescreen Student.png, id=333, 1445.4pt x 903.375pt>
+File: images/UI/Homescreen Student.png Graphic file (type png)
+<use images/UI/Homescreen Student.png>
+Package pdftex.def Info: images/UI/Homescreen Student.png  used on input line 504.
+(pdftex.def)             Requested size: 345.0pt x 215.61519pt.
+ [17] [18 <./images/UI/Homescreen Student.png>]
+<images/UI/Educator's tournaments-battles.png, id=345, 1445.4pt x 903.375pt>
+File: images/UI/Educator's tournaments-battles.png Graphic file (type png)
+<use images/UI/Educator's tournaments-battles.png>
+Package pdftex.def Info: images/UI/Educator's tournaments-battles.png  used on input line 518.
+(pdftex.def)             Requested size: 345.0pt x 215.61519pt.
+ [19 <./images/UI/Educator's tournaments-battles.png>]
+<images/UI/Search.png, id=352, 1445.4pt x 903.375pt>
+File: images/UI/Search.png Graphic file (type png)
+<use images/UI/Search.png>
+Package pdftex.def Info: images/UI/Search.png  used on input line 533.
+(pdftex.def)             Requested size: 345.0pt x 215.61519pt.
+<images/UI/Battle Screen.png, id=353, 1445.4pt x 903.375pt>
+File: images/UI/Battle Screen.png Graphic file (type png)
+<use images/UI/Battle Screen.png>
+Package pdftex.def Info: images/UI/Battle Screen.png  used on input line 544.
+(pdftex.def)             Requested size: 345.0pt x 215.61519pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[20 <./images/UI/Search.png>] [21 <./images/UI/Battle Screen.png>] [22] [23] [24] [25] (RASD.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
  ***********
 Package rerunfilecheck Info: File `RASD.out' has not changed.
-(rerunfilecheck)             Checksum: 0C24B556BD5643B4DE279D1CB4381B03;6316.
+(rerunfilecheck)             Checksum: 07BF7EC244C618D3F5E9D9FB345E7CFF;7666.
  ) 
 Here is how much of TeX's memory you used:
- 8602 strings out of 474586
- 137674 string characters out of 5745681
- 1939558 words of memory out of 5000000
- 30642 multiletter control sequences out of 15000+600000
+ 8673 strings out of 474586
+ 139600 string characters out of 5745681
+ 1940558 words of memory out of 5000000
+ 30693 multiletter control sequences out of 15000+600000
  559922 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,6n,79p,1136b,492s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,6n,79p,1136b,518s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\jasm2\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/jasm2/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/jasm2/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/jasm2/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on RASD.pdf (17 pages, 490058 bytes).
+Output written on RASD.pdf (26 pages, 2218465 bytes).
 PDF statistics:
- 332 PDF objects out of 1000 (max. 8388607)
- 63 named destinations out of 1000 (max. 500000)
- 352 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 421 PDF objects out of 1000 (max. 8388607)
+ 83 named destinations out of 1000 (max. 500000)
+ 428 words of extra memory for PDF output out of 10000 (max. 10000000)
 

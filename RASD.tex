@@ -44,9 +44,8 @@
 
 The primary purpose of the CodeKataBattle (CKB) platform is to provide an environment 
 for students to enhance their software development skills through collaborative 
-learning and friendly competition and for educators to set up these scenarios. The platform facilitates 
-this by allowing educators to setup tournaments where code kata battles are organized. Here students 
-form teams and showcase their coding abilities in a test-driven development (TDD) framework.
+learning and competition, and for educators to set up these scenarios. The platform facilitates 
+this by allowing educators to setup tournaments where code kata battles are organized.
 
 \textbf{A) Skill Enhancement through Practice:}
 
@@ -66,12 +65,11 @@ CKB should have an automated evaluation system that provides feedback to student
 
  \textbf{D) Competition and Recognition:}
 
-The platform should possess a leaderboard functionality that allows participants to 
+The platform should have a leaderboard functionality that allows participants to 
 gauge their performance and see how their skills compare to other participants.
 
 In summary, CodeKataBattle aims to create a learning platform, combining 
-hands-on coding practice, collaborative teamwork and automated feedback, all under the 
-guidance of educators. 
+hands-on coding practice, collaborative teamwork and automated feedback.
 
 Knowing this, the S2B will have a certain set of goals to achieve:
 \begin{itemize}
@@ -86,13 +84,18 @@ Knowing this, the S2B will have a certain set of goals to achieve:
     \item \textbf{G9:} The evaluation carried on by the platform should be performed with the build automation scripts set by the educator and should be based on the test cases set by the educator and the timeliness of the submission.
     \item \textbf{G10:} Every student and educator should be able to see the leaderboard of a battle they belong to.
     \item \textbf{G11:} Once the battle ends, the educator that created it should be able to manually evaluate the code of the students if they so desire to and set a grade for each student.
-    \item \textbf{G12:} Once the educator consolidates the results of a battle, the students that participated in it should be notified, the final results of the battle should be displayed to everyone. The leaderboard of the tournament the battle belongs to should be updated by adding for each student the battle score to the sum of all the other battles they have participated on.
+    \item \textbf{G12:} Once the educator consolidates the results of a battle, the students that participated in it should be notified and the final results of the battle should be displayed to everyone. The leaderboard of the tournament the battle belongs to should be updated by adding for each student the battle score to the sum of all the other battles they have participated on.
     \item \textbf{G13:} Every student and educator should be able to see the leaderboard of every tournament.
     \item \textbf{G14:} An instructor that owns a tournament should be able to close it.
     \item \textbf{G15:} Once the owner of a tournament closes it, the platform should notify all the students once the leaderboard of the tournament is available.
     \item \textbf{G16:} When a tournament is created, all students should be notified. 
     \item \textbf{G17:} When a battle is created, all students participating in the tournament the battle belongs to should be notified.
+    \item \textbf{G18:} A student should be able to browse the platform and find tournaments based on keywords like topics, educators' names, programming language and experience level.
+    \item \textbf{G19:} A student should be able to cancel their registration to a tournament or battle before the registration deadline.
+
 \end{itemize}
+
+Goal G18 and G19 are not inferred from the description of the problem but it are goals that would be beneficial to the platform given its nature and certain situations that could occur.
 
 \newpage
 
@@ -137,25 +140,28 @@ Controlled by the world and observed by the system.
     \item \textbf{SP1:} An educator creates a tournament with a set of attributes.
     \item \textbf{SP2:} An educator creates a battle with a set of attributes inside a tournament.
     \item \textbf{SP3:} An educator invites other educators to a tournament.
-    \item \textbf{SP4:} A student registers to a tournament.
-    \item \textbf{SP5:} A student or a team of students registers to a battle.
-    \item \textbf{SP6:} GitHub notfies the system that a student has pushed a commit to the main branch of a forked repository of a battle. 
-    \item \textbf{SP7:} An educator performs manual evaluations on the submissions of a battle they own.
-    \item \textbf{SP8:} An educator consolidates the results of a battle.
-    \item \textbf{SP9:} An educator closes a tournament.
+    \item \textbf{SP4:} A student looks for a tournament.
+    \item \textbf{SP5:} A student registers to a tournament.
+    \item \textbf{SP6:} A student cancels a registration to a tournament.
+    \item \textbf{SP7:} A student or a team of students registers to a battle.
+    \item \textbf{SP8:} A student or a team of students cancels a registration to a battle.
+    \item \textbf{SP9:} GitHub notfies the system that a student has pushed a commit to the main branch of a forked repository of a battle. 
+    \item \textbf{SP10:} An educator performs manual evaluations on the submissions of a battle they own.
+    \item \textbf{SP11:} An educator consolidates the results of a battle.
+    \item \textbf{SP12:} An educator closes a tournament.
 \end{itemize}
 
 Controlled by the system and observed by the world.
 
 \begin{itemize}
-    \item \textbf{SP10:} The system notifies all the students that a tournament has been created.
-    \item \textbf{SP11:} The system notifies all the students participating in a tournament that a battle has been created.
-    \item \textbf{SP12:} The system displays the leaderboard of tournament while it is active and after it has ended.
-    \item \textbf{SP13:} The system displays the leaderboard of a battle while it is active and after it has ended.
-    \item \textbf{SP14:} The system updates a battle's leaderboard every time a new evaluation is performed.
-    \item \textbf{SP15:} The system notifies all the students participating in a battle that the final results have been consolidated.
-    \item \textbf{SP16:} The system updates the leaderboard of a tournament every time a battle ends.
-    \item \textbf{SP17:} The system notifies all the students participating in a tournament that it has ended.
+    \item \textbf{SP13:} The system notifies all the students that a tournament has been created.
+    \item \textbf{SP14:} The system notifies all the students participating in a tournament that a battle has been created.
+    \item \textbf{SP15:} The system displays the leaderboard of tournament while it is active and after it has ended.
+    \item \textbf{SP16:} The system displays the leaderboard of a battle while it is active and after it has ended.
+    \item \textbf{SP17:} The system updates a battle's leaderboard every time a new evaluation is performed.
+    \item \textbf{SP18:} The system notifies all the students participating in a battle that the final results have been consolidated.
+    \item \textbf{SP19:} The system updates the leaderboard of a tournament every time a battle ends.
+    \item \textbf{SP20:} The system notifies all the students participating in a tournament that it has ended.
 \end{itemize}
 
 \newpage
@@ -228,49 +234,63 @@ Matteo Camilli at the Politecnico di Milano, A.Y 2023/2024;
     An educator called Adam wants to create a tournament for his students. He goes to the CKB platform and creates a tournament with a registration deadline of 2 weeks from now. The platform notifies all the students that a tournament has been created. He then invites his colleagues to the tournament so when the tournament starts they can create battles.
 
     \textbf{Goals:} G1, G2, G3, G16.
-    \textbf{Phenomena:} SP1, SP3, SP10.
+    \textbf{Phenomena:} SP1, SP3, SP13.
 
-    \item \textbf{2. Student registers to a tournament:}
+    \item \textbf{2. Student registers to a tournament 1:}
     
     A student called Bob receives a notification that a tournament has been created by educator Adam. He goes to the CKB platform and registers to the tournament before the registration deadline.
 
     \textbf{Goals:} G6, G16.
-    \textbf{Phenomena:} SP4, SP10.
+    \textbf{Phenomena:} SP5, SP13.
 
+    \item \textbf{5. Students registers to a tournament 2:}
+    
+    Francesca doesn't regularly check the notification the CKB platform sends her. She instead looks for tournaments by herself. Currently she considers herself an intermidiate level programmer in Java, so she uses the search functionality of the platform to find tournaments that have these characteristics. She then finds the tournament created by educator Charlie and registers to it. 
+
+    \textbf{Goals:} G6, G16.
+    \textbf{Phenomena:} SP4, SP5.
+    
     \item \textbf{3. Educator creates a battle:}
     
     Educator Charlie wants to create a battle for the tournament he was invited to by educator Adam. He goes to the CKB platform and creates a battle with a registration deadline of 1 week from now, a final submission deadline of 2 weeks from now, a minimum of 1 participant per group and a maximum of 3 participants per group. He also sets the programming language to Java, the description of the problem and uploads the build automation scripts and test cases which will evaluate the students code. The platform notifies all the students participating in the tournament that a battle has been created.
 
     \textbf{Goals:} G4, G5, G17.
-    \textbf{Phenomena:} SP2, SP11.
+    \textbf{Phenomena:} SP2, SP14.
 
     \item \textbf{4. Students registers to a battle:}
     
     Bob receives a notification that a battle has been created by educator Charlie. He goes to the CKB platform and reads the description of the battle. He then contacts his friends Danielle and Eve, who are also inside educator Adam's tournament, and they decide to form a team and register to the battle together. Charlie invites Danielle and Eve to the battle and they accept. 
 
     \textbf{Goals:} G7, G17.
-    \textbf{Phenomena:} W1, SP5, SP11.
+    \textbf{Phenomena:} W1, SP7, SP14.
+
+    \item \textbf{5. Student cancels registration to battle:}
+    
+    Francesca wants to register to the battle set by educator Charlie with her friends Gabriel and Harry. She registers to the battle and invites them while doing so. However, Gabriel and Harry never accept the invitation. Francesca then decides to cancel her registration to the battle one day before the registration deadline expires. 
+
+    \textbf{Goals:} G7, G19.
+    \textbf{Phenomena:} W1, SP7, SP8, SP14.
 
     \item \textbf{5. Student submits a solution to a battle:}
     
     After the registrarion deadline ends, the system sends the link to the newly created GitHub repository to the students that registered to the battle. Bob, Danielle and Eve fork the repository and set up an automated workflow through GitHub Actions that will notify the system every time a commit is pushed to the main branch of the forked repository of the battle. After that, they start working on the problem and push a commit to the main branch of the forked repository of the battle. The system receives the notification thanks to the automated workflow and runs the build automation script to evaluate the submission taking into account the test cases educator Charlie submitted and the timeliness of the submission. The system then updates the leaderboard of the battle accordingly. The team notices that they have not passed all the test cases and decide to keep working on the problem. After a few days of several teams submitting their solutions, educator Charlie checks the leaderboard to see how the students are doing.
 
     \textbf{Goals:} G8, G9, G10.
-    \textbf{Phenomena:} W2, W3, W4, SP6, SP13, SP14.
+    \textbf{Phenomena:} W2, W3, W4, SP9, SP16, SP17.
 
     \item \textbf{6. Educator performs manual evaluations on the submissions of a battle after it has ended:}
     
     After the final submission deadline of educator Charlie's battle ends, he decides to manually evaluate the submissions of the students. He sets a grade for each team based on his own evaluation criteria. After that, he consolidates the results of the battle. The system updates the leaderboards taking into account the evaluation it performed and the evaluations from educator Charlie. It then also updates the tournament leadeaboard accordingly. The system then notifies all the students participating in the battle that the final results have been consolidated. Bob, Danielle and Eve check the leaderboard and see their score. They then check the leaderboard of the tournament and see that their score has been added to the sum of all the other battles they have participated on.
 
     \textbf{Goals:} G11, G12, G13.
-    \textbf{Phenomena:} W5, SP7, SP8, SP12, SP13, SP15, SP16.
+    \textbf{Phenomena:} W5, SP10, SP11, SP15, SP16, SP18, SP19.
 
     \item \textbf{7. Educator closes a tournament:}
     
     After all the battles of the tournament have ended, educator Adam decides to close the tournament. The system notifies all the students participating in the tournament that it has ended. Bob, Danielle and Eve check the leaderboard of the tournament and see their final score.
 
     \textbf{Goals:} G14, G15.
-    \textbf{Phenomena:} SP9, SP17.
+    \textbf{Phenomena:} SP12, SP20.
 
 
 \end{itemize}
@@ -283,14 +303,16 @@ In it we can see the following classes:
 
 \begin{itemize}
     \item \textbf{Student:} This class represents a student of the platform. It has an id, a name, a github account and it associates to a set of TournamentRegistrations and StudentTeams.
+    \item \textbf{Educator:} This class represents an educator of the platform. It has an id, a name, and it associates to a set of Tournaments and Battles. It can associato to tournaments as an owner or as an invited educator. 
     \item \textbf{TournamentRegistration:} This class represents a registration of a student to a tournament. It saves the score the associated student has on the associated tournament. Serves as a Many to Many relationship between Student and Tournament.
     \item \textbf{StudentTeam:} This class represents a team of students. There can be 1 or more students in one StudentTeam. It has an id and saves the score of the team on the battle the team belongs to.
     \item \textbf{Tournament:} This class represents a tournament. It has an id and a registration deadline. It is associated to a set of Battles and TournamentRegistrations. It also has an owner which is an Educator and a set of invited educators.
     \item \textbf{Battle:} This class represents a battle. It has an id, a registration deadline, a final submission deadline, and a minimum and maximum number of participants per group. It belongs to a tournament and it contains a set of StudentTeams, a CodeKata and a GitHubRepo.
     \item \textbf{CodeKata:} This class represents a code kata. It has a programming language, a description, a set of test cases and a set of build automation scripts. These will be uploaded to the GitHubRepo of the battle. 
-    \item \textbf{GitHubRepo:} This class represents a GitHub repository. It has an id and it belongs to a battle. 
-    \item \textbf{GitHubIntegration:} This class represents the integration of the system with GitHub. It could act as a facade for the GitHub API.
-    \item \textbf{Educator:} This class represents an educator of the platform. It has an id, a name, and it associates to a set of Tournaments and Battles. It can associato to tournaments as an owner or as an invited educator. 
+    \item \textbf{GitHub:} This class represents GitHub. It is associated with a set of GitHubRepos.
+    \item \textbf{GitHubRepo:} This class represents a GitHub repository. It has an url and can take the form of \textbf{GitHubRepoSubmission} or \textbf{GitHubRepoEvaluation}. It has a url and is associated to GitHub.
+    \item \textbf{GitHubRepoSubmission:} This class represents the GitHub repository of a battle that students fork to submit their solutions. It is a specialization of GitHubRepo and is associated to a Battle.
+    \item \textbf{GitHubRepoEvaluation:} This class represents the GitHub repository of a battle that the system uses to evaluate the submissions of the students based on the automation scripts and test cases provided by the educator. It is a specialization of GitHubRepo and is associated to a Battle.
 \end{itemize}
 \newpage
 \begin{figure}[h]
@@ -388,7 +410,8 @@ Here, \textbf{Student}s are notified that the final results are available.
     
     This functionality allows for the system to evaluate the submissions of the students. Each time the system receives
     a notification from GitHub that a commit has been pushed to the main branch of one of the forked repositories of the battle,
-    the system will pull the latest sources, run the tests and update the leaderboard of the battle accordingly.
+    the system will pull the latest sources from that fork, upload them to the evaluation repository of the battle, run the build automation scripts
+    there and receive the results of the evaluation. The system will then update the leaderboard of the battle accordingly.
 
     \item \textbf{Consolidate results:}
     
@@ -417,14 +440,13 @@ Here, \textbf{Student}s are notified that the final results are available.
 
 \begin{itemize}
     \item \textbf{D1:} All users have a valid email address and can access their email to confirm their registration.
-    \item \textbf{D2:} GitHub integration is reliable, and the system can communicate with GitHub to create repositories, pull code, and receive notifications.
+    \item \textbf{D2:} GitHub integration is reliable, and the system can communicate with GitHub to create repositories, pull code, submit files, and receive notifications and reports.
     \item \textbf{D3:} Students and educators have a basic understanding of version control systems, especially GitHub.
-    \item \textbf{D4:} Educators have the necessary expertise to create meaningful and effective code kata battles, including defining appropriate test cases.
+    \item \textbf{D4:} Educators have the necessary expertise to create meaningful and effective code kata battles, including defining appropriate test cases and build automation scripts.
     \item \textbf{D5:} Students have the required technical skills to participate in code kata battles, including forking repositories, setting up GitHub Actions, and writing code.
-    \item \textbf{D6:} The system has access to resources (computational resources, storage, etc.) to perform automated evaluations of code submissions.
-    \item \textbf{D7:} Users have a GitHub account.
-    \item \textbf{D8:} The educator's uploaded description of the problem, programming language test cases and build automation scripts are all related to each other.
-    \item \textbf{D9:} Educators have a set of evaluation criteria through which they perform their manual evaluations.
+    \item \textbf{D6:} Users have a GitHub account.
+    \item \textbf{D7:} The educator's uploaded description of the problem, programming language test cases and build automation scripts are all related to each other.
+    \item \textbf{D8:} Educators have a set of evaluation criteria through which they perform their manual evaluations.
 \end{itemize}
 
 \subsubsection{Dependencies}
@@ -437,7 +459,7 @@ Here, \textbf{Student}s are notified that the final results are available.
 \subsubsection{Constraints}
 
 \begin{itemize}
-\item The system's functionality heavily depends on the reliability and availability of external services such as GitHub and email services.
+\item The system's functionality heavily depends on the reliability and availability of external services such as GitHub and to a lesser extent email services.
 \item The system's performance is constrained by the response time of GitHub services for repository creation and code evaluation.
 \item Users must have internet access to interact with the CKB platform and GitHub services.
 \end{itemize}
@@ -474,10 +496,146 @@ Here, \textbf{Student}s are notified that the final results are available.
 \fi
 \subsection{External Interface Requirements}
 \subsubsection{User Interfaces}
+
+In the following figures we can see the mockups of the user interfaces of the system. 
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UI/Homescreen Student.png}
+    \caption{Homescreen Student}
+    \label{fig:HomescreenStudent}
+\end{figure}
+
+The first oneis the main page of the system once a student has logged in. Here the user can see the 
+list of tournaments active, another sectionwith the list of tournaments that have ended, a section 
+with only the list of tournaments the student has registered to and lastly a section with the battles 
+the student has registered to.
+
+\newpage
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UI/Educator's tournaments-battles}
+    \caption{Educator's tournaments and battles}
+    \label{fig:Educatorstournamentsbattles}
+\end{figure}
+
+The second one is the page where an educator can see all of the tournaments and battles they are a part of or own. 
+Each tournament has some information about the name, creator, the number of battles and which of them are active.
+The battles have their name, which tournament they belong to, the number of teams registered and which phase it is on
+depending on the color of the circle. Gray means on the registration phase, green means on the submission phase, yellow
+means on the consolidation phase and red means closed.
+
+\newpage
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UI/Search}
+    \caption{Search Enviorment}
+    \label{fig:Search}
+\end{figure}
+
+The third one is the page where a student can search for tournaments. They can enter key words to the
+search bar and the system will return the tournaments that match the search. Also, there are some tags for
+different topics, programming languages and difficulty levels that the student can use to filter the results.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UI/Battle Screen}
+    \caption{Battle Screen}
+    \label{fig:BattleScreen}
+\end{figure}
+
+\newpage
+
+Lastly, the fourth one is the page where a student can see the details of a battle. Here they can see the description
+of the problem, the programming language, the owner of the battle, the registration deadline and the final submission deadline.
+Students can register to the battle if it is on the registration phase. When they click the button it will open a form where
+they could invite other students.
+
 \subsubsection{Hardware Interfaces}
+
+The system will be presented in the form of an application either web or mobile or both. This means that the users
+will need a device, either a computer or mobile phone to access the system. The system will also need a server to run on.
+
 \subsubsection{Software Interfaces}
+
+The system will interact with the following software components:
+
+\textbf{GitHub API}: The system will communicate with the GitHub API to create repositories, receive notifications and reports, and pull and submit files.
+
 \subsubsection{Communication Interfaces}
+
+\textbf{Email Service}: The system relies on email services for communication purposes, including user registration confirmation and other relevant notifications.
+
 \subsection{Functional Requirements}
+
+\begin{itemize}
+    \item \textbf{R1:} At any time, The system shall allow users to sign up and login. 
+    
+    \subsubsection{Tournament and Battle Creation}
+
+    \item \textbf{R2:} At any time, The system shall allow logged in educators to create tournaments.
+    \item \textbf{R3:} When creating a tournament, the educator that is doing so must be able to set the registration deadline.
+    \item \textbf{R4:} When creating a tournament, the educator that is doing so must be able to set a name.
+    \item \textbf{R5:} After the creation of a tournament, the system shall notify all the students that a tournament has been created.
+    \item \textbf{R6:} At any time, The system shall allow logged in educators to invite other logged in educators to tournaments.
+    \item \textbf{R7:} At any time, The system shall allow logged in educators to create battles.
+    \item \textbf{R8:} When creating a battle, the educator that is doing so must be able to upload a description of the problem.
+    \item \textbf{R9:} When creating a battle, the educator that is doing so must be able to choose the programming language.
+    \item \textbf{R10:} When creating a battle, the educator that is doing so must be able to set the registration deadline.
+    \item \textbf{R11:} When creating a battle, the educator that is doing so must be able to set the final submission deadline.
+    \item \textbf{R12:} When creating a battle, the educator that is doing so must be able to set the minimum and maximum number of participants per group.
+    \item \textbf{R13:} When creating a battle, the educator that is doing so must be able to upload the test cases that will be used to evaluate the students code.
+    \item \textbf{R14:} When creating a battle, the educator that is doing so must be able to upload the build automation scripts that will be used to evaluate the students code.
+    \item \textbf{R15:} After the creation of a battle, the system shall notify all students that are registered to the tournament the battle belongs to that a battle has been created.
+
+    \subsubsection{Tournament and Battle Registration}
+
+    \item \textbf{R16:} At any time, The system shall allow logged in students to see the list of all tournaments.
+    \item \textbf{R17:} At any time, The system shall allow logged in students to register to tournaments before the registration deadline of said tournament.
+    \item \textbf{R18:} At any time, The system shall allow logged in students to cancel their registration to tournaments they belong to before the registration deadline of said tournament.
+    \item \textbf{R19:} At any time, The system shall allow logged in students to see the description of the battles of a tournament they belong to.
+    \item \textbf{R20:} At any time, The system shall allow logged in students to register to battles of a tournament they belong to before the registration deadline of said battle.
+    \item \textbf{R21:} When registering to a battle, the student that is doing so must be able to invite other students to the battle.
+    \item \textbf{R22:} At any time, The system shall allow logged in students to accept invitations to battles of a tournament they belong to before the registration deadline of said battle.
+    \item \textbf{R23:} At any time, The system shall allow logged in students to cancel their registration to battles they belong to before the registration deadline of said battle.
+    
+    \subsubsection{Leaderboards}
+
+    \item \textbf{R24:} At any time, The system shall allow logged in users to see the leaderboard of any tournament.
+    \item \textbf{R25:} At any time, The system shall allow logged in users to see the leaderboard of any battle.
+    
+    \subsubsection{Submissions and Evaluations}
+
+    \item \textbf{R26:} When the registration deadline of a battle expires, the system shall create a GitHub repository for the battle that the students should fork to make submissions. This repository should have the github actions workflow set up to receive notifications from GitHub when a commit is pushed to the main branch. This way when students fork the github actions of the fork will be already set up.
+    \item \textbf{R27:} When the registration deadline of a battle expires, the system shall create a GitHub repository with the appropiate files, including the automation scripts and test cases files for the battle that the system will use to evaluate the submissions of the students.
+    \item \textbf{R28:} When the registration deadline of a battle expires, the system shall send invitations to the GitHub repository used for submissions of the battle to the students that registered to it.
+    \item \textbf{R29:} At any time, the system should be able to receive notifications from GitHub that a commit has been pushed to the main branch of one of the forked repositories of the battle.
+    \item \textbf{R30:} The system should be able to pull the latest sources from the forked repository of the battle that the notification came from.
+    \item \textbf{R31:} The system should be able to upload the latest sources from the forked repository of the battle that the notification came from, to the evaluation repository of the battle.
+    \item \textbf{R32:} The system should be able to receive the results of the evaluation from the evaluation repository of the battle.
+    \item \textbf{R33:} The system should be able to update the leaderboard of the battle with the results of the evaluation.
+    
+    \subsubsection{Manual Evaluations}
+
+    \item \textbf{R34:} Once the final submission deadline of a battle expires, the system shall allow the educator that created the battle to manually evaluate the submissions of the students.
+    \item \textbf{R35:} Once the educator that created the battle finishes manually evaluating the submissions of the students and closes the battle, the system shall update the leaderboard of the battle with the results of the manual evaluation.
+    
+    \subsubsection{Battle and Tournament Closing}
+
+    \item \textbf{R36:} Once the educator that created the battle finishes manually evaluating the submissions of the students and closes the battle, the system shall notify all the students that participated in the battle that the final results have been published.
+    \item \textbf{R37:} Once the educator that created the battle finishes manually evaluating the submissions of the students and closes the battle, the system shall update the leaderboard of the tournament that the battle belongs to by adding the score that each student got on the battle to their score on the rest of the battles of the tournament that they have participated on.
+    \item \textbf{R38:} At any time, the system shall allow the owner of a tournament to close it.
+    \item \textbf{R39:} Once the owner of a tournament closes it, the system shall update the leaderboard of the tournament and notify all the students that participated on it that the tournament has ended.
+    
+    \subsubsection{Tournament Search}
+
+    \item \textbf{R40:} At any time, the system shall allow logged in students to search for tournaments. The system should return the tournaments that match the search criteria. This criteria is given by the keywords the student searched for, the tags the student selected, the programming language the student selected and the difficulty level the student selected.
+
+
+\end{itemize}
+
 \subsection{Performance Requirements}
 \subsection{Design Constraints}
 \subsubsection{Standards compliance}
