@@ -5,7 +5,10 @@
 \usepackage{parskip}
 \usepackage{enumitem}
 \usepackage{array}
+\usepackage{tabularx}
 \usepackage[section]{placeins}
+\usepackage{float}% If comment this, figure moves to Page 2
+
 
 \fontsize{10pt}{12pt}\selectfont % Set the font size
 \begin{document}
@@ -76,7 +79,7 @@ hands-on coding practice, collaborative teamwork and automated feedback.
 Knowing this, the S2B will have a certain set of goals to achieve:
 \begin{itemize}
     \item \textbf{G1:} Every educator should be able to create a tournament.
-    \item \textbf{G2:} When crearing a tournament, the educator doing so should be able to set a registration deadline.
+    \item \textbf{G2:} When crearing a tournament, the educator doing so should be able to set a registration deadline and a name.
     \item \textbf{G3:} Every educator that owns a tournament should be able to invite other educators to it.
     \item \textbf{G4:} Every educator that belongs to a tournament should be able to create battles.
     \item \textbf{G5:} When creating a battle, the educator doing so should be able to set the programming language, a decription of the problem, the test cases which will evaluate the students code, the build automation scripts, the registration deadline, the final submission deadline, the minimum and maximum number of participants per group.
@@ -552,71 +555,67 @@ The system will interact with the following software components:
 
     \subsubsection*{Tournament and Battle Creation}
 
-    \item \textbf{R4:} At any time, The system shall allow logged in educators to create tournaments.
-    \item \textbf{R5:} When creating a tournament, the educator that is doing so must be able to set the registration deadline.
-    \item \textbf{R6:} When creating a tournament, the educator that is doing so must be able to set a name.
-    \item \textbf{R7:} When creating a tournament, the parameters being set must be valid. This means that the registration deadline must be in the future and the name must be a non empty string.
-    \item \textbf{R7:} After the creation of a tournament, the system shall notify all the students that a tournament has been created.
-    \item \textbf{R8:} At any time, The system shall allow logged in educators to invite other logged in educators to tournaments.
-    \item \textbf{R9:} At any time, The system shall allow logged in educators to create battles inside tournaments they are a part of.
-    \item \textbf{R10:} When creating a battle, the educator that is doing so must be able to upload a description of the problem.
-    \item \textbf{R11:} When creating a battle, the educator that is doing so must be able to choose the programming language.
-    \item \textbf{R12:} When creating a battle, the educator that is doing so must be able to set the registration deadline.
-    \item \textbf{R13:} When creating a battle, the educator that is doing so must be able to set the final submission deadline.
-    \item \textbf{R14:} When creating a battle, the educator that is doing so must be able to set the minimum and maximum number of participants per group.
-    \item \textbf{R15:} When creating a battle, the educator that is doing so must be able to upload the test cases that will be used to evaluate the students' code.
-    \item \textbf{R16:} When creating a battle, the educator that is doing so must be able to upload the build automation scripts that will be used to evaluate the students' code.
-    \item \textbf{R17:} When creating a battle, the parameters being set must be valid. This means that the registration deadline must be in the future, the final submission deadline must be after the registration deadline, the minimum number of participants per group must be greater than 0, the maximum number of participants per group must be greater than or equal to the minimum number of participants per group, the programming language must be a valid programming language, the description of the problem must be a non empty string, the test cases must be a valid set of test cases and the build automation scripts must be a valid set of build automation scripts. This last two vary according to the programming language.
-
-    \item \textbf{R17:} After the creation of a battle, the system shall notify all students that are registered to the tournament the battle belongs to that a battle has been created.
+    \item \textbf{R6:} At any time, The system shall allow logged in educators to create tournaments.
+    \item \textbf{R7:} When creating a tournament, the educator that is doing so must be able to set the registration deadline.
+    \item \textbf{R8:} When creating a tournament, the educator that is doing so must be able to set a name.
+    \item \textbf{R9:} When creating a tournament, the parameters being set must be valid. This means that the registration deadline must be in the future and the name must be a non empty string.
+    \item \textbf{R10:} After the creation of a tournament, the system shall notify all the students that a tournament has been created.
+    \item \textbf{R11:} At any time, The system shall allow logged in educators to invite other educators to tournaments they own and logged in educators that have been invited should be able to accept this invitations.
+    \item \textbf{R12:} At any time, The system shall allow logged in educators to create battles inside tournaments they are a part of.
+    \item \textbf{R13:} When creating a battle, the educator that is doing so must be able to upload a description of the problem.
+    \item \textbf{R14:} When creating a battle, the educator that is doing so must be able to choose the programming language.
+    \item \textbf{R15:} When creating a battle, the educator that is doing so must be able to set the registration deadline.
+    \item \textbf{R16:} When creating a battle, the educator that is doing so must be able to set the final submission deadline.
+    \item \textbf{R17:} When creating a battle, the educator that is doing so must be able to set the minimum and maximum number of participants per group.
+    \item \textbf{R18:} When creating a battle, the educator that is doing so must be able to upload the test cases that will be used to evaluate the students' code.
+    \item \textbf{R19:} When creating a battle, the educator that is doing so must be able to upload the build automation scripts that will be used to evaluate the students' code.
+    \item \textbf{R20:} When creating a battle, the parameters being set must be valid. This means that the registration deadline must be in the future, the final submission deadline must be after the registration deadline, the minimum number of participants per group must be greater than 0, the maximum number of participants per group must be greater than or equal to the minimum number of participants per group, the programming language must be a valid programming language, the description of the problem must be a non empty string, the test cases must be a valid set of test cases and the build automation scripts must be a valid set of build automation scripts. This last two vary according to the programming language.
+    \item \textbf{R21:} After the creation of a battle, the system shall notify all students that are registered to the tournament the battle belongs to that a battle has been created.
 
     \subsubsection*{Tournament and Battle Registration}
 
-    \item \textbf{R18:} At any time, The system shall allow logged in students to see the list of all tournaments.
-    \item \textbf{R19:} At any time, The system shall allow logged in students to register for tournaments before the registration deadline of said tournament.
-    \item \textbf{R20:} At any time, The system shall allow logged in students to cancel their registration for tournaments they belong to before the registration deadline of said tournament.
-    \item \textbf{R21:} At any time, The system shall allow logged in students to see the description of the battles of a tournament they belong to.
-    \item \textbf{R22:} At any time, The system shall allow logged in students to register for battles of a tournament they belong to before the registration deadline of said battle.
-    \item \textbf{R23:} When registering for a battle, the student that is doing so must be able to invite other students to the battle.
-    \item \textbf{R24:} At any time, The system shall allow logged in students to accept invitations to battles of a tournament they belong to before the registration deadline of said battle.
-    \item \textbf{R25:} At any time, The system shall allow logged in students to cancel their registration for battles they belong to before the registration deadline of said battle.
+    \item \textbf{R22:} At any time, The system shall allow logged in students to register for tournaments before the registration deadline of said tournament.
+    \item \textbf{R23:} At any time, The system shall allow logged in students to cancel their registration for tournaments they belong to before the registration deadline of said tournament.
+    \item \textbf{R24:} At any time, The system shall allow logged in students to register for battles of a tournament they belong to before the registration deadline of said battle.
+    \item \textbf{R25:} When registering for a battle, the student that is doing so must be able to invite other students to the battle.
+    \item \textbf{R26:} At any time, The system shall allow logged in students to accept invitations to battles of a tournament they belong to before the registration deadline of said battle.
+    \item \textbf{R27:} At any time, The system shall allow logged in students to cancel their registration for battles they belong to before the registration deadline of said battle.
     
     \subsubsection*{Leaderboards}
 
-    \item \textbf{R26:} At any time, The system shall allow logged in users to see the leaderboard of any tournament.
-    \item \textbf{R27:} At any time, The system shall allow logged in users to see the leaderboard of any battle.
+    \item \textbf{R28:} At any time, The system shall allow logged in users to see the leaderboard of any tournament.
+    \item \textbf{R29:} At any time, The system shall allow logged in users to see the leaderboard of any battle.
     
     \subsubsection*{Submissions and Evaluations}
 
-    \item \textbf{R28:} When the registration deadline of a battle expires, the system shall create a GitHub repository for the battle that the students should fork to make submissions. This repository should have the GitHub Actions workflow set up to receive notifications from GitHub when a commit is pushed to the main branch. This way, when students fork the GitHub actions of the fork will be already set up.
-    \item \textbf{R29:} When the registration deadline of a battle expires, the system shall create a GitHub repository with the appropriate files, including the automation scripts and test cases files for the battle that the system will use to evaluate the submissions of the students.
-    \item \textbf{R30:} When the registration deadline of a battle expires, the system shall send invitations to the GitHub repository used for submissions of the battle to the students that registered for it.
-    \item \textbf{R31:} At any time, the system should be able to receive notifications from GitHub that a commit has been pushed to the main branch of one of the forked repositories of the battle.
-    \item \textbf{R32:} The system should be able to pull the latest sources from the forked repository of the battle that the notification came from.
-    \item \textbf{R33:} The system should be able to upload the latest sources from the forked repository of the battle that the notification came from, to the evaluation repository of the battle.
-    \item \textbf{R34:} The system should be able to receive the results of the evaluation from the evaluation repository of the battle.
-    \item \textbf{R35:} The system should be able to update the leaderboard of the battle with the results of the evaluation.
+    \item \textbf{R30:} When the registration deadline of a battle expires, the system shall create a GitHub repository for the battle that the students should fork to make submissions. This repository should have the GitHub Actions workflow set up to receive notifications from GitHub when a commit is pushed to the main branch. This way, when students fork the GitHub actions of the fork will be already set up.
+    \item \textbf{R31:} When the registration deadline of a battle expires, the system shall create a GitHub repository with the appropriate files, including the automation scripts and test cases files for the battle that the system will use to evaluate the submissions of the students.
+    \item \textbf{R32:} When the registration deadline of a battle expires, the system shall send invitations to the GitHub repository used for submissions of the battle to the students that registered for it.
+    \item \textbf{R33:} At any time, the system should be able to receive notifications from GitHub that a commit has been pushed to the main branch of one of the forked repositories of the battle.
+    \item \textbf{R34:} The system should be able to pull the latest sources from the forked repository of the battle that the notification came from.
+    \item \textbf{R35:} The system should be able to upload the latest sources from the forked repository of the battle that the notification came from, to the evaluation repository of the battle.
+    \item \textbf{R36:} The system should be able to receive the results of the evaluation from the evaluation repository of the battle.
+    \item \textbf{R37:} The system should be able to update the leaderboard of the battle with the results of the evaluation and the timeliness of the submission.
     
     \subsubsection*{Manual Evaluations}
 
-    \item \textbf{R36:} Once the final submission deadline of a battle expires, the system shall allow the educator that created the battle to manually evaluate the submissions of the students.
-    \item \textbf{R37:} Once the educator that created the battle finishes manually evaluating the submissions of the students and closes the battle, the system shall update the leaderboard of the battle with the results of the manual evaluation.
+    \item \textbf{R38:} Once the final submission deadline of a battle expires, the system shall allow the educator that created the battle to manually evaluate the submissions of the students.
     
     \subsubsection*{Battle and Tournament Closing}
 
-    \item \textbf{R38:} Once the educator that created the battle finishes manually evaluating the submissions of the students and closes the battle, the system shall notify all the students that participated in the battle that the final results have been published.
-    \item \textbf{R39:} Once the educator that created the battle finishes manually evaluating the submissions of the students and closes the battle, the system shall update the leaderboard of the tournament that the battle belongs to by adding the score that each student got on the battle to their score on the rest of the battles of the tournament that they have participated in.
-    \item \textbf{R40:} At any time, if there are no open battles in a tournament, the system shall allow the owner of the tournament to close it.
-    \item \textbf{R41:} Once the owner of a tournament closes it, the system shall update the leaderboard of the tournament and notify all the students that participated in it that the tournament has ended.
+    \item \textbf{R39:} Once the educator that created the battle finishes manually evaluating the submissions of the students and closes the battle, the system shall notify all the students that participated in the battle that the final results have been published.
+    \item \textbf{R40:} Once the educator that created the battle finishes manually evaluating the submissions of the students and closes the battle, the system shall update the leaderboard of the tournament that the battle belongs to by adding the score that each student got on the battle to their score on the rest of the battles of the tournament that they have participated in.
+    \item \textbf{R41:} At any time, if there are no open battles in a tournament, the system shall allow the owner of the tournament to close it.
+    \item \textbf{R42:} Once the owner of a tournament closes it, the system shall update the leaderboard of the tournament and notify all the students that participated in it that the tournament has ended.
     
     \subsubsection*{Search system}
 
-    \item \textbf{R42:} At any time, the system shall allow logged in users to search for tournaments. The system should return the tournaments that match the search criteria. This criteria is given by the keywords the user searched for, the tags the user selected, the programming language the user selected and the difficulty level the user selected.
-    \item \textbf{R43:} At any time, the system shall display to students the tournaments they are registered to.
-    \item \textbf{R44:} At any time, the system shall display to students the battles they are registered to.
-    \item \textbf{R45:} At any time, the system shall display to educators the tournaments own or are a part of.
-    \item \textbf{R46:} At any time, the system shall display to educators the battles they own.
-    \item \textbf{R47:} At any time, the system shall display to users that are inside a tournament the battles of that tournament.
+    \item \textbf{R43:} At any time, the system shall allow logged in users to search for tournaments. The system should return the tournaments that match the search criteria. This criteria is given by the keywords the user searched for, the tags the user selected, the programming language the user selected and the difficulty level the user selected.
+    \item \textbf{R44:} At any time, the system shall display to students the tournaments they are registered to.
+    \item \textbf{R45:} At any time, the system shall display to students the battles they are registered to.
+    \item \textbf{R46:} At any time, the system shall display to educators the tournaments own or are a part of.
+    \item \textbf{R47:} At any time, the system shall display to educators the battles they own.
+    \item \textbf{R48:} At any time, the system shall display to users that are inside a tournament the battles of that tournament.
 
 
 \end{itemize}
@@ -642,64 +641,95 @@ the actors.
     \hline
     Name & Login \\ 
     \hline
-    Actors & User \\ 
+    Actors & user \\ 
     \hline
-    Entry Condition & User is not logged in and enters the system \\ 
+    Entry Condition & user is not logged in and enters the system \\ 
     \hline
-    Event Flow & 1- User enters and sends credentials\\ 
-               & 2- System checks credentials\\
-               & 3- Credentials are valid: System logs in user and shows initial screen\\
+    Event Flow & 1- Sytem shows registration form\\
+               & 2- user enters and sends credentials\\ 
+               & 3- System checks credentials\\
+               & 4- Credentials are valid: System logs in user and shows initial screen\\
     \hline
-    Exit Condition & User has access to all the functionalities their role allow\\ 
+    Exit Condition & user has access to all the functionalities their role allow\\ 
     \hline
-    Exception & 3- Credential are not valid: System displays log in error\\ 
+    Exception & 4- Credential are not valid: System displays log in error\\ 
     \hline
 \end{tabular*}
 
-\subsubsection*{UC2 - Register}
+\subsubsection*{UC2 - Retrieve Password}
+
+\setlength\tabcolsep{0pt}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
+    \hline
+    Name & Retrieve Password \\ 
+    \hline
+    Actors & user and email service\\ 
+    \hline
+    Entry Condition & user is not logged in and enters the system \\ 
+    \hline
+    Event Flow & 1- user selects retrieve password option\\ 
+               & 2- System asks for email of account\\
+               & 3- user provides email of account\\
+               & 4- System sends recovery email through email service\\
+               & 5- user receives recovery email through email service\\
+               & 6- user sets new password\\
+    \hline
+    Exit Condition & user account has new password\\ 
+    \hline
+    Exception & 3- Email is not associated with an account: System displays log in error\\ 
+    \hline
+\end{tabular*}
+
+\subsubsection*{UC3 - Register}
 
 \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
     \hline
     Name & Login \\ 
     \hline
-    Actors & User \\ 
+    Actors & user \\ 
     \hline
-    Entry Condition & User is not registered and enters the system \\ 
+    Entry Condition & user logged in and enters the system \\ 
     \hline
-    Event Flow & 1- User enters and sends new credentials\\ 
-               & 2- System checks credentials\\
-               & 3- Credentials are valid: System saves the credentials\\ 
+    Event Flow & 1- System shows login form\\
+               & 2- user selects register\\
+               & 3- System shows registration form\\
+               & 4- user enters and sends new credentials\\ 
+               & 5- System checks credentials\\
+               & 6- Credentials are valid: System saves the credentials\\ 
     \hline
-    Exit Condition & User has access now valid credentials to log in\\ 
+    Exit Condition & user has access now valid credentials to log in\\ 
     \hline
-    Exception & 3- Credentials are not valid:\\
+    Exception & 6- Credentials are not valid:\\
               &   System shows an error message\\
     \hline
 \end{tabular*}
 
-\subsubsection*{UC3 - Educator Creates Tournament}
+\subsubsection*{UC4 - Educator Creates Tournament}
 
 \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
     \hline
     Name & Tournament Creation \\ 
     \hline
-    Actors & Educator and Students \\ 
+    Actors & educator\\ 
     \hline
-    Entry Condition & Educator is logged in and enters the system \\ 
+    Entry Condition & educator is logged in and enters the system \\ 
     \hline
-    Event Flow & 1- Educator enters system and sends tournament parameters\\
-               & 2- System saves the tournament\\
-               & 3- System notifies all students\\
+    Event Flow & 1- educator selects create tournament option\\
+               & 2- System returns a tournament form to the educator\\
+               & 3- educator sets tournament parameters\\
+               & 4- System checks parameters\\
+               & 5- Parameters valid: System creates the tournament\\
+               & 6- System notifies all students\\
                & that a tournament has been created\\
     \hline
     Exit Condition & A new tournament with the given\\
                    & parameters exists in the system\\
     \hline
-    Exception & 1- Parameter are not valid: System shows an error message\\
+    Exception & 5- Parameter not valid: System shows an error message\\
     \hline
 \end{tabular*}
 
-\subsubsection*{UC4 - Educator invites other educator to tournament}
+\subsubsection*{UC5 - Educator invites other educator to tournament}
 
 \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
     \hline
@@ -715,13 +745,14 @@ the actors.
                & 2- educator1 invites educator2 to the tournament\\
                & 3- The system send notification to educator2\\    
                & 4- educator2 receives the invitation and accepts it\\
+               & 5- The system adds educator2 to the tournament\\
     \hline
     Exit Condition & educator2 is now part of the tournament\\
                    &  and could create battles inside it\\
     \hline
 \end{tabular*}
 
-\subsubsection*{UC5 - Educator creates battle}
+\subsubsection*{UC6 - Educator creates battle}
 
 \begin{tabular*}{\linewidth}{ cc }
     \hline
@@ -736,18 +767,19 @@ the actors.
     Event Flow & 1- educator signals battle creation\\
                & 2- The system returns a form to the educator\\
                & 3- educator sets battle parameters, including uploading files\\
-               & 4- The system saves the battle\\
-               & 5- The system notifies all students \\
+               & 4- System checks parameters\\
+               & 5- Parameters valid: System creates the battle\\
+               & 6- The system notifies all students \\
                & on the tournament that a battle has been created\\
 
     \hline
     Exit Condition & A new battle exists inside the tournament\\
     \hline
-    Exception & 2- Parameters are not valid: System shows an error message\\
+    Exception & 5- Parameters are not valid: System shows an error message\\
     \hline
 \end{tabular*}
 
-\subsubsection*{UC6 - Tournament Registration}
+\subsubsection*{UC7 - Tournament Registration}
 
 \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
     \hline
@@ -759,14 +791,14 @@ the actors.
                     & registration deadline of tournament has not expired\\
                     & and student found tournament they want to register to\\
     \hline
-    Event Flow & 1- student registers to the tournament\\
+    Event Flow & 1- student signals they want to register to the tournament\\
                & 2- The system registers student to tournament\\
     \hline
     Exit Condition & Student is now registered to the tournament\\
     \hline
 \end{tabular*}
 
-\subsubsection*{UC7 - Tournament Unregistration}
+\subsubsection*{UC8 - Tournament Unregistration}
 
 \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
     \hline
@@ -788,7 +820,7 @@ the actors.
 \end{tabular*}
 
 
-\subsubsection*{UC8 - Battle Registration}
+\subsubsection*{UC9 - Battle Registration}
 
 \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
     \hline
@@ -809,7 +841,7 @@ the actors.
     \hline
 \end{tabular*}
 
-\subsubsection*{UC9 - Student joins battle via invite}
+\subsubsection*{UC10 - Student joins battle via invite}
 
 \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
     \hline
@@ -836,7 +868,7 @@ the actors.
     \hline
 \end{tabular*}
 
-\subsubsection*{UC10 - Battle Unregistration}
+\subsubsection*{UC11 - Battle Unregistration}
 
 \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
     \hline
@@ -855,7 +887,7 @@ the actors.
     \hline
 \end{tabular*}
 
-\subsubsection*{UC11 - Students makes submission}
+\subsubsection*{UC12 - Students makes submission}
 
 \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
     \hline
@@ -874,7 +906,7 @@ the actors.
                & to GitHub.\\
                & 2- GitHub notfies the system and sends the code uploaded\\
                & 3- System pushes the code on the GitHub evaluation repository\\
-               & 4- This triggers an automated workflow where the evaluation\\
+               & 4- This triggers an automated workflow oN GitHub where the evaluation\\
                & is performed.\\
                & 5- The GitHub evaluation repository sends the results of the evaluation\\
                & to the system.\\
@@ -886,7 +918,7 @@ the actors.
     \hline
 \end{tabular*}
 
-\subsubsection*{UC12 - Educator Performs Manual Evaluations}
+\subsubsection*{UC13 - Educator Performs Manual Evaluations}
 
 \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
     \hline
@@ -917,7 +949,7 @@ the actors.
     \hline
 \end{tabular*}
 
-\subsubsection*{UC13 - Educator Closes Tournament}
+\subsubsection*{UC14 - Educator Closes Tournament}
 
 \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
     \hline
@@ -940,9 +972,11 @@ the actors.
                     & battles can no longer be created inside it\\
                 
     \hline
+    Exception & 2- There are battles still ongoing: Nothing happens\\
+    \hline
 \end{tabular*}
 
-\subsubsection*{UC14 - Find Tournament via search}
+\subsubsection*{UC15 - Find Tournament via search}
 
 \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
     \hline
@@ -965,7 +999,7 @@ the actors.
 \end{tabular*}
 
 
-\subsubsection*{UC15 - Find Tournament on main page}
+\subsubsection*{UC16 - Find Tournament on main page}
 
 \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
     \hline
@@ -985,7 +1019,7 @@ the actors.
     \hline
 \end{tabular*}
 
-\subsubsection*{UC16 - Find Battle on main page}
+\subsubsection*{UC17 - Find Battle on main page}
 
 \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
     \hline
@@ -1005,7 +1039,7 @@ the actors.
     \hline
 \end{tabular*}
 
-\subsubsection*{UC17 - Find Battle on tournament page}
+\subsubsection*{UC18 - Find Battle on tournament page}
 
 \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
     \hline
@@ -1026,61 +1060,456 @@ the actors.
 
 \subsubsection{Sequence Diagrams}
 
-The first sequence diagram shows the battle registration of a student and all the actions that need to happen first
-such as the tournament creation, tournament notification to students, battle creation, battle notification to students,
-and finally the battle registration of the student. Also, the sequence flow of inviting another educator to a tournament
-is included. In this case we assume that all the inputs from the educators and students are valid. Also important to point out
-that there is a time constraint before the educator can create a battle.
-\begin{center}
-\begin{figure}[!h]
-    \centering
-    \includegraphics[width=1\textwidth]{images/BattleRegistrationSequenceDiagram}
-    \caption{Battle Registration Sequence Diagram}
-    \label{fig:BattleRegistrationSequenceDiagram}
-\end{figure}
-\end{center}
+On the following figures we can see the sequence diagrams of the main use cases of the system that were described above.
+It is important to note that the sequence diagrams only show that particular use case, but normally
+these are part of a bigger flow of events that are not shown here but can be reconstructed from the entry conditions
+of the use cases. For example, the use case regarding the submission on a battle is part of the flow of events
+that starts with an educator registering in the system, logging in, creating a tournament, a student registering to the tournament
+the registration deadline expiring, the creation of a battle the student registering to the battle and finally the registration deadline
+expiring. This dependencies are both shown on the entry conditions of the use cases and on the use case diagram.
 
-The second sequence diagram shows the submission of a student for a battle. The students communicates with GitHub
-to start the submission process. Then, the system receives a notification from GitHub that a commit has been pushed
-to the main branch of the forked repository of the battle. The system then pulls the latest sources from the forked
-repository of the battle, uploads them to the evaluation repository of the battle, which then runs the build automation
-scripts to evaluate the submission. This repository then sends the results of the evaluation to the system, which updates
-the leaderboard of the battle accordingly. When updating the leaderboard, the system infers the StudentTeam that made the
-submission based on the GitHub repository that the notification came from. 
-
-\begin{figure}[!h]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{images/SubmissionSequenceDiagram}
-    \caption{Submission Sequence Diagram}
-    \label{fig:SubmissionSequenceDiagram}
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC1}
+    \caption{Use Case 1}
+    \label{fig:UC1}
 \end{figure}
 
-Lastly, the third sequence diagram shows the manual evaluations of the educator. The educator asks the system
-to see the submissions of the battle and then one by one it assigns a score to the submissions, which gets updated 
-in the battle leaderboard. Once the educator decides to finish, it communicates that to the system, which then
-notifies all the students that the final results have been published and updates the tournament the battle is a part of.
-
-\begin{figure}[!h]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{images/ManualEvaluationsSequenceDiagram}
-    \caption{Manual Evaluations Sequence Diagram}
-    \label{fig:ManualEvaluationsSequenceDiagram}
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC2}
+    \caption{Use Case 2}
+    \label{fig:UC2}
 \end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC3}
+    \caption{Use Case 3}
+    \label{fig:UC3}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC4}
+    \caption{Use Case 4}
+    \label{fig:UC4}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC5}
+    \caption{Use Case 5}
+    \label{fig:UC5}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC6}
+    \caption{Use Case 6}
+    \label{fig:UC6}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC7}
+    \caption{Use Case 7}
+    \label{fig:UC7}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC8}
+    \caption{Use Case 8}
+    \label{fig:UC8}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC9}
+    \caption{Use Case 9}
+    \label{fig:UC9}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC10}
+    \caption{Use Case 10}
+    \label{fig:UC10}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC11}
+    \caption{Use Case 1}
+    \label{fig:UC11}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC12}
+    \caption{Use Case 12}
+    \label{fig:UC12}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC13}
+    \caption{Use Case 13}
+    \label{fig:UC13}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC14}
+    \caption{Use Case 14}
+    \label{fig:UC14}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC15}
+    \caption{Use Case 15}
+    \label{fig:UC15}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC16}
+    \caption{Use Case 16}
+    \label{fig:UC16}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC17}
+    \caption{Use Case 17}
+    \label{fig:UC17}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC18}
+    \caption{Use Case 18}
+    \label{fig:UC18}
+\end{figure}
+
+\newpage
+
+\subsubsection{Requirements Mapping}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
+        \hline
+        \multicolumn{2}{|c|}{\parbox{0.9\dimexpr\textwidth-2\tabcolsep\relax}{\centering\textbf{G1: Every educator should be able to create a tournament}}} \\
+        \hline
+        Requirements & R1, R2, R6\\ 
+        \hline
+        Domain Assumptions & D1\\
+        \hline
+    \end{tabular*}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
+        \hline
+        \multicolumn{2}{|c|}{\parbox{0.9\dimexpr\textwidth-2\tabcolsep\relax}{\centering\textbf{G2: When creating a tournament, the educator doing so should be able to set a registration deadline and a name.}}} \\
+        \hline
+        Requirements & R1, R2, R6, R7, R8, R9 \\
+        \hline
+        Domain Assumptions & D1\\
+        \hline
+    \end{tabular*}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
+        \hline
+        \multicolumn{2}{|c|}{\parbox{0.9\dimexpr\textwidth-2\tabcolsep\relax}{\centering\textbf{G3: Every educator that owns a tournament should be able to invite other educators to it.}}} \\
+        \hline
+        Requirements & R1, R2, R6, R11\\
+        \hline
+        Domain Assumptions & D1\\
+        \hline
+    \end{tabular*}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
+        \hline
+        \multicolumn{2}{|c|}{\parbox{0.9\dimexpr\textwidth-2\tabcolsep\relax}{\centering\textbf{G4: Every educator that belongs to a tournament should be able to create battles.}}} \\
+        \hline
+        Requirements & R1, R2, R6, R11, R12\\
+        \hline
+        Domain Assumptions & D1\\
+        \hline
+    \end{tabular*}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
+        \hline
+        \multicolumn{2}{|c|}{\parbox{0.9\dimexpr\textwidth-2\tabcolsep\relax}{\centering\textbf{G5: When creating a battle, the educator doing so should be able to set the programming language, a description of the problem, the test cases which will evaluate the students' code, the build automation scripts, the registration deadline, the final submission deadline, the minimum and maximum number of participants per group.}}} \\
+        \hline
+        Requirements & R1, R2, R6, R11, R12, R13, R14,\\
+                     & R15, R16, R17, R18, R19, R20\\
+        \hline
+        Domain Assumptions & D1, D4, D7\\
+        \hline
+    \end{tabular*}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
+        \hline
+        \multicolumn{2}{|c|}{\parbox{0.9\dimexpr\textwidth-2\tabcolsep\relax}{\centering\textbf{G6: Every student should be able to see the list of tournaments and register to them before the registration deadline.}}} \\
+        \hline
+        Requirements & R1, R2, R22, R44\\
+        \hline
+        Domain Assumptions & D1\\
+        \hline
+    \end{tabular*}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
+        \hline
+        \multicolumn{2}{|c|}{\parbox{0.9\dimexpr\textwidth-2\tabcolsep\relax}{\centering\textbf{G7: Every student should be able to see the description of the battles of a tournament they belong to and register to them before the registration deadline by themselves or with other students by inviting them to join or by accepting another student's invitation.}}} \\
+        \hline
+        Requirements & R1, R2, R22, R24, R25, R26, R45, R49\\
+        \hline
+        Domain Assumptions & D1\\
+        \hline
+    \end{tabular*}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
+        \hline
+        \multicolumn{2}{|c|}{\parbox{0.9\dimexpr\textwidth-2\tabcolsep\relax}{\centering\textbf{G8: Every time a student makes a submission to a battle, the platform should evaluate it and update the leaderboard of the battle accordingly.}}} \\
+        \hline
+        Requirements & R1, R2, R22, R24, R30, R31,\\
+                     & R32, R33, R34, R35, R36, R37\\
+        \hline
+        Domain Assumptions & D1, D2, D3, D5, D6\\
+        \hline
+    \end{tabular*}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
+        \hline
+        \multicolumn{2}{|c|}{\parbox{0.9\dimexpr\textwidth-2\tabcolsep\relax}{\centering\textbf{G9: The evaluation carried out by the platform should be performed with the build automation scripts set by the educator and should be based on the test cases set by the educator and the timeliness of the submission.}}} \\
+        \hline
+        Requirements & R1, R2, R30, R31, R32, R33,\\
+                     & R34, R35, R36, R37\\
+        \hline
+        Domain Assumptions & D1, D2\\
+        \hline
+    \end{tabular*}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
+        \hline
+        \multicolumn{2}{|c|}{\parbox{0.9\dimexpr\textwidth-2\tabcolsep\relax}{\centering\textbf{G10: Every student and educator should be able to see the leaderboard of a battle they belong to.}}} \\
+        \hline
+        Requirements & R1, R2, R29\\
+        \hline
+        Domain Assumptions & D1\\
+        \hline
+    \end{tabular*}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
+        \hline
+        \multicolumn{2}{|c|}{\parbox{0.9\dimexpr\textwidth-2\tabcolsep\relax}{\centering\textbf{G11: Once the battle ends, the educator that created it should be able to manually evaluate the code of the students if they so desire to and set a grade for each student.}}} \\
+        \hline
+        Requirements & R1, R2, R12, R38\\
+        \hline
+        Domain Assumptions & D1, D8\\
+        \hline
+    \end{tabular*}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
+        \hline
+        \multicolumn{2}{|c|}{\parbox{0.9\dimexpr\textwidth-2\tabcolsep\relax}{\centering\textbf{G12: Once the educator consolidates the results of a battle, the students that participated in it should be notified and the final results of the battle should be displayed to everyone. The leaderboard of the tournament the battle belongs to should be updated by adding for each student the battle score to the sum of all the other battles they have participated on.
+        }}} \\
+        \hline
+        Requirements & R1, R2, R12, R24, R39, R40, \\
+        \hline
+        Domain Assumptions & D1\\
+        \hline
+    \end{tabular*}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
+        \hline
+        \multicolumn{2}{|c|}{\parbox{0.9\dimexpr\textwidth-2\tabcolsep\relax}{\centering\textbf{G13: Every student and educator should be able to see the leaderboard of every tournament.}}} \\
+        \hline
+        Requirements & R1, R2, R28\\
+        \hline
+        Domain Assumptions & D1\\
+        \hline
+    \end{tabular*}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
+        \hline
+        \multicolumn{2}{|c|}{\parbox{0.9\dimexpr\textwidth-2\tabcolsep\relax}{\centering\textbf{G14: An instructor that owns a tournament should be able to close it.}}} \\
+        \hline
+        Requirements & R1, R2, R6, R41\\
+        \hline
+        Domain Assumptions & D1\\
+        \hline
+    \end{tabular*}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
+        \hline
+        \multicolumn{2}{|c|}{\parbox{0.9\dimexpr\textwidth-2\tabcolsep\relax}{\centering\textbf{G15: Once the owner of a tournament closes it, the platform should notify all the students once the leaderboard of the tournament is available.}}} \\
+        \hline
+        Requirements & R1, R2, R6, R41, R42\\
+        \hline
+        Domain Assumptions & D1\\
+        \hline
+    \end{tabular*}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
+        \hline
+        \multicolumn{2}{|c|}{\parbox{0.9\dimexpr\textwidth-2\tabcolsep\relax}{\centering\textbf{G16: When a tournament is created, all students should be notified.}}} \\
+        \hline
+        Requirements & R1, R2, R6, R10\\
+        \hline
+        Domain Assumptions & D1\\
+        \hline
+    \end{tabular*}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
+        \hline
+        \multicolumn{2}{|c|}{\parbox{0.9\dimexpr\textwidth-2\tabcolsep\relax}{\centering\textbf{G17: When a battle is created, all students participating in the tournament the battle belongs to should be notified.}}} \\
+        \hline
+        Requirements & R1, R2, R12, R21, RR22\\
+        \hline
+        Domain Assumptions & D1\\
+        \hline
+    \end{tabular*}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
+        \hline
+        \multicolumn{2}{|c|}{\parbox{0.9\dimexpr\textwidth-2\tabcolsep\relax}{\centering\textbf{G18: A user should be able to browse the platform and find tournaments based on keywords like topics, educators’ names, programming language and experience level.}}} \\
+        \hline
+        Requirements & R1, R2, R43\\
+        \hline
+        Domain Assumptions & D1\\
+        \hline
+    \end{tabular*}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
+        \hline
+        \multicolumn{2}{|c|}{\parbox{0.9\dimexpr\textwidth-2\tabcolsep\relax}{\centering\textbf{G19: A student should be able to cancel their registration to a tournament or battle before the registration deadline.}}} \\
+        \hline
+        Requirements & R1, R2, R22, R23, R24, R27\\
+        \hline
+        Domain Assumptions & D1\\
+        \hline
+    \end{tabular*}
+\end{table}
+
 
 \subsection{Performance Requirements}
+\begin{enumerate}
+  \item \textbf{R50:} The system shall respond to user actions within 1.5 seconds, ensuring a seamless and responsive user experience.
+  \item \textbf{R51:} The platform shall support concurrent access by a minimum of 500 users, maintaining optimal performance during peak usage periods.
+  \item \textbf{R52:} The system shall handle a database of 100,000 Code Kata problems, ensuring efficient retrieval and storage operations.
+\end{enumerate}
 
-
-
+% Design Constraints
 \subsection{Design Constraints}
-\subsubsection{Standards compliance}
-\subsubsection{Hardware limitations}
-\subsubsection{Any other constraint}
+\subsubsection{Standards Compliance}
+\begin{enumerate}
+  \item \textbf{R53:} The system design shall comply with relevant industry standards for web applications, ensuring compatibility and interoperability.
+  \item \textbf{R54:} The user interface design shall adhere to web accessibility standards (WCAG 2.0 or later) to ensure inclusivity for users with disabilities.
+\end{enumerate}
+
+\subsubsection{Hardware Limitations}
+\begin{enumerate}
+  \item \textbf{R55:} The system shall operate within the hardware specifications outlined in the system requirements documentation, including minimum processor speed, RAM, and storage capacity.
+  \item \textbf{R56:} The system shall be compatible with commonly used web browsers, including Chrome, Firefox, Safari, and Edge, ensuring a consistent user experience.
+\end{enumerate}
+
+\subsubsection{Any Other Constraint}
+\begin{enumerate}
+  \item \textbf{R57:} The system development and deployment shall comply with legal and regulatory requirements, including data protection and privacy laws.
+  \item \textbf{R58:} The system shall be designed to accommodate potential variations in user network conditions, such as low bandwidth or intermittent connectivity.
+\end{enumerate}
+
+% Software System Attributes
 \subsection{Software System Attributes}
 \subsubsection{Reliability}
+\begin{enumerate}
+  \item \textbf{R59:} The system shall achieve a 99.9% uptime, minimizing service interruptions and downtime.
+  \item \textbf{R60:} The platform shall implement automated data backup procedures to prevent data loss in case of system failures.
+\end{enumerate}
+
 \subsubsection{Availability}
+\begin{enumerate}
+  \item \textbf{R61:} The system shall be available 24/7, allowing users to access the platform at any time.
+  \item \textbf{R62:} The platform shall implement a load balancing mechanism to distribute traffic evenly and ensure optimal availability during peak usage.
+\end{enumerate}
+
 \subsubsection{Security}
+\begin{enumerate}
+  \item \textbf{R63:} The system shall encrypt user data during transmission to prevent unauthorized access.
+  \item \textbf{R64:} The platform shall implement user authentication and authorization mechanisms to control access to sensitive information.
+\end{enumerate}
+
 \subsubsection{Maintainability}
+\begin{enumerate}
+  \item \textbf{R65:} The system shall provide automated software updates to ensure that the latest features and security patches are applied.
+  \item \textbf{R66:} The development team shall document the codebase and provide a user-friendly manual for system administrators.
+  \item \textbf{R67:} The development team shall follow patterns and best practices for code organization to ensure that the codebase is easy to maintain and expand.
+
+\end{enumerate}
+
 \subsubsection{Portability}
+\begin{enumerate}
+  \item \textbf{R68:} The system shall be compatible with major operating systems, including Windows, macOS, and Linux.
+  \item \textbf{R69:} The platform shall support the latest versions of common web browsers to ensure a consistent user experience across different environments.
+\end{enumerate}
 
 \section{FORMAL ANALYSIS USING ALLOY}
 
