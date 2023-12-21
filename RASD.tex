@@ -8,7 +8,9 @@
 \usepackage{tabularx}
 \usepackage[section]{placeins}
 \usepackage{float}% If comment this, figure moves to Page 2
-
+\usepackage[dvipsnames]{xcolor}
+\usepackage{listings}
+\usepackage{alloy-style}
 
 \fontsize{10pt}{12pt}\selectfont % Set the font size
 \begin{document}
@@ -1511,6 +1513,7 @@ expiring. This dependencies are both shown on the entry conditions of the use ca
 \end{itemize}
 
 \section{FORMAL ANALYSIS USING ALLOY}
+\lstinputlisting[language=alloy]{Alloy/CodeKataBlade.als}
 
 \section{EFFORT SPENT}
 
