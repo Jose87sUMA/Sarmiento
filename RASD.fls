@@ -84,6 +84,10 @@ INPUT C:\Users\jasm2\AppData\Local\Programs\MiKTeX\tex\generic\uniquecounter\uni
 INPUT C:\Users\jasm2\AppData\Local\Programs\MiKTeX\tex\generic\uniquecounter\uniquecounter.sty
 INPUT C:\Users\jasm2\AppData\Local\Programs\MiKTeX\tex\latex\parskip\parskip.sty
 INPUT C:\Users\jasm2\AppData\Local\Programs\MiKTeX\tex\latex\parskip\parskip.sty
+INPUT C:\Users\jasm2\AppData\Local\Programs\MiKTeX\tex\latex\enumitem\enumitem.sty
+INPUT C:\Users\jasm2\AppData\Local\Programs\MiKTeX\tex\latex\enumitem\enumitem.sty
+INPUT C:\Users\jasm2\AppData\Local\Programs\MiKTeX\tex\latex\tools\array.sty
+INPUT C:\Users\jasm2\AppData\Local\Programs\MiKTeX\tex\latex\tools\array.sty
 INPUT C:\Users\jasm2\AppData\Local\Programs\MiKTeX\tex\latex\placeins\placeins.sty
 INPUT C:\Users\jasm2\AppData\Local\Programs\MiKTeX\tex\latex\placeins\placeins.sty
 INPUT C:\Users\jasm2\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
@@ -167,6 +171,30 @@ INPUT .\images\UI\Battle Screen.png
 INPUT .\images\UI\Battle Screen.png
 INPUT .\images\UI\Battle Screen.png
 INPUT .\images\UI\Battle Screen.png
+INPUT .\images\UseCaseDiagram.png
+INPUT .\images\UseCaseDiagram.png
+INPUT .\images\UseCaseDiagram.png
+INPUT .\images\UseCaseDiagram.png
+INPUT .\images\UseCaseDiagram.png
+INPUT .\images\UseCaseDiagram.png
+INPUT .\images\BattleRegistrationSequenceDiagram.png
+INPUT .\images\BattleRegistrationSequenceDiagram.png
+INPUT .\images\BattleRegistrationSequenceDiagram.png
+INPUT .\images\BattleRegistrationSequenceDiagram.png
+INPUT .\images\BattleRegistrationSequenceDiagram.png
+INPUT .\images\BattleRegistrationSequenceDiagram.png
+INPUT .\images\SubmissionSequenceDiagram.png
+INPUT .\images\SubmissionSequenceDiagram.png
+INPUT .\images\SubmissionSequenceDiagram.png
+INPUT .\images\SubmissionSequenceDiagram.png
+INPUT .\images\SubmissionSequenceDiagram.png
+INPUT .\images\SubmissionSequenceDiagram.png
+INPUT .\images\ManualEvaluationsSequenceDiagram.png
+INPUT .\images\ManualEvaluationsSequenceDiagram.png
+INPUT .\images\ManualEvaluationsSequenceDiagram.png
+INPUT .\images\ManualEvaluationsSequenceDiagram.png
+INPUT .\images\ManualEvaluationsSequenceDiagram.png
+INPUT .\images\ManualEvaluationsSequenceDiagram.png
 INPUT RASD.aux
 INPUT .\RASD.out
 INPUT .\RASD.out
