@@ -464,9 +464,9 @@ Here, \textbf{Student}s are notified that the final results are available.
 \subsubsection{Constraints}
 
 \begin{itemize}
-\item The system's functionality heavily depends on the reliability and availability of external services such as GitHub and to a lesser extent email services.
-\item The system's performance is constrained by the response time of GitHub services for repository creation and code evaluation.
-\item Users must have internet access to interact with the CKB platform and GitHub services.
+    \item The system's functionality heavily depends on the reliability and availability of external services such as GitHub and to a lesser extent email services.
+    \item The system's performance is constrained by the response time of GitHub services for repository creation and code evaluation.
+    \item Users must have internet access to interact with the CKB platform and GitHub services.
 \end{itemize}
 
 \section{SPECIFIC REQUIREMENTS}
@@ -1358,7 +1358,7 @@ expiring. This dependencies are both shown on the entry conditions of the use ca
     \end{tabular*}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
         \hline
@@ -1371,7 +1371,7 @@ expiring. This dependencies are both shown on the entry conditions of the use ca
     \end{tabular*}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
         \hline
@@ -1384,7 +1384,7 @@ expiring. This dependencies are both shown on the entry conditions of the use ca
     \end{tabular*}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
         \hline
@@ -1397,7 +1397,7 @@ expiring. This dependencies are both shown on the entry conditions of the use ca
     \end{tabular*}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
         \hline
@@ -1410,7 +1410,7 @@ expiring. This dependencies are both shown on the entry conditions of the use ca
     \end{tabular*}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
         \hline
@@ -1423,7 +1423,7 @@ expiring. This dependencies are both shown on the entry conditions of the use ca
     \end{tabular*}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
         \hline
@@ -1436,7 +1436,7 @@ expiring. This dependencies are both shown on the entry conditions of the use ca
     \end{tabular*}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} cc }
         \hline
@@ -1451,65 +1451,64 @@ expiring. This dependencies are both shown on the entry conditions of the use ca
 
 
 \subsection{Performance Requirements}
-\begin{enumerate}
+\begin{itemize}
   \item \textbf{R50:} The system shall respond to user actions within 1.5 seconds, ensuring a seamless and responsive user experience.
   \item \textbf{R51:} The platform shall support concurrent access by a minimum of 500 users, maintaining optimal performance during peak usage periods.
   \item \textbf{R52:} The system shall handle a database of 100,000 Code Kata problems, ensuring efficient retrieval and storage operations.
-\end{enumerate}
+\end{itemize}
 
 % Design Constraints
 \subsection{Design Constraints}
 \subsubsection{Standards Compliance}
-\begin{enumerate}
+\begin{itemize}
   \item \textbf{R53:} The system design shall comply with relevant industry standards for web applications, ensuring compatibility and interoperability.
   \item \textbf{R54:} The user interface design shall adhere to web accessibility standards (WCAG 2.0 or later) to ensure inclusivity for users with disabilities.
-\end{enumerate}
+\end{itemize}
 
 \subsubsection{Hardware Limitations}
-\begin{enumerate}
+\begin{itemize}
   \item \textbf{R55:} The system shall operate within the hardware specifications outlined in the system requirements documentation, including minimum processor speed, RAM, and storage capacity.
   \item \textbf{R56:} The system shall be compatible with commonly used web browsers, including Chrome, Firefox, Safari, and Edge, ensuring a consistent user experience.
-\end{enumerate}
+\end{itemize}
 
 \subsubsection{Any Other Constraint}
-\begin{enumerate}
+\begin{itemize}
   \item \textbf{R57:} The system development and deployment shall comply with legal and regulatory requirements, including data protection and privacy laws.
   \item \textbf{R58:} The system shall be designed to accommodate potential variations in user network conditions, such as low bandwidth or intermittent connectivity.
-\end{enumerate}
+\end{itemize}
 
 % Software System Attributes
 \subsection{Software System Attributes}
 \subsubsection{Reliability}
-\begin{enumerate}
-  \item \textbf{R59:} The system shall achieve a 99.9% uptime, minimizing service interruptions and downtime.
+\begin{itemize}
+  \item \textbf{R59:} The system shall achieve a 99.9\% uptime, minimizing service interruptions and downtime.
   \item \textbf{R60:} The platform shall implement automated data backup procedures to prevent data loss in case of system failures.
-\end{enumerate}
+\end{itemize}
 
 \subsubsection{Availability}
-\begin{enumerate}
+\begin{itemize}
   \item \textbf{R61:} The system shall be available 24/7, allowing users to access the platform at any time.
   \item \textbf{R62:} The platform shall implement a load balancing mechanism to distribute traffic evenly and ensure optimal availability during peak usage.
-\end{enumerate}
+\end{itemize}
 
 \subsubsection{Security}
-\begin{enumerate}
+\begin{itemize}
   \item \textbf{R63:} The system shall encrypt user data during transmission to prevent unauthorized access.
   \item \textbf{R64:} The platform shall implement user authentication and authorization mechanisms to control access to sensitive information.
-\end{enumerate}
+\end{itemize}
 
 \subsubsection{Maintainability}
-\begin{enumerate}
+\begin{itemize}
   \item \textbf{R65:} The system shall provide automated software updates to ensure that the latest features and security patches are applied.
   \item \textbf{R66:} The development team shall document the codebase and provide a user-friendly manual for system administrators.
   \item \textbf{R67:} The development team shall follow patterns and best practices for code organization to ensure that the codebase is easy to maintain and expand.
-
-\end{enumerate}
+\end{itemize}
 
 \subsubsection{Portability}
-\begin{enumerate}
+\begin{itemize}
   \item \textbf{R68:} The system shall be compatible with major operating systems, including Windows, macOS, and Linux.
   \item \textbf{R69:} The platform shall support the latest versions of common web browsers to ensure a consistent user experience across different environments.
-\end{enumerate}
+\end{itemize}
 
 \section{FORMAL ANALYSIS USING ALLOY}
 

@@ -1,0 +1,46 @@
+\contentsline {section}{\numberline {1}INTRODUCTION}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Purpose}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Scope}{5}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Definitions, Acronyms, Abbreviations}{7}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Definitions}{7}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Acronyms}{7}{subsubsection.1.3.2}%
+\contentsline {subsubsection}{\numberline {1.3.3}Abbreviations}{8}{subsubsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.4}Revision history}{8}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Reference Documents}{8}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Document Structure}{8}{subsection.1.6}%
+\contentsline {section}{\numberline {2}OVERALL DESCRIPTION}{9}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Product perspective}{9}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Scenarios}{9}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Domain Class Diagram}{12}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}State Diagrams}{14}{subsubsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.2}Product functions}{16}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}User characteristics}{17}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Assumptions, dependencies and constraints}{18}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Domain Assumptions}{18}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Dependencies}{18}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Constraints}{18}{subsubsection.2.4.3}%
+\contentsline {section}{\numberline {3}SPECIFIC REQUIREMENTS}{19}{section.3}%
+\contentsline {subsection}{\numberline {3.1}External Interface Requirements}{19}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}User Interfaces}{19}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Hardware Interfaces}{22}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Software Interfaces}{22}{subsubsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.4}Communication Interfaces}{22}{subsubsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.2}Functional Requirements}{23}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Use Case Diagram}{27}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Use Cases}{27}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Sequence Diagrams}{34}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}Requirements Mapping}{44}{subsubsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.3}Performance Requirements}{46}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Design Constraints}{47}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Standards Compliance}{47}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Hardware Limitations}{47}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Any Other Constraint}{47}{subsubsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.5}Software System Attributes}{47}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Reliability}{47}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Availability}{47}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}Security}{48}{subsubsection.3.5.3}%
+\contentsline {subsubsection}{\numberline {3.5.4}Maintainability}{48}{subsubsection.3.5.4}%
+\contentsline {subsubsection}{\numberline {3.5.5}Portability}{48}{subsubsection.3.5.5}%
+\contentsline {section}{\numberline {4}FORMAL ANALYSIS USING ALLOY}{48}{section.4}%
+\contentsline {section}{\numberline {5}EFFORT SPENT}{48}{section.5}%
+\contentsline {section}{\numberline {6}REFERENCES}{48}{section.6}%
