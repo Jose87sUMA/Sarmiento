@@ -576,9 +576,9 @@ The system will interact with the following software components:
 
     \subsubsection*{Tournament and Battle Registration}
 
-    \item \textbf{R22:} At any time, The system shall allow logged in students to register for tournaments before the registration deadline of said tournament.
+    \item \textbf{R22:} At any time, The system shall allow logged in students to register for tournaments before the registration deadline of said tournament if they are yet not registered.
     \item \textbf{R23:} At any time, The system shall allow logged in students to cancel their registration for tournaments they belong to before the registration deadline of said tournament.
-    \item \textbf{R24:} At any time, The system shall allow logged in students to register for battles of a tournament they belong to before the registration deadline of said battle.
+    \item \textbf{R24:} At any time, The system shall allow logged in students to register for battles of a tournament they belong to before the registration deadline of said battle if they are not regisred ter.
     \item \textbf{R25:} When registering for a battle, the student that is doing so must be able to invite other students to the battle.
     \item \textbf{R26:} At any time, The system shall allow logged in students to accept invitations to battles of a tournament they belong to before the registration deadline of said battle.
     \item \textbf{R27:} At any time, The system shall allow logged in students to cancel their registration for battles they belong to before the registration deadline of said battle.
@@ -1515,9 +1515,31 @@ expiring. This dependencies are both shown on the entry conditions of the use ca
 \section{FORMAL ANALYSIS USING ALLOY}
 \lstinputlisting[language=alloy]{Alloy/CodeKataBlade.als}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Alloy/instance}
+    \caption{Alloy Instance}
+    \label{fig:AlloyInstance}
+\end{figure}
+
 \section{EFFORT SPENT}
 
+\begin{itemize}
+    \item Introduction: 4 hours
+    \item Overall Description: 10 hours
+    \item Specific Requirements: 16 hours
+    \item Formal Analysis Using Alloy: 8 hours
+\end{itemize}
+
 \section{REFERENCES}
+
+\begin{itemize}
+    \item Diagrams done with Visual Paradigm
+    \item UI Mockups done with UIzard
+    \item GitHub Actions documentation: \url{https://docs.github.com/en/actions}
+    \item Alloy documentation: \url{http://alloytools.org/documentation.html}
+\end{itemize}
+
 
 \end{document}
 

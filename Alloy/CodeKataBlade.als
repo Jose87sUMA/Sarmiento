@@ -1,47 +1,54 @@
+abstract sig Bool {}
+one sig True extends Bool {}
+one sig False extends Bool {}
+
 // Signatures
+sig DateTimes{
+
+}
+
 abstract sig User {
   id: one Int,
-  name: one String,
-  email: one String,
-  githubAccount: one String,
-  password: one String
 }
 
 sig Student, Educator extends User {}
 
 sig StudentTeam {
-  students: set Student
+  var students: set Student,
+  battle: one Battle,
+  var score: one Int
 }
 
 sig Tournament {
   id: one Int,
-  name: one String,
-  registrationDeadline: one Time,
-  battles: set Battle,
-  participants: set Student,
+  registrationDeadline: one DateTimes,
+  var battles: set Battle,
+  var activeBattles: set Battle,
+  var participants: set Student,
   owner: one Educator,
-  invitedEducators: set Educator
+  var invitedEducators: set Educator,
+  var isOpen: one Bool
 }
 
 sig Battle {
   id: one Int,
   owner: one Educator,
-  registrationDeadline: one Time,
-  finalSubmissionDeadline: one Time,
-  minParticipants: one Int,
-  maxParticipants: one Int,
-  participants: set StudentTeam,
+  registrationDeadline: one DateTimes,
+  finalSubmissionDeadline: one DateTimes,
+  minTeamSize: one Int,
+  maxTeamSize: one Int,
+  var participants: set StudentTeam,
   codeKata: one CodeKata,
   githubRepoSubmissions: lone GitHubRepoSubmission,
   githubRepoEvaluations: lone GitHubRepoEvaluation,
-  tournament: one Tournament
+  tournament: one Tournament,
+  var isOpen: one Bool
 }
 
 sig CodeKata {
-  language: one String,
-  description: one String,
   testCases: set TestCase,
-  buildAutomationScripts: set BuildAutomationScript
+  buildAutomationScripts: set BuildAutomationScript,
+  battle: one Battle
 }
 
 sig GitHubRepo {
@@ -51,67 +58,116 @@ sig GitHubRepo {
 sig GitHubRepoSubmission, GitHubRepoEvaluation extends GitHubRepo {}
 
 sig TestCase {
+  codeKata: one CodeKata
 }
 
 sig BuildAutomationScript {
+    codeKata: one CodeKata
 }
 
-// Relations
-fact ValidPasswords {
-  all u: User | u.password.length >= 8
+fact TournamentHasUniqueId {
+    all t1: Tournament | t1.id > 0
 }
 
-fact CanOwnBattlesInTournamentIfOwnsTournamentOrParticipatesInTournament{
-  all e: Educator, t: Tournament, b: Battle | b.owner = e and b.tournament = t implies (b in t.invitedEducators or b = t.owner)
+fact BattleHasUniqueId {
+    all b1: Battle | b1.id > 0
 }
 
-// Use Case 4: Educator Creates Tournament
-pred CreateTournament[e: Educator, registrationDeadline: Time, name: String] {
-  let newTournament = Tournament & {
-    id: #Tournament + 1,
-    registrationDeadline: registrationDeadline,
-    battles: none,
-    participants: none,
-    owner: e,
-    invitedEducators: none
-  } 
-}
-pred CreateBattle[e: Educator, tournament: Tournament, registrationDeadline: Time, submissionDeadline: Time, minParticipants: Int, 
-					maxParticipants: Int, language: String, description: String,
-					testCases: set TestCase,   buildAutomationScripts: set BuildAutomationScript] {
-  
-let newCodeKata = CodeKata & {
-  language: language,
-  description: description,
-  testCases: testCases,
-  buildAutomationScripts: buildAutomationScripts
-}
-let newBattle= Battle & {
-    id: #Battle + 1
-    owner: e
-    registrationDeadline: registrationDeadline,
-    finalSubmissionDeadline: one Time,
-    minParticipants: minParticipants,
-    maxParticipants: maxParticipants,
-    participants: none,
-    codeKata: newCodeKata,
-    githubRepoSubmissions: none,
-    githubRepoEvaluations: none,
-    tournament: tournament
-  }  
+fact UserHasUniqueId {
+    all s1: User | s1.id > 0
 }
 
-// ... Additional use case predicates can be added ...
-
-// Assertions
-assert AtLeastOneUser {
-  some u: User | u in Student or u in Educator
+fact TournamentHasUniqueId {
+    all t1, t2: Tournament | t1 != t2 implies t1.id != t2.id
 }
 
-assert EachBattleBelongsToTournament {
-  all b: Battle | b in b.tournament.battles
+fact BattleHasUniqueId {
+    all b1, b2: Battle | b1 != b2 implies b1.id != b2.id
 }
 
-run AtLeastOneUser for 5
+fact UserHasUniqueId {
+    all s1, s2: User | s1 != s2 implies s1.id != s2.id
+}
 
-// ... Additional assertions or run commands can be added ...
+fact OneTeamPerStudentPerBattle {
+    all s: Student, b: Battle | lone t: StudentTeam | isInTeamForBattle[s, t, b]
+}
+
+fact StudentTeamAbidesByBattleSizeConditions {
+    all st: StudentTeam | st.battle.minTeamSize <= #st.students and #st.students <=  st.battle.maxTeamSize
+}
+
+fact TournamentActiveBattlesInTournamentBattles{
+    all t: Tournament | t.activeBattles in t.battles 
+}
+
+fact NumberOfActiveBattlesOfTournamentIsEqualToNumberOfOpenBattles{
+    all t: Tournament | #t.activeBattles = #{b: t.battles | b.isOpen = True}
+}
+
+fact BattleInOnlyOneTournament{
+    all t1, t2: Tournament | disj[t1.battles, t2.battles]
+}
+
+fact TournamentWithActiveBattlesCannotBeClosed{
+    all t: Tournament | #t.activeBattles > 0 implies t.isOpen = True
+}
+
+pred isStudent[user: User] {
+    user in Student
+}
+
+pred isEducator[user: User] {
+    user in Educator
+}
+pred isTournamentOwner[e: Educator, t: Tournament] {
+    e = t.owner
+}
+
+pred isPartOfTournament[e: Educator, t: Tournament] {
+    e in t.invitedEducators
+}
+
+pred isBattleOwner[e: Educator, b: Battle] {
+    e = b.owner
+}
+
+pred isInTournament[s: Student, t: Tournament] {
+    s in t.participants
+}
+
+pred isInBattle[s: Student, b: Battle] {
+    one st: StudentTeam | st.battle = b and s in st.students
+}
+
+pred isInTeamForBattle[s: Student, st: StudentTeam, b: Battle] {
+    s in st.students and st.battle = b
+}
+
+pred example{
+   some s: Student, st: StudentTeam | s in st.students
+}
+
+fun getTournamentBattles[t: Tournament]: set Battle {
+    t.battles
+}
+
+fun getBattlesOfStudent[s: Student]: set Battle {
+    { b: Battle | isInBattle[s, b] }
+}
+
+assert oneTeamPerStudentPerBattle {
+    all s: Student, b: Battle | lone t: StudentTeam | isInTeamForBattle[s, t, b]
+}
+
+assert StudentRegisteredToTournamentOfBattleTheyAreRegisteredTo  {
+    all s: Student, t: Tournament, b: Battle, st: StudentTeam| 
+        st in b.participants and b in t.battles implies s in t.participants
+}
+
+
+check oneTeamPerStudentPerBattle
+check StudentRegisteredToTournamentOfBattleTheyAreRegisteredTo
+
+
+run example
