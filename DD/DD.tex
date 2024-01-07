@@ -499,6 +499,7 @@ it is easier to understand the meaning calls to the database server and the para
     Educator \textbf{educatorInvited})
     \item void \textbf{createBattle}(Tournament \textbf{tournament}, Educator \textbf{educator}, string \textbf{name}, 
     string \textbf{description}, Date \textbf{registrationDeadline}, Date \textbf{finalSubmissionDeadline}, 
+    int \textbf{maxNumberOfParticipants}, int \textbf{minNumberOfParticipants},
     string \textbf{language}, File[] \textbf{testCases}, File[] \textbf{buildAutomationScripts})
     \item void \textbf{registerToTournament}(Tournament \textbf{tournament}, Student \textbf{student})
     \item void \textbf{unregisterFromTournament}(Tournament \textbf{tournament}, Student \textbf{student})
@@ -536,14 +537,17 @@ it is easier to understand the meaning calls to the database server and the para
     \item void \textbf{unregisterFromTournament}(Tournament \textbf{tournament}, Student \textbf{student})
     \item void \textbf{updateTournamentScores}(Tournament \textbf{tournament}, Battle \textbf{battle})
     \item void \textbf{closeTournament}(Tournament \textbf{tournament})
-
+    
+    In addition to these methods, the TournamentManager must also also periodically check if the registration deadline of a tournament has passed, and if so, close the tournament registrations.
+    \item void \textbf{monitorDeadlines}()
 \end{itemize}
 
 \paragraph{BattleManager:}
 
 \begin{itemize}
     \item void \textbf{createBattle}(Tournament \textbf{tournament}, Educator \textbf{educator}, string \textbf{name}, 
-    string \textbf{description}, Date \textbf{registrationDeadline}, Date \textbf{finalSubmissionDeadline}, 
+    string \textbf{description}, Date \textbf{registrationDeadline}, Date \textbf{finalSubmissionDeadline},
+    int \textbf{maxNumberOfParticipants}, int \textbf{minNumberOfParticipants}, 
     string \textbf{language}, File[] \textbf{testCases}, File[] \textbf{buildAutomationScripts})
     \item void \textbf{registerToBattle}(Battle \textbf{battle}, Student \textbf{student})
     \item void \textbf{inviteStudentToBattle}(Battle \textbf{battle}, Student \textbf{studentInviting}, Student \textbf{studentInvited})
@@ -552,6 +556,13 @@ it is easier to understand the meaning calls to the database server and the para
     \item Map<StudentTeam, File[]> \textbf{seeSubmissions}(Battle \textbf{battle})
     \item void \textbf{setGrade}(StudentTeam \textbf{studentTeam}, float \textbf{grade})
     \item void \textbf{closeBattle}(Battle \textbf{battle})
+
+    In addition to these methods, the BattleManager must also also periodically check if the registration deadline and submission deadline of a battle has passed, and if so, go to the next phase of the battle.
+    In the case the registrationDeadline of a Battle has passed, the BattleManager besides closing the registrations, must also create the GitHub repositories for submission and evaluation, uploading to these 
+    repositories the test cases and build automation scripts. More specifically, in the submission repository, the BattleManager must setup the GitHub Actions workflow to communicate to the EvaluationManager when a new submission is made.
+    On the other hand, in the evaluation repository, the BattleManager must setup the GitHub Actions workflow, test cases and build automation scripts to perform evaluations on uploaded files and communicate to the EvaluationManager the results of these. 
+    Besides this, it must also invite the students that registered to the battle to the submission repository.
+    \item void \textbf{monitorDeadlines}()
 \end{itemize}
 
 \paragraph{NotificationManager:}
@@ -599,12 +610,160 @@ it is easier to understand the meaning calls to the database server and the para
 
 \subsection{Selected architectural styles and patterns}
 
+\paragraph{3-tier Architecture:}
 
+As explained in the overview, the chosen architecture for the system is a three-tier architecture, a widely adopted
+model for developing scalable and maintainable web applications. This architectural 
+style divides the application into three interconnected layers: presentation, application,
+and data, with the addition of the external services like GitHub and email services.
+
+\paragraph{Model-View-Controller:}
+
+The Model-View-Controller (MVC) is a software architectural pattern that separates an application into three main logical components: the model, the view, and the controller. Each of these components are built to handle specific development aspects of an application. MVC is one of the most frequently used industry-standard web development framework to create scalable and extensible projects.
+In the case of this system, it is used to separate the presentation layer from the application layer.
+
+\paragraph{RESTful API:}
+
+REST stands for Representational State Transfer. It is a software architectural style that defines a set of constraints to be used for creating web services. Web services that conform to the REST architectural style, called RESTful web services, provide interoperability between computer systems on the Internet. RESTful web services allow the requesting systems to access and manipulate textual representations of web resources by using a uniform and predefined set of stateless operations. In the case of this system, it is used to define the communication between the presentation layer and the application layer.
 
 \subsection{Other design decisions}
 
+\paragraph{Entity Relationship Diagram:}
+
+The structure defined for the database is as follows:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/EntityRelationshipDiagram.png}
+    \caption{Entity Relationship Diagram}
+    \label{fig:EntityRelationshipDiagram}
+\end{figure}
+
+Also, in order to prevent a single point of failure in the database, it is replicated in a master-slave configuration.
+
 % 3. USER INTERFACE DESIGN
 \section{USER INTERFACE DESIGN}
+
+\subsection{Mockups}
+
+\paragraph{Homepage for all users:}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UI/Homepage.png}
+    \caption{Homepage}
+    \label{fig:Homepage}
+\end{figure}
+
+On this screen, both students and educators can see the tournaments and battles 
+they are a part of, the closed tournaments in which they participated and open 
+tournaments they can register to or be invited to respectively. From this screen, they
+can travel to the tournament or battle page by clicking on the respective card. If there
+are more tournaments or battles than the ones that can be shown, the user can scroll down
+on each of the tabs to see more. There is also a calendar that shows the important dates
+of both the upcoming tournaments and battles and the ones that are currently happening and
+the user is a part of.
+
+\paragraph{Tournament Page for Students before Registration Deadline Expires:}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UI/Tournament Page before Registration Deadline Student not registered.png}
+    \caption{Tournament Page for Students before Registration Deadline expires}
+    \label{fig:TournamentPageForStudentsBeforeRegistrationDeadline}
+\end{figure}
+
+On this screen, students can see the name and registration deadline of the tournament.If the student
+is not registered, they can register to thebattle. If the student is already registered, they can 
+unregister from the battle.
+
+\paragraph{Active Tournament Page for Student:}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UI/Tournament Page Active.png}
+    \caption{Active Tournament Page for Students}
+    \label{fig:ActiveTournamentPageForStudents}
+\end{figure}
+
+On this screen, students can seet the leaderboard, open, active and closed battles of that tournament.
+If the student seeing the page is registered to the tournament it will be shown with a non-clickable indicator.
+If the student is registered to a battle, it will be shown with a green indicator. Students can go to any
+of the tournaments by clicking on the respective name. 
+
+\paragraph{Active Tournament Page for Educator:}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UI/Tournament Page Active Educator.png}
+    \caption{Active Tournament Page for Educator}
+    \label{fig:ActiveTournamentPageForEducator}
+\end{figure}
+
+On this screen, educators can seet the leaderboard, open, active and closed battles of that tournament.
+If the educator is the owner or is a participant of the tournament, this will be shown with a non-clickable indicator.
+If the educator is the owner of a battle, a close tournament button will be shown. This button is unavailable
+if there are open or active battles in the tournament.
+If a educator is the owner of a battle, it will be shown with a green indicator. Educators can go to any
+of the battles in the tournament by clicking on the respective name.
+
+\paragraph{Open Battle Page:}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UI/Battle Screen before Registration Deadline Student not registered.png}
+    \caption{Open Battle Page}
+    \label{fig:OpenBattlePage}
+\end{figure}
+
+On this screen, users can see the details of the battle, such as the description, the
+language and other information. Additionally, if the user is a student and if the student is 
+registered to the tournament the battle belongs to and is not registered to the battle, they can register it. 
+If the student is already registered to the battle, they can unregister from the battle. Also, if the student
+is registered, they can invite other students to the battle. 
+
+\paragraph{Active or Closed Battle Page:}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UI/Battle Screen Active Student.png}
+    \caption{Active Battle Page}
+    \label{fig:ActiveBattlePage}
+\end{figure}
+
+On this screen, users can see the details of the battle, such as the description, the
+language and the leaderboard. Additionally, if the user is a student and registered to the battle,
+it displays this information.
+
+The different tournament and battle pages are located on the same URL for the same tournament or battle.
+The differences shown on the UI are dependant of the status of the tournament or battle and the type of user.
+
+\paragraph{Search Enviornment:}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UI/Search.png}
+    \caption{Search Enviornment}
+    \label{fig:SearchEnviornment}
+\end{figure}
+
+On this screen, users can look for tournaments according to keywords, language, tags and expertise level.
+The results are shown in a list, and the user can click on any of the tournaments to go to the tournament page.
+
+Other screens like login, register, password recovery, etc. are not shown as they are standard and similar to other applications.
+
+\subsection{Flowcharts}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UI/UserInterfaceFlowchart.png}
+    \caption{User Interfaces Flowchart}
+    \label{fig:UserInterfacesFlowchart}
+\end{figure}
+
+This diagram shows the flow of the user interfaces of the system on a normal execution. There are other
+possible flows, such as entering to specific pages for accepting invitations or new password creation, but
+these are only accessible via email link and are not shown here.
 
 % 4. REQUIREMENTS TRACEABILITY
 \section{REQUIREMENTS TRACEABILITY}
