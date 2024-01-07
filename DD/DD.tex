@@ -662,7 +662,8 @@ can travel to the tournament or battle page by clicking on the respective card. 
 are more tournaments or battles than the ones that can be shown, the user can scroll down
 on each of the tabs to see more. There is also a calendar that shows the important dates
 of both the upcoming tournaments and battles and the ones that are currently happening and
-the user is a part of.
+the user is a part of. Users can go to the search enviornment from here. 
+Educators can go to the tournament creation page from here as well.
 
 \paragraph{Tournament Page for Students before Registration Deadline Expires:}
 
@@ -706,6 +707,7 @@ If the educator is the owner of a battle, a close tournament button will be show
 if there are open or active battles in the tournament.
 If a educator is the owner of a battle, it will be shown with a green indicator. Educators can go to any
 of the battles in the tournament by clicking on the respective name.
+From here the educator can also create battles for the tournament.
 
 \paragraph{Open Battle Page:}
 
@@ -738,6 +740,26 @@ it displays this information.
 The different tournament and battle pages are located on the same URL for the same tournament or battle.
 The differences shown on the UI are dependant of the status of the tournament or battle and the type of user.
 
+\paragraph{Tournament Creation Page:}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UI/Create Tournament.png}
+    \caption{Tournament Creation Page}
+    \label{fig:TournamentCreationPage}
+\end{figure}
+
+\paragraph{Battle Creation Page:}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UI/Create Battle.png}
+    \caption{Battle Creation Page}
+    \label{fig:BattleCreationPage}
+\end{figure}
+
+On this screen, educators can create a Battle by filling the form with the all the necessary information.
+
 \paragraph{Search Enviornment:}
 
 \begin{figure}[H]
@@ -752,7 +774,7 @@ The results are shown in a list, and the user can click on any of the tournament
 
 Other screens like login, register, password recovery, etc. are not shown as they are standard and similar to other applications.
 
-\subsection{Flowcharts}
+\subsection{Flowchart}
 
 \begin{figure}[H]
     \centering
@@ -768,8 +790,212 @@ these are only accessible via email link and are not shown here.
 % 4. REQUIREMENTS TRACEABILITY
 \section{REQUIREMENTS TRACEABILITY}
 
+The following is the list of requirements specified in the RASD document. For each requirement or group of them,
+there is a group of components and some functionalities the components possess that fulfill the requirements. These 
+components and functionalities are declared just below the group of requirements they fulfill.
+
+\begin{itemize}
+
+    \subsubsection*{Authentication}
+
+    \item \textbf{R1:} At any time, The system shall allow users to register.
+    \item \textbf{R2:} At any time, The system shall allow user to login. 
+    \item \textbf{R4:} At any time, two accounts with the same email may not exist.
+    \item \textbf{R5:} At any time, an account may not have a password without a number and more than 8 characters.
+    
+    All the previous requirements are fulfilld by the following functionalities:
+
+    \textbf{Web Application:} Register Page
+
+    \textbf{Web Server:} registerRequest
+
+    \textbf{AuthenticationManager:} registerRequest
+
+    \item \textbf{R3:} At any time, The system shall allow users to try to recover their password by sending a password recovery email.
+
+    \textbf{Web Application:} Recover Password Page
+
+    \textbf{Web Server:} retrievePassword
+
+    \textbf{AuthenticationManager:} retrievePassword
+
+    \textbf{Email Services Integration:} sendRecoveryEmail
+
+    \subsubsection*{Tournament and Battle Creation}
+
+    \item \textbf{R6:} At any time, The system shall allow logged in educators to create tournaments.
+    \item \textbf{R7:} When creating a tournament, the educator that is doing so must be able to set the registration deadline.
+    \item \textbf{R8:} When creating a tournament, the educator that is doing so must be able to set a name.
+    \item \textbf{R9:} When creating a tournament, the parameters being set must be valid. This means that the registration deadline must be in the future and the name must be a non empty string.
+    
+    \textbf{Web Application:} Create Tournament Page
+
+    \textbf{Web Server:} createTournament
+
+    \textbf{TournamentManager:} createTournament
+
+    \item \textbf{R10:} After the creation of a tournament, the system shall notify all the students that a tournament has been created.
+
+    \textbf{NotificationManager:} newTournamentNotification
+
+    \textbf{Email Services Integration:} sendTournamentNotification
+
+    \item \textbf{R11:} At any time, The system shall allow logged in educators to invite other educators to tournaments they own and logged in educators that have been invited should be able to accept this invitations.
+    
+    \textbf{Web Application:} Tournament Page
+
+    \textbf{Web Server:} inviteEducatorToTournament, acceptTournamentInvitation, declineTournamentInvitation
+
+    \textbf{TournamentManager:} inviteEducatorToTournament, addEducatorToTournament
+
+    \textbf{NotificationManager:} inviteEducatorToTournament
+
+    \textbf{Email Services Integration:} sendTournamentInvitation
+
+    \item \textbf{R12:} At any time, The system shall allow logged in educators to create battles inside tournaments they are a part of.
+    \item \textbf{R13:} When creating a battle, the educator that is doing so must be able to upload a description of the problem.
+    \item \textbf{R14:} When creating a battle, the educator that is doing so must be able to choose the programming language.
+    \item \textbf{R15:} When creating a battle, the educator that is doing so must be able to set the registration deadline.
+    \item \textbf{R16:} When creating a battle, the educator that is doing so must be able to set the final submission deadline.
+    \item \textbf{R17:} When creating a battle, the educator that is doing so must be able to set the minimum and maximum number of participants per group.
+    \item \textbf{R18:} When creating a battle, the educator that is doing so must be able to upload the test cases that will be used to evaluate the students' code.
+    \item \textbf{R19:} When creating a battle, the educator that is doing so must be able to upload the build automation scripts that will be used to evaluate the students' code.
+    \item \textbf{R20:} When creating a battle, the parameters being set must be valid. This means that the registration deadline must be in the future, the final submission deadline must be after the registration deadline, the minimum number of participants per group must be greater than 0, the maximum number of participants per group must be greater than or equal to the minimum number of participants per group, the programming language must be a valid programming language, the description of the problem must be a non empty string, the test cases must be a valid set of test cases and the build automation scripts must be a valid set of build automation scripts. This last two vary according to the programming language.
+
+    \textbf{Web Application:} Create Battle Page
+
+    \textbf{Web Server:} createBattle
+
+    \textbf{BattleManager:} createBattle
+
+    \item \textbf{R21:} After the creation of a battle, the system shall notify all students that are registered to the tournament the battle belongs to that a battle has been created.
+
+    \textbf{NotificationManager:} newBattleNotification
+
+    \subsubsection*{Tournament and Battle Registration}
+
+    \item \textbf{R22:} At any time, The system shall allow logged in students to register for tournaments before the registration deadline of said tournament if they are yet not registered.
+    \item \textbf{R23:} At any time, The system shall allow logged in students to cancel their registration for tournaments they belong to before the registration deadline of said tournament.
+    
+    \textbf{Web Application:} Tournament Page
+
+    \textbf{Web Server:} registerToTournament, unregisterFromTournament
+
+    \textbf{TournamentManager:} registerToTournament, unregisterFromTournament
+
+    \item \textbf{R24:} At any time, The system shall allow logged in students to register for battles of a tournament they belong to before the registration deadline of said battle if they are not registered.
+    \item \textbf{R25:} When registering for a battle, the student that is doing so must be able to invite other students to the battle.
+    \item \textbf{R26:} At any time, The system shall allow logged in students to accept invitations to battles of a tournament they belong to before the registration deadline of said battle.
+    \item \textbf{R27:} At any time, The system shall allow logged in students to cancel their registration for battles they belong to before the registration deadline of said battle.
+    
+    \textbf{Web Application:} Battle Page
+
+    \textbf{Web Server:} registerToBattle, inviteStudentToBattle, acceptBattleInvitation, unregisterFromBattle
+
+    \textbf{BattleManager:} registerToBattle, inviteStudentToBattle, acceptBattleInvitation, unregisterFromBattle
+
+    \textbf{NotificationManager:} inviteStudentToBattle
+
+    \subsubsection*{Leaderboards}
+
+    \item \textbf{R28:} At any time, The system shall allow logged in users to see the leaderboard of any tournament.
+    \item \textbf{R29:} At any time, The system shall allow logged in users to see the leaderboard of any battle.
+    
+    \textbf{Web Application:} Tournament Page, Battle Page
+
+    \subsubsection*{Submissions and Evaluations}
+
+    \item \textbf{R30:} When the registration deadline of a battle expires, the system shall create a GitHub repository for the battle that the students should fork to make submissions. This repository should have the GitHub Actions workflow set up to receive notifications from GitHub when a commit is pushed to the main branch. This way, when students fork the GitHub actions of the fork will be already set up.
+    \item \textbf{R31:} When the registration deadline of a battle expires, the system shall create a GitHub repository with the appropriate files, including the automation scripts and test cases files for the battle that the system will use to evaluate the submissions of the students.
+    \item \textbf{R32:} When the registration deadline of a battle expires, the system shall send invitations to the GitHub repository used for submissions of the battle to the students that registered for it.
+    
+    \textbf{BattleManager:} monitorDeadlines
+
+    \item \textbf{R33:} At any time, the system should be able to receive notifications from GitHub that a commit has been pushed to the main branch of one of the forked repositories of the battle.
+    \item \textbf{R34:} The system should be able to pull the latest sources from the forked repository of the battle that the notification came from.
+    
+    \textbf{EvaluationManager:} performEvaluation
+
+    \item \textbf{R35:} The system should be able to upload the latest sources from the forked repository of the battle that the notification came from, to the evaluation repository of the battle.
+    
+    \textbf{EvaluationManager:} performEvaluation
+
+    \textbf{GitHub API Integration:} performEvaluation
+
+    \item \textbf{R36:} The system should be able to receive the results of the evaluation from the evaluation repository of the battle.
+    \item \textbf{R37:} The system should be able to update the leaderboard of the battle with the results of the evaluation and the timeliness of the submission.
+    
+    \textbf{EvaluationManager:} storeEvaluationResults
+    
+    \subsubsection*{Manual Evaluations}
+
+    \item \textbf{R38:} Once the final submission deadline of a battle expires, the system shall allow the educator that created the battle to manually evaluate the submissions of the students.
+    
+    \textbf{Web Application:} Battle Page, Submissions Page
+
+    \textbf{Web Server:} seeSubmissions, setGrade
+
+    \textbf{BattleManager:} seeSubmissions, setGrade
+
+    \textbf{GitHub API Integration:} getSubmissionFiles
+    
+    \subsubsection*{Battle and Tournament Closing}
+
+    \item \textbf{R39:} Once the educator that created the battle finishes manually evaluating the submissions of the students and closes the battle, the system shall notify all the students that participated in the battle that the final results have been published.
+    \item \textbf{R40:} Once the educator that created the battle finishes manually evaluating the submissions of the students and closes the battle, the system shall update the leaderboard of the tournament that the battle belongs to by adding the score that each student got on the battle to their score on the rest of the battles of the tournament that they have participated in.
+    
+    \textbf{Web Application:} Battle Page
+
+    \textbf{Web Server:} closeBattle
+
+    \textbf{BattleManager:} closeBattle
+
+    \textbf{NotificationManager:} notifyStudentsInClosingBattle
+
+    \textbf{Email Services Integration:} sendClosingBattleNotification
+
+    \item \textbf{R41:} At any time, if there are no open battles in a tournament, the system shall allow the owner of the tournament to close it.
+    \item \textbf{R42:} Once the owner of a tournament closes it, the system shall update the leaderboard of the tournament and notify all the students that participated in it that the tournament has ended.
+    
+    \textbf{Web Application:} Tournament Page
+
+    \textbf{Web Server:} closeTournament
+
+    \textbf{TournamentManager:} closeTournament
+
+    \textbf{NotificationManager:} notifyStudentsInClosingTournament
+
+    \textbf{Email Services Integration:} sendClosingTournamentNotification
+
+    \subsubsection*{Search system}
+
+    \item \textbf{R43:} At any time, the system shall allow logged in users to search for tournaments. The system should return the tournaments that match the search criteria. This criteria is given by the keywords the user searched for, the tags the user selected, the programming language the user selected and the difficulty level the user selected.
+    
+    \textbf{Web Application:} Search Page
+
+    \textbf{Web Server:} searchTournament
+
+    \textbf{SearchManager:} searchTournament
+    
+    \item \textbf{R44:} At any time, the system shall display to students the tournaments they are registered to.
+    \item \textbf{R45:} At any time, the system shall display to students the battles they are registered to.
+    \item \textbf{R46:} At any time, the system shall display to educators the tournaments own or are a part of.
+    \item \textbf{R47:} At any time, the system shall display to educators the battles they own.
+    
+    \textbf{Web Application:} Homepage
+
+    \item \textbf{R48:} At any time, the system shall display to users that are inside a tournament the battles of that tournament.
+    
+    \textbf{Web Application:} Tournament Page
+
+
+\end{itemize}
+
+
 % 5. IMPLEMENTATION, INTEGRATION AND TEST PLAN
 \section{IMPLEMENTATION, INTEGRATION AND TEST PLAN}
+
+
 
 % 6. EFFORT SPENT
 \section{EFFORT SPENT}
