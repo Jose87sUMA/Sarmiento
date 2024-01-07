@@ -104,11 +104,18 @@ CodeKataBlade integrates with GitHub, a popular code hosting platform, allowing 
 \end{itemize}
 
 \subsection{Revision history}
+
+Initial version of the document. 07/01/2024
+
 \subsection{Reference Documents}
 
 The specification of the RASD and DD assignment of the Software
 Engineering II course, held by professor Matteo Rossi, Elisabetta Di Nitto and
 Matteo Camilli at the Politecnico di Milano, A.Y 2023/2024.
+
+Requirement Analysis and Specification Document (RASD) document of the CodeKataBlade system.
+
+UML Documentation
 
 \subsection{Document Structure}
 
@@ -122,7 +129,6 @@ Matteo Camilli at the Politecnico di Milano, A.Y 2023/2024.
     \item \textbf{7. References:} This section provides a list of the reference documents used to redact this document. 
 \end{itemize}
 
-% 2. ARCHITECTURAL DESIGN
 \section{ARCHITECTURAL DESIGN}
 \subsection{Overview: High-level components and their interaction}
 
@@ -641,7 +647,6 @@ The structure defined for the database is as follows:
 
 Also, in order to prevent a single point of failure in the database, it is replicated in a master-slave configuration.
 
-% 3. USER INTERFACE DESIGN
 \section{USER INTERFACE DESIGN}
 
 \subsection{Mockups}
@@ -787,7 +792,8 @@ This diagram shows the flow of the user interfaces of the system on a normal exe
 possible flows, such as entering to specific pages for accepting invitations or new password creation, but
 these are only accessible via email link and are not shown here.
 
-% 4. REQUIREMENTS TRACEABILITY
+\newpage
+
 \section{REQUIREMENTS TRACEABILITY}
 
 The following is the list of requirements specified in the RASD document. For each requirement or group of them,
@@ -993,7 +999,7 @@ components and functionalities are declared just below the group of requirements
 
 \newpage
 
-\section{IMPLEMENTATION, INTEGRATION AND TEST PLAN}
+\section{IMPLEMENTATION, INTEGRATION, TEST AND DEPLOYMENT PLAN}
 
 \subsection{Implementation Overview}
 
@@ -1056,6 +1062,9 @@ Acceptance tests will be conducted to ensure that the system meets the specified
 \subsubsection*{Regression Testing:}
 Regression testing will be performed after each iteration to ensure that new developments do not introduce issues or break existing functionality.
 
+All of these different tests will be carried out during the implementation phase, with the goal of identifying and addressing issues at an early stage of development to make sure
+that the functional and non-functional requirements are met.
+
 \subsection{Deployment Plan}
 
 The deployment plan outlines the steps for deploying the system into a production environment. This involves configuring servers, setting up databases, and ensuring that the application runs smoothly in a live environment.
@@ -1082,13 +1091,23 @@ Monitoring tools will be set up to keep track of system performance, errors, and
 
 The implementation, integration, and test plan outline the approach to developing a scalable, maintainable, and functional web application. By following best practices in software development, testing, and deployment, the goal is to deliver a system that meets the specified requirements and provides a positive user experience. Regular testing, including unit testing, functional testing, and system testing, will help identify and address issues at various stages of development, ensuring a robust and reliable final product.
 
-% 6. EFFORT SPENT
 \section{EFFORT SPENT}
 
+\textbf{Introduction:} 1 hour 
 
+\textbf{Architectural Design:} 18 hours
 
-% 7. REFERENCES
+\textbf{User Interface Design:} 3 hours
+
+\textbf{Requirements Traceability:} 2 hours
+
+\textbf{Implementation, Integration and Test Plan:} 3 hours
+
 \section{REFERENCES}
 
+Used tools:
+
+Visual Paradigm for UML Modelling 
+uiwizard for UI Mockups
 
 \end{document}
