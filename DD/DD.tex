@@ -309,7 +309,8 @@ External services, such as the GitHub API for code repositories and an email ser
 \end{figure}
 
 On the deployment diagram, we can see the different components of the system and how they are 
-deployed on the different nodes. The web application runs on the users' PC which communicates with the
+deployed on the different nodes. In this case, the shown deployment assumes the application is developed on Java.
+The web application runs on the users' PC which communicates with the
 web server, which runs on a Web Server Technology which could be Apache Tomcat, Nginx or other. This two 
 elements represent the presentation layer.
 The web server is connected to the application server, which runs on a Java EE Application Server. This
@@ -321,7 +322,10 @@ the external components. The database is managed by a Database Management System
 \subsection{Runtime view}
 
 In the following diagrams we can see the sequence diagrams of the main functionalities of the system.
-These are more fleshed out versions of the use case diagrams presented in the RASD document.
+These are more fleshed out versions of the use case diagrams presented in the RASD document. It is important to 
+note that the calls to the database server are just not depicted as they would in a real scenario, since these
+are normally done via queries and not via custom method calls. It was represented via method calls so that
+it is easier to understand the meaning calls to the database server and the parameters used.
 
 \subsubsection*{UC1 - Login}
 
@@ -476,15 +480,127 @@ These are more fleshed out versions of the use case diagrams presented in the RA
     \label{fig:UC17and18}
 \end{figure}
 
+\newpage
+
 \subsection{Component interfaces}
+
+\paragraph{WebServer:}
+
+\begin{itemize}
+    \item void \textbf{loginRequest}(string \textbf{email}, string \textbf{password})
+    \item void \textbf{registerRequest}(string \textbf{email}, string \textbf{password}, string \textbf{name}, string \textbf{surname}, string \textbf{gitHubAccount})
+    \item void \textbf{retrievePassword}(string \textbf{email})
+    \item void \textbf{newPassword}(string \textbf{email}, string \textbf{password})
+    \item void \textbf{createTournament}(string \textbf{name}, Date \textbf{registrationDeadline}, Educator \textbf{educator})
+    \item void \textbf{inviteEducatorToTournament}(Tournament \textbf{tournament}, Educator \textbf{educatorInvited})
+    \item void \textbf{acceptTournamentInvitation}(Tournament \textbf{tournament}, 
+    Educator \textbf{educatorInvited})
+    \item void \textbf{declineTournamentInvitation}(Tournament \textbf{tournament},
+    Educator \textbf{educatorInvited})
+    \item void \textbf{createBattle}(Tournament \textbf{tournament}, Educator \textbf{educator}, string \textbf{name}, 
+    string \textbf{description}, Date \textbf{registrationDeadline}, Date \textbf{finalSubmissionDeadline}, 
+    string \textbf{language}, File[] \textbf{testCases}, File[] \textbf{buildAutomationScripts})
+    \item void \textbf{registerToTournament}(Tournament \textbf{tournament}, Student \textbf{student})
+    \item void \textbf{unregisterFromTournament}(Tournament \textbf{tournament}, Student \textbf{student})
+    \item void \textbf{registerToBattle}(Battle \textbf{battle}, Student \textbf{student})
+    \item void \textbf{inviteStudentToBattle}(Battle \textbf{battle}, Student \textbf{studentInviting}, Student \textbf{studentInvited})
+    \item void \textbf{acceptBattleInvitation}(Battle \textbf{battle}, Student \textbf{studentInviting}, Student \textbf{studentInvited})
+    \item void \textbf{unregisterFromBattle}(Battle \textbf{battle}, Student \textbf{student})
+    \item void \textbf{seeSubmissions}(Battle \textbf{battle})
+    \item void \textbf{setGrade}(StudentTeam \textbf{studentTeam}, float \textbf{grade})
+    \item void \textbf{closeBattle}(Battle \textbf{battle})
+    \item void \textbf{closeTournament}(Tournament \textbf{tournament})
+    \item void \textbf{searchTournament}(string \textbf{keyword}, string[] \textbf{tags}, string \textbf{language}, string \textbf{expertiseLevel})
+    \item void \textbf{goToTournament}(Tournament \textbf{tournament})
+    \item void \textbf{goToBattle}(Battle \textbf{battle})
+\end{itemize}
+
+\paragraph{AuthenticationManager:}
+
+\begin{itemize}
+    \item void \textbf{loginRequest}(string \textbf{email}, string \textbf{password})
+    \item void \textbf{registerRequest}(string \textbf{email}, string \textbf{password}, string \textbf{name}, string \textbf{surname}, string \textbf{gitHubAccount})
+    \item void \textbf{retrievePassword}(string \textbf{email})
+    \item void \textbf{newPassword}(string \textbf{email}, string \textbf{password})
+
+\end{itemize}
+
+\paragraph{TournamentManager:}
+
+\begin{itemize}
+    \item void \textbf{createTournament}(string \textbf{name}, Date \textbf{registrationDeadline}, Educator \textbf{educator})
+    \item void \textbf{inviteEducatorToTournament}(Tournament \textbf{tournament}, Educator \textbf{educatorInvited})
+    \item void \textbf{addEducatorToTournament}(Tournament \textbf{tournament}, 
+    Educator \textbf{educatorInvited})
+    \item void \textbf{addStudent}(Tournament \textbf{tournament}, Student \textbf{student})
+    \item void \textbf{unregisterFromTournament}(Tournament \textbf{tournament}, Student \textbf{student})
+    \item void \textbf{updateTournamentScores}(Tournament \textbf{tournament}, Battle \textbf{battle})
+    \item void \textbf{closeTournament}(Tournament \textbf{tournament})
+
+\end{itemize}
 
 \paragraph{BattleManager:}
 
 \begin{itemize}
-    \item 
+    \item void \textbf{createBattle}(Tournament \textbf{tournament}, Educator \textbf{educator}, string \textbf{name}, 
+    string \textbf{description}, Date \textbf{registrationDeadline}, Date \textbf{finalSubmissionDeadline}, 
+    string \textbf{language}, File[] \textbf{testCases}, File[] \textbf{buildAutomationScripts})
+    \item void \textbf{registerToBattle}(Battle \textbf{battle}, Student \textbf{student})
+    \item void \textbf{inviteStudentToBattle}(Battle \textbf{battle}, Student \textbf{studentInviting}, Student \textbf{studentInvited})
+    \item void \textbf{acceptBattleInvitation}(Battle \textbf{battle}, Student \textbf{studentInviting}, Student \textbf{studentInvited})
+    \item void \textbf{unregisterFromBattle}(Battle \textbf{battle}, Student \textbf{student})
+    \item Map<StudentTeam, File[]> \textbf{seeSubmissions}(Battle \textbf{battle})
+    \item void \textbf{setGrade}(StudentTeam \textbf{studentTeam}, float \textbf{grade})
+    \item void \textbf{closeBattle}(Battle \textbf{battle})
+\end{itemize}
+
+\paragraph{NotificationManager:}
+
+\begin{itemize}
+    \item void \textbf{newTournamentNotification}(Tournament \textbf{tournament})
+    \item void \textbf{inviteEducatorToTournament}(Tournament \textbf{tournament}, Educator \textbf{educatorInvited})
+    \item void \textbf{newBattleNotification}(Tournament \textbf{tournament}, Battle \textbf{battle})
+    \item void \textbf{inviteStudentToBattle}(Battle \textbf{battle}, Student \textbf{studentInviting}, Student \textbf{studentInvited})
+    \item void \textbf{notifyStudentsInClosingBattle}(Battle \textbf{battle})
+    \item void \textbf{notifyStudentsInClosingTournament}(Tournament \textbf{tournament})
+\end{itemize}
+
+\paragraph{EvaluationManager:}
+
+\begin{itemize}
+    \item void \textbf{performEvaluation}(File[] \textbf{submissionFiles}, string \textbf{parentBattleSubmissionRepoUrl}, string \textbf{gitHubAccountStudent})
+    \item void \textbf{storeEvaluationResults}(float \textbf{evaluationResult}, int \textbf{StudentTeamId})
+\end{itemize}
+
+\paragraph{SearchManager:}
+
+\begin{itemize}
+    \item void \textbf{searchTournament}(string \textbf{keyword}, string[] \textbf{tags}, string \textbf{language}, string \textbf{expertiseLevel})
+\end{itemize}
+
+\paragraph{GitHub API Integration:}
+
+\begin{itemize}
+    \item void \textbf{performEvaluation}(String \textbf{battleEvaluationRepoUrl}, File[] \textbf{submissionFiles}, StudentTeam \textbf{studentTeam})
+    \item Map<StudentId, File[]> \textbf{getSubmissionFiles}(Battle \textbf{battle})
+\end{itemize}
+
+\paragraph{Email Service Integration:}
+
+\begin{itemize}
+    \item void \textbf{sendRecoveryEmail}(string \textbf{email})
+    \item void \textbf{sendTournamentNotification}(Tournament \textbf{tournament})
+    \item void \textbf{sendTournamentInvitation}(Tournament \textbf{tournament}, Educator \textbf{educatorInvited})
+    \item void \textbf{sendBattleNotification}(Tournament \textbf{tournament}, Battle \textbf{battle})
+    \item void \textbf{sendBattleInvitation}(Battle \textbf{battle}, Student \textbf{studentInviting}, Student \textbf{studentInvited})
+    \item void \textbf{sendClosingBattleNotification}(Battle \textbf{battle})
+    \item void \textbf{sendClosingTournamentNotification}(Tournament \textbf{tournament})
 \end{itemize}
 
 \subsection{Selected architectural styles and patterns}
+
+
+
 \subsection{Other design decisions}
 
 % 3. USER INTERFACE DESIGN
