@@ -301,9 +301,26 @@ External services, such as the GitHub API for code repositories and an email ser
 
 \subsection{Deployment view}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/DeploymentDiagram.png}
+    \caption{Deployment Diagram}
+    \label{fig:DeploymentDiagram}
+\end{figure}
 
+On the deployment diagram, we can see the different components of the system and how they are 
+deployed on the different nodes. The web application runs on the users' PC which communicates with the
+web server, which runs on a Web Server Technology which could be Apache Tomcat, Nginx or other. This two 
+elements represent the presentation layer.
+The web server is connected to the application server, which runs on a Java EE Application Server. This
+element represents the application layer. The application server is connected to the database and to 
+the external components. The database is managed by a Database Management System such as MySQL, PostgreSQL or other. 
 
 \subsection{Runtime view}
+
+In the following diagrams we can see the sequence diagrams of the main functionalities of the system.
+These are more fleshed out versions of the use case diagrams presented in the RASD document.
+
 \subsection{Component interfaces}
 \subsection{Selected architectural styles and patterns}
 \subsection{Other design decisions}

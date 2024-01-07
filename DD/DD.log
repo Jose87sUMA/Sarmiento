@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.6)  7 JAN 2024 04:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.6)  7 JAN 2024 05:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -318,11 +318,22 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has
                                                   \__shipout_drop_firstpage_...
 l.215     \item I
                  nvokes APIs for communication with the Application Layer. <./images/ComponentDiagram.png>] [8]
-Overfull \hbox (1.18141pt too wide) in paragraph at lines 318--318
+<images/DeploymentDiagram.png, id=204, 1021.8978pt x 448.7967pt>
+File: images/DeploymentDiagram.png Graphic file (type png)
+<use images/DeploymentDiagram.png>
+Package pdftex.def Info: images/DeploymentDiagram.png  used on input line 306.
+(pdftex.def)             Requested size: 345.0pt x 151.5137pt.
+ [9]
+Overfull \hbox (1.18141pt too wide) in paragraph at lines 335--335
 []\OT1/cmr/bx/n/14.4 IMPLEMENTATION, IN-TE-GRA-TION AND
  []
 
-[9] [10] (DD.aux)
+[10
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.344 \end{document}
+                     <./images/DeploymentDiagram.png>] [11] (DD.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
@@ -331,17 +342,17 @@ Package rerunfilecheck Info: File `DD.out' has not changed.
 (rerunfilecheck)             Checksum: 13A2AFAB72C20F94C2C5ED72705EAD90;4427.
  ) 
 Here is how much of TeX's memory you used:
- 10991 strings out of 474586
- 173355 string characters out of 5745681
+ 11001 strings out of 474586
+ 173637 string characters out of 5745681
  1934558 words of memory out of 5000000
- 33000 multiletter control sequences out of 15000+600000
+ 33008 multiletter control sequences out of 15000+600000
  559922 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,6n,79p,591b,535s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\jasm2\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/jasm2/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/jasm2/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/jasm2/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on DD.pdf (11 pages, 422021 bytes).
+Output written on DD.pdf (12 pages, 646909 bytes).
 PDF statistics:
- 251 PDF objects out of 1000 (max. 8388607)
- 60 named destinations out of 1000 (max. 500000)
- 235 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 259 PDF objects out of 1000 (max. 8388607)
+ 62 named destinations out of 1000 (max. 500000)
+ 240 words of extra memory for PDF output out of 10000 (max. 10000000)
 
