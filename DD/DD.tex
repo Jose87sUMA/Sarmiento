@@ -231,7 +231,7 @@ External services, such as the GitHub API for code repositories and an email ser
 \begin{itemize}
     \item Manages the creation, moderation, and deletion of tournaments.
     \item Handles tournament-related processes and rules.
-    \item Interfaces with the BattleManager for battle-related processes such as battle creation.
+    \item Interfaces with the NotificationManager for tournament-related notifications.
     \item Interfaces with the Data Layer for tournament data.
 \end{itemize}
 
@@ -242,6 +242,7 @@ External services, such as the GitHub API for code repositories and an email ser
     \item Handles battle-related processes such as registrations, its deadlines, its GitHub 
     repository creation, and its leaderboard.
     \item Interfaces with the TournamentManager for tournament-related processes such as tournament leadeboard updating.
+    \item Interfaces with the NotificationManager for battle-related notifications.
     \item Interfaces with GitHub API Integration for repository creation.
     \item Interfaces with the Data Layer for battle data.
 \end{itemize}
@@ -251,17 +252,16 @@ External services, such as the GitHub API for code repositories and an email ser
 \begin{itemize}
     \item Handles the evaluation of code submissions based on set criteria.
     \item Utilizes build automation scripts and test cases for evaluation.
-    \item Interfaces with the BattleManager for battle-related processes such as battle leadeaboard updating.
     \item Interfaces with GitHub API Integration for repository pulling.
     \item Interfaces with the Data Layer for storage of evaluation results.
+    \item Has a port through which it receives messages from GitHub which are called during GitHub Actions on submissions and evaluations.
 \end{itemize}
 
 \paragraph{NotificationManager:}
 
 \begin{itemize}
     \item Manages the sending of notifications to users.
-    \item Interfaces with the TournamentManager and BattleManager for tournament and battle-related notifications.
-    \item Interfaces with Email Services Integration for sending notifications.
+    \item Interfaces with Email Services Integration for sending notifications via email.
 \end{itemize}
 
 \paragraph{SearchManager:}
@@ -316,12 +316,174 @@ The web server is connected to the application server, which runs on a Java EE A
 element represents the application layer. The application server is connected to the database and to 
 the external components. The database is managed by a Database Management System such as MySQL, PostgreSQL or other. 
 
+\newpage
+
 \subsection{Runtime view}
 
 In the following diagrams we can see the sequence diagrams of the main functionalities of the system.
 These are more fleshed out versions of the use case diagrams presented in the RASD document.
 
+\subsubsection*{UC1 - Login}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC1}
+    \caption{Use Case 1}
+    \label{fig:UC1}
+\end{figure}
+
+\subsubsection*{UC2 - Retrieve Password}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC2}
+    \caption{Use Case 2}
+    \label{fig:UC2}
+\end{figure}
+
+\subsubsection*{UC3 - Register}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC3}
+    \caption{Use Case 3}
+    \label{fig:UC3}
+\end{figure}
+
+\subsubsection*{UC4 - Educator Creates Tournament}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC4}
+    \caption{Use Case 4}
+    \label{fig:UC4}
+\end{figure}
+
+\subsubsection*{UC5 - Educator invites other educator to tournament}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC5}
+    \caption{Use Case 5}
+    \label{fig:UC5}
+\end{figure}
+
+\subsubsection*{UC6 - Educator creates battle}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC6}
+    \caption{Use Case 6}
+    \label{fig:UC6}
+\end{figure}
+
+\subsubsection*{UC7 - Tournament Registration}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC7}
+    \caption{Use Case 7}
+    \label{fig:UC7}
+\end{figure}
+
+\subsubsection*{UC8 - Tournament Unregistration}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC8}
+    \caption{Use Case 8}
+    \label{fig:UC8}
+\end{figure}
+
+\subsubsection*{UC9 - Battle Registration}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC9}
+    \caption{Use Case 9}
+    \label{fig:UC9}
+\end{figure}
+
+\subsubsection*{UC10 - Student joins battle via invite}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC10}
+    \caption{Use Case 10}
+    \label{fig:UC10}
+\end{figure}
+
+\subsubsection*{UC11 - Battle Unregistration}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC11}
+    \caption{Use Case 11}
+    \label{fig:UC11}
+\end{figure}
+
+\subsubsection*{UC12 - Students makes submission}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC12}
+    \caption{Use Case 12}
+    \label{fig:UC12}
+\end{figure}
+
+\subsubsection*{UC13 - Educator Performs Manual Evaluations and Closes Battle}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC13}
+    \caption{Use Case 13}
+    \label{fig:UC13}
+\end{figure}
+
+\subsubsection*{UC14 - Educator Closes Tournament}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC14}
+    \caption{Use Case 14}
+    \label{fig:UC14}
+\end{figure}
+
+\subsubsection*{UC15 - Find Tournament via search}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC15}
+    \caption{Use Case 15}
+    \label{fig:UC15}
+\end{figure}
+
+\subsubsection*{UC16 - Find Tournament on main page}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC16}
+    \caption{Use Case 16}
+    \label{fig:UC16}
+\end{figure}
+
+\subsubsection*{UC17 - Find Battle on main page or on tournament page}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/UseCaseSequenceDiagrams/UC17&18}
+    \caption{Use Case 17 and 18}
+    \label{fig:UC17and18}
+\end{figure}
+
 \subsection{Component interfaces}
+
+\paragraph{BattleManager:}
+
+\begin{itemize}
+    \item 
+\end{itemize}
+
 \subsection{Selected architectural styles and patterns}
 \subsection{Other design decisions}
 
