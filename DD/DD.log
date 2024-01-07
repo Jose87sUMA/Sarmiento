@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.6)  7 JAN 2024 21:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.6)  7 JAN 2024 21:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -245,4 +245,486 @@ LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
-LaTeX Font Info:    
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+ (C:\Users\jasm2\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count285
+\scratchdimen=\dimen159
+\scratchbox=\box59
+\nofMPsegments=\count286
+\nofMParguments=\count287
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count288
+\MPscratchDim=\dimen160
+\MPnumerator=\count289
+\makeMPintoPDFobject=\count290
+\everyMPtoPDFconversion=\toks25
+) (C:\Users\jasm2\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (C:\Users\jasm2\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package hyperref Info: Link coloring OFF on input line 18.
+ (DD.out) (DD.out)
+\@outlinefile=\write3
+\openout3 = `DD.out'.
+
+\c@lstlisting=\count291
+ [1
+
+{C:/Users/jasm2/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (DD.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 2.
+)
+\tf@toc=\write4
+\openout4 = `DD.toc'.
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.49 \newpage
+              [1] [2] [3]
+<images/3-tier-architecture.png, id=199, 542.025pt x 271.0125pt>
+File: images/3-tier-architecture.png Graphic file (type png)
+<use images/3-tier-architecture.png>
+Package pdftex.def Info: images/3-tier-architecture.png  used on input line 131.
+(pdftex.def)             Requested size: 345.0pt x 172.50455pt.
+ [4] [5
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.159 
+       <./images/3-tier-architecture.png>] [6]
+<images/ComponentDiagram.png, id=222, 1384.6932pt x 688.0104pt>
+File: images/ComponentDiagram.png Graphic file (type png)
+<use images/ComponentDiagram.png>
+Package pdftex.def Info: images/ComponentDiagram.png  used on input line 192.
+(pdftex.def)             Requested size: 345.0pt x 171.41428pt.
+ [7
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.216 \end{itemize}
+                    <./images/ComponentDiagram.png>] [8]
+<images/DeploymentDiagram.png, id=239, 1107.1764pt x 448.7967pt>
+File: images/DeploymentDiagram.png Graphic file (type png)
+<use images/DeploymentDiagram.png>
+Package pdftex.def Info: images/DeploymentDiagram.png  used on input line 306.
+(pdftex.def)             Requested size: 345.0pt x 139.84457pt.
+ [9] [10
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.320 \newpage
+               <./images/DeploymentDiagram.png>]
+<images/UseCaseSequenceDiagrams/UC1.png, id=256, 731.3724pt x 285.4665pt>
+File: images/UseCaseSequenceDiagrams/UC1.png Graphic file (type png)
+<use images/UseCaseSequenceDiagrams/UC1.png>
+Package pdftex.def Info: images/UseCaseSequenceDiagrams/UC1.png  used on input line 334.
+(pdftex.def)             Requested size: 345.0pt x 134.66147pt.
+<images/UseCaseSequenceDiagrams/UC2.png, id=257, 1146.9249pt x 492.1587pt>
+File: images/UseCaseSequenceDiagrams/UC2.png Graphic file (type png)
+<use images/UseCaseSequenceDiagrams/UC2.png>
+Package pdftex.def Info: images/UseCaseSequenceDiagrams/UC2.png  used on input line 343.
+(pdftex.def)             Requested size: 345.0pt x 148.03925pt.
+<images/UseCaseSequenceDiagrams/UC3.png, id=258, 1118.0169pt x 359.9046pt>
+File: images/UseCaseSequenceDiagrams/UC3.png Graphic file (type png)
+<use images/UseCaseSequenceDiagrams/UC3.png>
+Package pdftex.def Info: images/UseCaseSequenceDiagrams/UC3.png  used on input line 352.
+(pdftex.def)             Requested size: 345.0pt x 111.05853pt.
+ [11
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.356 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.356 
+       <./images/UseCaseSequenceDiagrams/UC1.png> <./images/UseCaseSequenceDiagrams/UC2.png>]
+<images/UseCaseSequenceDiagrams/UC4.png, id=269, 1313.8686pt x 406.1574pt>
+File: images/UseCaseSequenceDiagrams/UC4.png Graphic file (type png)
+<use images/UseCaseSequenceDiagrams/UC4.png>
+Package pdftex.def Info: images/UseCaseSequenceDiagrams/UC4.png  used on input line 361.
+(pdftex.def)             Requested size: 345.0pt x 106.6458pt.
+<images/UseCaseSequenceDiagrams/UC5.png, id=270, 1276.2882pt x 402.5439pt>
+File: images/UseCaseSequenceDiagrams/UC5.png Graphic file (type png)
+<use images/UseCaseSequenceDiagrams/UC5.png>
+Package pdftex.def Info: images/UseCaseSequenceDiagrams/UC5.png  used on input line 370.
+(pdftex.def)             Requested size: 345.0pt x 108.81114pt.
+<images/UseCaseSequenceDiagrams/UC6.png, id=271, 1287.8514pt x 611.4042pt>
+File: images/UseCaseSequenceDiagrams/UC6.png Graphic file (type png)
+<use images/UseCaseSequenceDiagrams/UC6.png>
+Package pdftex.def Info: images/UseCaseSequenceDiagrams/UC6.png  used on input line 379.
+(pdftex.def)             Requested size: 345.0pt x 163.78456pt.
+ [12
+pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.383 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.383 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.383 
+       <./images/UseCaseSequenceDiagrams/UC3.png> <./images/UseCaseSequenceDiagrams/UC4.png> <./images/UseCaseSequenceDiagrams/UC5.png>]
+<images/UseCaseSequenceDiagrams/UC7.png, id=286, 789.1884pt x 185.0112pt>
+File: images/UseCaseSequenceDiagrams/UC7.png Graphic file (type png)
+<use images/UseCaseSequenceDiagrams/UC7.png>
+Package pdftex.def Info: images/UseCaseSequenceDiagrams/UC7.png  used on input line 388.
+(pdftex.def)             Requested size: 345.0pt x 80.88008pt.
+<images/UseCaseSequenceDiagrams/UC8.png, id=287, 796.4154pt x 219.7008pt>
+File: images/UseCaseSequenceDiagrams/UC8.png Graphic file (type png)
+<use images/UseCaseSequenceDiagrams/UC8.png>
+Package pdftex.def Info: images/UseCaseSequenceDiagrams/UC8.png  used on input line 397.
+(pdftex.def)             Requested size: 345.0pt x 95.17014pt.
+ [13
+pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.401 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.401 
+       <./images/UseCaseSequenceDiagrams/UC6.png> <./images/UseCaseSequenceDiagrams/UC7.png>]
+<images/UseCaseSequenceDiagrams/UC9.png, id=298, 725.5908pt x 198.0198pt>
+File: images/UseCaseSequenceDiagrams/UC9.png Graphic file (type png)
+<use images/UseCaseSequenceDiagrams/UC9.png>
+Package pdftex.def Info: images/UseCaseSequenceDiagrams/UC9.png  used on input line 406.
+(pdftex.def)             Requested size: 345.0pt x 94.15404pt.
+<images/UseCaseSequenceDiagrams/UC10.png, id=299, 1146.2022pt x 463.2507pt>
+File: images/UseCaseSequenceDiagrams/UC10.png Graphic file (type png)
+<use images/UseCaseSequenceDiagrams/UC10.png>
+Package pdftex.def Info: images/UseCaseSequenceDiagrams/UC10.png  used on input line 415.
+(pdftex.def)             Requested size: 345.0pt x 139.43573pt.
+<images/UseCaseSequenceDiagrams/UC11.png, id=300, 722.7pt x 197.2971pt>
+File: images/UseCaseSequenceDiagrams/UC11.png Graphic file (type png)
+<use images/UseCaseSequenceDiagrams/UC11.png>
+Package pdftex.def Info: images/UseCaseSequenceDiagrams/UC11.png  used on input line 424.
+(pdftex.def)             Requested size: 345.0pt x 94.18372pt.
+ [14
+pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.428 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.428 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.428 
+       <./images/UseCaseSequenceDiagrams/UC8.png> <./images/UseCaseSequenceDiagrams/UC9.png> <./images/UseCaseSequenceDiagrams/UC10.png>]
+<images/UseCaseSequenceDiagrams/UC12.png, id=314, 901.9296pt x 353.4003pt>
+File: images/UseCaseSequenceDiagrams/UC12.png Graphic file (type png)
+<use images/UseCaseSequenceDiagrams/UC12.png>
+Package pdftex.def Info: images/UseCaseSequenceDiagrams/UC12.png  used on input line 433.
+(pdftex.def)             Requested size: 345.0pt x 135.18324pt.
+<images/UseCaseSequenceDiagrams/UC13.png, id=315, 1349.2809pt x 765.3393pt>
+File: images/UseCaseSequenceDiagrams/UC13.png Graphic file (type png)
+<use images/UseCaseSequenceDiagrams/UC13.png>
+Package pdftex.def Info: images/UseCaseSequenceDiagrams/UC13.png  used on input line 442.
+(pdftex.def)             Requested size: 345.0pt x 195.69029pt.
+ [15
+pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.446 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.446 
+       <./images/UseCaseSequenceDiagrams/UC11.png> <./images/UseCaseSequenceDiagrams/UC12.png>]
+<images/UseCaseSequenceDiagrams/UC14.png, id=326, 1074.6549pt x 393.1488pt>
+File: images/UseCaseSequenceDiagrams/UC14.png Graphic file (type png)
+<use images/UseCaseSequenceDiagrams/UC14.png>
+Package pdftex.def Info: images/UseCaseSequenceDiagrams/UC14.png  used on input line 451.
+(pdftex.def)             Requested size: 345.0pt x 126.21211pt.
+<images/UseCaseSequenceDiagrams/UC15.png, id=327, 755.2215pt x 543.4704pt>
+File: images/UseCaseSequenceDiagrams/UC15.png Graphic file (type png)
+<use images/UseCaseSequenceDiagrams/UC15.png>
+Package pdftex.def Info: images/UseCaseSequenceDiagrams/UC15.png  used on input line 460.
+(pdftex.def)             Requested size: 345.0pt x 248.26624pt.
+ [16
+pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.464 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.17}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.464 
+       <./images/UseCaseSequenceDiagrams/UC13.png> <./images/UseCaseSequenceDiagrams/UC14.png>]
+<images/UseCaseSequenceDiagrams/UC16.png, id=338, 370.0224pt x 132.9768pt>
+File: images/UseCaseSequenceDiagrams/UC16.png Graphic file (type png)
+<use images/UseCaseSequenceDiagrams/UC16.png>
+Package pdftex.def Info: images/UseCaseSequenceDiagrams/UC16.png  used on input line 469.
+(pdftex.def)             Requested size: 345.0pt x 123.98976pt.
+<images/UseCaseSequenceDiagrams/UC17&18.png, id=339, 296.307pt x 125.7498pt>
+File: images/UseCaseSequenceDiagrams/UC17&18.png Graphic file (type png)
+<use images/UseCaseSequenceDiagrams/UC17&18.png>
+Package pdftex.def Info: images/UseCaseSequenceDiagrams/UC17&18.png  used on input line 478.
+(pdftex.def)             Requested size: 345.0pt x 146.4263pt.
+ [17
+pdfTeX warning (ext4): destination with the same identifier (name{figure.18}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.482 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.19}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.482 
+       <./images/UseCaseSequenceDiagrams/UC15.png> <./images/UseCaseSequenceDiagrams/UC16.png>] [18
+pdfTeX warning (ext4): destination with the same identifier (name{figure.20}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.483 \newpage
+               <./images/UseCaseSequenceDiagrams/UC17&18.png>]
+Overfull \hbox (5.7062pt too wide) in paragraph at lines 491--492
+[]\OT1/cmr/m/n/10 void \OT1/cmr/bx/n/10 reg-is-ter-Re-quest\OT1/cmr/m/n/10 (string \OT1/cmr/bx/n/10 email\OT1/cmr/m/n/10 , string \OT1/cmr/bx/n/10 pass-word\OT1/cmr/m/n/10 , string \OT1/cmr/bx/n/10 name\OT1/cmr/m/n/10 , string
+ []
+
+
+Overfull \hbox (2.00732pt too wide) in paragraph at lines 494--495
+[]\OT1/cmr/m/n/10 void \OT1/cmr/bx/n/10 cre-ate-Tour-na-ment\OT1/cmr/m/n/10 (string \OT1/cmr/bx/n/10 name\OT1/cmr/m/n/10 , Date \OT1/cmr/bx/n/10 reg-is-tra-tionDead-line\OT1/cmr/m/n/10 , Ed-
+ []
+
+
+Overfull \hbox (2.00641pt too wide) in paragraph at lines 500--504
+[]\OT1/cmr/m/n/10 void \OT1/cmr/bx/n/10 cre-ate-Bat-tle\OT1/cmr/m/n/10 (Tournament \OT1/cmr/bx/n/10 tour-na-ment\OT1/cmr/m/n/10 , Ed-u-ca-tor \OT1/cmr/bx/n/10 ed-u-ca-tor\OT1/cmr/m/n/10 , string
+ []
+
+
+Overfull \hbox (12.25957pt too wide) in paragraph at lines 500--504
+\OT1/cmr/bx/n/10 mis-sion-Dead-line\OT1/cmr/m/n/10 , int \OT1/cmr/bx/n/10 maxNum-berOf-Par-tic-i-pants\OT1/cmr/m/n/10 , int \OT1/cmr/bx/n/10 min-Num-berOf-
+ []
+
+
+Overfull \hbox (4.24493pt too wide) in paragraph at lines 514--515
+[]\OT1/cmr/m/n/10 void \OT1/cmr/bx/n/10 search-Tour-na-ment\OT1/cmr/m/n/10 (string \OT1/cmr/bx/n/10 key-word\OT1/cmr/m/n/10 , string[] \OT1/cmr/bx/n/10 tags\OT1/cmr/m/n/10 , string \OT1/cmr/bx/n/10 lan-guage\OT1/cmr/m/n/10 ,
+ []
+
+[19]
+Overfull \hbox (5.7062pt too wide) in paragraph at lines 523--524
+[]\OT1/cmr/m/n/10 void \OT1/cmr/bx/n/10 reg-is-ter-Re-quest\OT1/cmr/m/n/10 (string \OT1/cmr/bx/n/10 email\OT1/cmr/m/n/10 , string \OT1/cmr/bx/n/10 pass-word\OT1/cmr/m/n/10 , string \OT1/cmr/bx/n/10 name\OT1/cmr/m/n/10 , string
+ []
+
+
+Overfull \hbox (2.00732pt too wide) in paragraph at lines 532--533
+[]\OT1/cmr/m/n/10 void \OT1/cmr/bx/n/10 cre-ate-Tour-na-ment\OT1/cmr/m/n/10 (string \OT1/cmr/bx/n/10 name\OT1/cmr/m/n/10 , Date \OT1/cmr/bx/n/10 reg-is-tra-tionDead-line\OT1/cmr/m/n/10 , Ed-
+ []
+
+
+Overfull \hbox (1.46579pt too wide) in paragraph at lines 538--539
+[]\OT1/cmr/m/n/10 void \OT1/cmr/bx/n/10 up-date-Tour-na-mentScores\OT1/cmr/m/n/10 (Tournament \OT1/cmr/bx/n/10 tour-na-ment\OT1/cmr/m/n/10 , Bat-tle \OT1/cmr/bx/n/10 bat-
+ []
+
+
+Overfull \hbox (2.00641pt too wide) in paragraph at lines 548--552
+[]\OT1/cmr/m/n/10 void \OT1/cmr/bx/n/10 cre-ate-Bat-tle\OT1/cmr/m/n/10 (Tournament \OT1/cmr/bx/n/10 tour-na-ment\OT1/cmr/m/n/10 , Ed-u-ca-tor \OT1/cmr/bx/n/10 ed-u-ca-tor\OT1/cmr/m/n/10 , string
+ []
+
+
+Overfull \hbox (12.25957pt too wide) in paragraph at lines 548--552
+\OT1/cmr/bx/n/10 mis-sion-Dead-line\OT1/cmr/m/n/10 , int \OT1/cmr/bx/n/10 maxNum-berOf-Par-tic-i-pants\OT1/cmr/m/n/10 , int \OT1/cmr/bx/n/10 min-Num-berOf-
+ []
+
+[20]
+Overfull \hbox (5.17528pt too wide) in paragraph at lines 576--577
+[]\OT1/cmr/m/n/10 void \OT1/cmr/bx/n/10 no-ti-fyS-tu-dentsIn-Clos-ing-Tour-na-ment\OT1/cmr/m/n/10 (Tournament \OT1/cmr/bx/n/10 tour-na-ment\OT1/cmr/m/n/10 ) 
+ []
+
+[21]
+Overfull \hbox (4.24493pt too wide) in paragraph at lines 589--590
+[]\OT1/cmr/m/n/10 void \OT1/cmr/bx/n/10 search-Tour-na-ment\OT1/cmr/m/n/10 (string \OT1/cmr/bx/n/10 key-word\OT1/cmr/m/n/10 , string[] \OT1/cmr/bx/n/10 tags\OT1/cmr/m/n/10 , string \OT1/cmr/bx/n/10 lan-guage\OT1/cmr/m/n/10 ,
+ []
+
+
+Overfull \hbox (4.10439pt too wide) in paragraph at lines 595--596
+[]\OT1/cmr/m/n/10 void \OT1/cmr/bx/n/10 per-formEval-u-a-tion\OT1/cmr/m/n/10 (String \OT1/cmr/bx/n/10 bat-tleE-val-u-a-tion-Re-poUrl\OT1/cmr/m/n/10 , File[] \OT1/cmr/bx/n/10 sub-
+ []
+
+
+Overfull \hbox (2.9461pt too wide) in paragraph at lines 608--609
+[]\OT1/cmr/m/n/10 void \OT1/cmr/bx/n/10 send-Clos-ing-Tour-na-ment-No-ti-fi-ca-tion\OT1/cmr/m/n/10 (Tournament \OT1/cmr/bx/n/10 tour-na-ment\OT1/cmr/m/n/10 ) 
+ []
+
+[22]
+<images/EntityRelationshipDiagram.png, id=385, 725.5908pt x 418.4433pt>
+File: images/EntityRelationshipDiagram.png Graphic file (type png)
+<use images/EntityRelationshipDiagram.png>
+Package pdftex.def Info: images/EntityRelationshipDiagram.png  used on input line 637.
+(pdftex.def)             Requested size: 345.0pt x 198.96056pt.
+<images/UI/Homepage.png, id=386, 1445.4pt x 903.375pt>
+File: images/UI/Homepage.png Graphic file (type png)
+<use images/UI/Homepage.png>
+Package pdftex.def Info: images/UI/Homepage.png  used on input line 653.
+(pdftex.def)             Requested size: 345.0pt x 215.61519pt.
+ [23
+pdfTeX warning (ext4): destination with the same identifier (name{figure.21}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.657 
+       <./images/EntityRelationshipDiagram.png>]
+<images/UI/Tournament Page before Registration Deadline Student not registered.png, id=395, 1445.4pt x 903.375pt>
+File: images/UI/Tournament Page before Registration Deadline Student not registered.png Graphic file (type png)
+<use images/UI/Tournament Page before Registration Deadline Student not registered.png>
+Package pdftex.def Info: images/UI/Tournament Page before Registration Deadline Student not registered.png  used on input line 672.
+(pdftex.def)             Requested size: 345.0pt x 215.61519pt.
+ [24
+pdfTeX warning (ext4): destination with the same identifier (name{figure.22}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.676 
+       <./images/UI/Homepage.png>]
+<images/UI/Tournament Page Active.png, id=404, 1445.4pt x 903.375pt>
+File: images/UI/Tournament Page Active.png Graphic file (type png)
+<use images/UI/Tournament Page Active.png>
+Package pdftex.def Info: images/UI/Tournament Page Active.png  used on input line 685.
+(pdftex.def)             Requested size: 345.0pt x 215.61519pt.
+ [25
+pdfTeX warning (ext4): destination with the same identifier (name{figure.23}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.689 
+       <./images/UI/Tournament Page before Registration Deadline Student not registered.png>]
+<images/UI/Tournament Page Active Educator.png, id=412, 1445.4pt x 903.375pt>
+File: images/UI/Tournament Page Active Educator.png Graphic file (type png)
+<use images/UI/Tournament Page Active Educator.png>
+Package pdftex.def Info: images/UI/Tournament Page Active Educator.png  used on input line 699.
+(pdftex.def)             Requested size: 345.0pt x 215.61519pt.
+ [26
+pdfTeX warning (ext4): destination with the same identifier (name{figure.24}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.703 
+       <./images/UI/Tournament Page Active.png>]
+<images/UI/Battle Screen before Registration Deadline Student not registered.png, id=420, 1445.4pt x 903.375pt>
+File: images/UI/Battle Screen before Registration Deadline Student not registered.png Graphic file (type png)
+<use images/UI/Battle Screen before Registration Deadline Student not registered.png>
+Package pdftex.def Info: images/UI/Battle Screen before Registration Deadline Student not registered.png  used on input line 716.
+(pdftex.def)             Requested size: 345.0pt x 215.61519pt.
+ [27
+pdfTeX warning (ext4): destination with the same identifier (name{figure.25}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.720 
+       <./images/UI/Tournament Page Active Educator.png>]
+<images/UI/Battle Screen Active Student.png, id=428, 1445.4pt x 903.375pt>
+File: images/UI/Battle Screen Active Student.png Graphic file (type png)
+<use images/UI/Battle Screen Active Student.png>
+Package pdftex.def Info: images/UI/Battle Screen Active Student.png  used on input line 731.
+(pdftex.def)             Requested size: 345.0pt x 215.61519pt.
+ [28
+pdfTeX warning (ext4): destination with the same identifier (name{figure.26}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.735 
+       <./images/UI/Battle Screen before Registration Deadline Student not registered.png>]
+<images/UI/Create Tournament.png, id=436, 1445.4pt x 903.375pt>
+File: images/UI/Create Tournament.png Graphic file (type png)
+<use images/UI/Create Tournament.png>
+Package pdftex.def Info: images/UI/Create Tournament.png  used on input line 747.
+(pdftex.def)             Requested size: 345.0pt x 215.61519pt.
+ [29
+pdfTeX warning (ext4): destination with the same identifier (name{figure.27}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.751 
+       <./images/UI/Battle Screen Active Student.png>]
+<images/UI/Create Battle.png, id=444, 1445.4pt x 903.375pt>
+File: images/UI/Create Battle.png Graphic file (type png)
+<use images/UI/Create Battle.png>
+Package pdftex.def Info: images/UI/Create Battle.png  used on input line 756.
+(pdftex.def)             Requested size: 345.0pt x 215.61519pt.
+ [30
+pdfTeX warning (ext4): destination with the same identifier (name{figure.28}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.760 
+       <./images/UI/Create Tournament.png>]
+<images/UI/Search.png, id=453, 1445.4pt x 903.375pt>
+File: images/UI/Search.png Graphic file (type png)
+<use images/UI/Search.png>
+Package pdftex.def Info: images/UI/Search.png  used on input line 767.
+(pdftex.def)             Requested size: 345.0pt x 215.61519pt.
+ [31
+pdfTeX warning (ext4): destination with the same identifier (name{figure.29}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.771 
+       <./images/UI/Create Battle.png>]
+<images/UI/UserInterfaceFlowchart.png, id=461, 565.1514pt x 418.4433pt>
+File: images/UI/UserInterfaceFlowchart.png Graphic file (type png)
+<use images/UI/UserInterfaceFlowchart.png>
+Package pdftex.def Info: images/UI/UserInterfaceFlowchart.png  used on input line 781.
+(pdftex.def)             Requested size: 345.0pt x 255.44797pt.
+ [32
+pdfTeX warning (ext4): destination with the same identifier (name{figure.30}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.785 
+       <./images/UI/Search.png>] [33
+pdfTeX warning (ext4): destination with the same identifier (name{figure.31}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.804     \item \textbf
+                       {R5:} At any time, an account may not have a password... <./images/UI/UserInterfaceFlowchart.png>] [34] [35]
+Overfull \hbox (8.20145pt too wide) in paragraph at lines 895--896
+[]\OT1/cmr/bx/n/10 BattleManager: \OT1/cmr/m/n/10 reg-is-ter-To-Bat-tle, in-viteS-tu-dent-To-Bat-tle, ac-cept-Bat-tleIn-
+ []
+
+[36] [37] [38] [39]
+Overfull \hbox (1.18141pt too wide) in paragraph at lines 996--996
+[]\OT1/cmr/bx/n/14.4 IMPLEMENTATION, IN-TE-GRA-TION AND
+ []
+
+[40] [41] [42] [43] (DD.aux)
+ ***********
+LaTeX2e <2023-11-01>
+L3 programming layer <2023-11-09>
+ ***********
+Package rerunfilecheck Info: File `DD.out' has not changed.
+(rerunfilecheck)             Checksum: 46C25DA2F7E7D52616010089F4861B5D;5305.
+ ) 
+Here is how much of TeX's memory you used:
+ 11432 strings out of 474586
+ 187548 string characters out of 5745681
+ 1937558 words of memory out of 5000000
+ 33307 multiletter control sequences out of 15000+600000
+ 559922 words of font info for 42 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 75i,6n,79p,839b,549s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\jasm2\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/jasm2/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/jasm2/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/jasm2/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+Output written on DD.pdf (44 pages, 9467759 bytes).
+PDF statistics:
+ 605 PDF objects out of 1000 (max. 8388607)
+ 194 named destinations out of 1000 (max. 500000)
+ 436 words of extra memory for PDF output out of 10000 (max. 10000000)
+
